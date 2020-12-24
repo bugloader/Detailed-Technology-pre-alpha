@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "W  ",
+    " W ",
+    "  A"
+  ],
+  "key": {
+    "W": {
+      "item": "dt:bronze_plate"
+    },
+    "A": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "dt:bronze_rasper",
+    "count": 1
+  }
+}

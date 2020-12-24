@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WWW",
+    "WAW",
+    "WBW"
+  ],
+  "key": {
+    "W": {
+      "item": "dt:copper_plate"
+    },
+    "A": {
+      "item": "minecraft:clay_ball"
+    },
+    "B": {
+      "item": "dt:copper_rod_frame"
+    }
+  },
+  "result": {
+    "item": "dt:fire_starter_block",
+    "count": 1
+  }
+}

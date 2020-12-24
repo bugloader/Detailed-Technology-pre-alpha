@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " W ",
+    "WAW",
+    " W "
+  ],
+  "key": {
+    "W": {
+      "item": "dt:beginner_fire_starter"
+    },
+    "A": {
+      "item": "minecraft:charcoal"
+    }
+  },
+  "result": {
+    "item": "dt:basic_fire_starter",
+    "count": 4
+  }
+}

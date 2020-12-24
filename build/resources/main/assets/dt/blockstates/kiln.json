@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=north": { "model": "dt:block/kiln", "y": 180 },
+    "facing=east":  { "model": "dt:block/kiln", "y": 270 },
+    "facing=south": { "model": "dt:block/kiln" },
+    "facing=west":  { "model": "dt:block/kiln", "y":  90}
+  }
+}
+

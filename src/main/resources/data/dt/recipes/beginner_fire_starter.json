@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WWW",
+    " W ",
+    "WWW"
+  ],
+  "key": {
+    "W": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "dt:beginner_fire_starter",
+    "count": 1
+  }
+}

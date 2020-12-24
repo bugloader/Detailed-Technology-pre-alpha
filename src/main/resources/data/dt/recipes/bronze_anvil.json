@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WWW",
+    " W ",
+    "WWW"
+  ],
+  "key": {
+    "W": {
+      "item": "dt:bronze_ingot"
+    }
+  },
+  "result": {
+    "item": "dt:bronze_anvil",
+    "count": 1
+  }
+}

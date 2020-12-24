@@ -1,0 +1,89 @@
+detailedTechnology/blocks/FireStarterBlock.java
+ detailedTechnology.blocks.FireStarterBlock
+ detailedTechnology.blocks.FireStarterBlock$1
+detailedTechnology/blocks/StoneMileRunner.java
+ detailedTechnology.blocks.StoneMileRunner
+detailedTechnology/items/SawItem.java
+ detailedTechnology.items.SawItem
+detailedTechnology/blocks/StoneMile.java
+ detailedTechnology.blocks.StoneMile
+detailedTechnology/gui/BronzeAnvilScreenHandler.java
+ detailedTechnology.gui.BronzeAnvilScreenHandler
+detailedTechnology/items/ClaySmallCrucibleWithLiquid.java
+ detailedTechnology.items.ClaySmallCrucibleWithLiquid
+detailedTechnology/blocks/CharcoalHeap.java
+ detailedTechnology.blocks.CharcoalHeap
+detailedTechnology/items/HammerItem.java
+ detailedTechnology.items.HammerItem
+detailedTechnology/gui/StoneMileScreenHandler.java
+ detailedTechnology.gui.StoneMileScreenHandler
+detailedTechnology/blockEntity/StoneMileEntity.java
+ detailedTechnology.blockEntity.StoneMileEntity
+detailedTechnology/gui/KilnScreen.java
+ detailedTechnology.gui.KilnScreen
+detailedTechnology/mixin/ExampleMixin.java
+ detailedTechnology.mixin.ExampleMixin
+detailedTechnology/items/RasperItem.java
+ detailedTechnology.items.RasperItem
+detailedTechnology/recipe/AnvilRecipe.java
+ detailedTechnology.recipe.AnvilRecipe
+detailedTechnology/blocks/BurningCharcoalHeap.java
+ detailedTechnology.blocks.BurningCharcoalHeap
+detailedTechnology/gui/BronzeAnvilScreen.java
+ detailedTechnology.gui.BronzeAnvilScreen
+detailedTechnology/DetailedTechnology.java
+ detailedTechnology.DetailedTechnology
+detailedTechnology/blockEntity/FireStarterBlockEntity.java
+ detailedTechnology.blockEntity.FireStarterBlockEntity
+detailedTechnology/blocks/Kiln.java
+ detailedTechnology.blocks.Kiln
+detailedTechnology/gui/CrucibleScreen.java
+ detailedTechnology.gui.CrucibleScreen
+detailedTechnology/DetailedTechnologyModClient.java
+ detailedTechnology.DetailedTechnologyModClient
+detailedTechnology/blockEntity/BrickCrucibleEntity.java
+ detailedTechnology.blockEntity.BrickCrucibleEntity
+detailedTechnology/blockEntity/BurningCharcoalHeapEntity.java
+ detailedTechnology.blockEntity.BurningCharcoalHeapEntity
+detailedTechnology/blocks/BrickCrucible.java
+ detailedTechnology.blocks.BrickCrucible
+detailedTechnology/recipe/KilnRecipe.java
+ detailedTechnology.recipe.KilnRecipe
+detailedTechnology/gui/KilnScreenHandler.java
+ detailedTechnology.gui.KilnScreenHandler
+detailedTechnology/gui/CrucibleScreenHandler.java
+ detailedTechnology.gui.CrucibleScreenHandler
+detailedTechnology/recipe/ShapelessRecipe.java
+ detailedTechnology.recipe.ShapelessRecipe
+detailedTechnology/items/DetailedArmorMaterial.java
+ detailedTechnology.items.DetailedArmorMaterial
+detailedTechnology/blocks/ClayModelIngot.java
+ detailedTechnology.blocks.ClayModelIngot
+ detailedTechnology.blocks.ClayModelIngot$1
+detailedTechnology/gui/StoneMileScreen.java
+ detailedTechnology.gui.StoneMileScreen
+detailedTechnology/Interfaces/ImplementedInventory.java
+ detailedTechnology.Interfaces.ImplementedInventory
+detailedTechnology/blockEntity/KilnEntity.java
+ detailedTechnology.blockEntity.KilnEntity
+detailedTechnology/gui/FireStarterBlockScreen.java
+ detailedTechnology.gui.FireStarterBlockScreen
+detailedTechnology/blockEntity/BronzeAnvilEntity.java
+ detailedTechnology.blockEntity.BronzeAnvilEntity
+detailedTechnology/blocks/Ores.java
+ detailedTechnology.blocks.Ores
+detailedTechnology/blocks/BronzeAnvil.java
+ detailedTechnology.blocks.BronzeAnvil
+ detailedTechnology.blocks.BronzeAnvil$1
+detailedTechnology/gui/FireStarterBlockScreenHandler.java
+ detailedTechnology.gui.FireStarterBlockScreenHandler
+detailedTechnology/items/BasicFireStarter.java
+ detailedTechnology.items.BasicFireStarter
+detailedTechnology/recipe/ShapedRecipe.java
+ detailedTechnology.recipe.ShapedRecipe
+detailedTechnology/items/BronzeMaterial.java
+ detailedTechnology.items.BronzeMaterial
+detailedTechnology/Registration.java
+ detailedTechnology.Registration
+detailedTechnology/items/BeginnerFireStarter.java
+ detailedTechnology.items.BeginnerFireStarter

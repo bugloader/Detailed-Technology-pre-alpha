@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AWA",
+    "ABA"
+  ],
+  "key": {
+    "W": {
+      "item": "dt:copper_plate"
+    },
+    "A": {
+      "item": "minecraft:clay_ball"
+    },
+    "B": {
+      "item": "dt:copper_rod_frame"
+    }
+  },
+  "result": {
+    "item": "dt:kiln",
+    "count": 1
+  }
+}

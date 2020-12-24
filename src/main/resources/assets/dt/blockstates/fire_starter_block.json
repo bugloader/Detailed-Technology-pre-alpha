@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=north": { "model": "dt:block/fire_starter_block", "y": 180 },
+    "facing=east":  { "model": "dt:block/fire_starter_block", "y": 270 },
+    "facing=south": { "model": "dt:block/fire_starter_block" },
+    "facing=west":  { "model": "dt:block/fire_starter_block", "y":  90}
+  }
+}
+
