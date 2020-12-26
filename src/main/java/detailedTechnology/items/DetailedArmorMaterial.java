@@ -20,7 +20,7 @@ public enum DetailedArmorMaterial implements ArmorMaterial {
 		      return Ingredient.ofItems(Ores.copperIngot);
 	   }),
 
-	BRONZE("bronze", 18, new int[]{3, 4, 5, 1},10,SoundEvents.ITEM_ARMOR_EQUIP_IRON,
+	BRONZE("bronze", 18, new int[]{3, 4, 5, 1},12,SoundEvents.ITEM_ARMOR_EQUIP_IRON,
 			0.0F, 0.0F, () -> {
 		return Ingredient.ofItems(Ores.copperIngot);
 	});

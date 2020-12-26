@@ -11,9 +11,10 @@ import net.minecraft.util.Identifier;
 public class StoneMileScreen extends HandledScreen<ScreenHandler> {
     //A path to the gui texture. In this example we use the texture from the dispenser
     private static final Identifier TEXTURE = new Identifier("dt", "textures/gui/container/stone_mile.png");
-
+    private final StoneMileScreenHandler screenHandler;
     public StoneMileScreen(ScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
+        this.screenHandler=(StoneMileScreenHandler) handler;
     }
 
     @Override
@@ -27,10 +28,14 @@ public class StoneMileScreen extends HandledScreen<ScreenHandler> {
     }
 
     @Override
-    public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
+    public void render(MatrixStack matrices, int mouseX, int mouseY, float delta){
         renderBackground(matrices);
         super.render(matrices, mouseX, mouseY, delta);
         drawMouseoverTooltip(matrices, mouseX, mouseY);
+        textRenderer.draw(matrices, Integer.toString(screenHandler.getTime())+"/30 times", 41, 41, 0x000000);
+        textRenderer.draw(matrices, screenHandler.getName(), 41, 61, 0x000000);
+        textRenderer.draw(matrices, Integer.toString(screenHandler.getTime())+"/30 times", 40, 40, 0xffffff);
+        textRenderer.draw(matrices, screenHandler.getName(), 40, 60, 0xffffff);
     }
 
     @Override

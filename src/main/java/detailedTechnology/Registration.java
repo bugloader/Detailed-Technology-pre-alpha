@@ -16,24 +16,30 @@ import java.util.function.Supplier;
 
 public class Registration {
 
-    public static String MOD_ID;
+    public static String MOD_ID = "dt";
 
-    public Registration(String MOD_ID) {
-        Registration.MOD_ID = MOD_ID;
+    public static String getIdName(String name){
+        return name.toLowerCase().replaceAll(" ","_");
     }
 
     public static void item(String name, Item item){
-        Registry.register(Registry.ITEM, new Identifier(MOD_ID,name),item);
+        String idName = getIdName(name);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID,idName),item);
+        System.out.println("\"item."+MOD_ID+"."+idName+"\":\""+name+"\",");
     }
 
     public static void block(String name, Block block){
-        Registry.register(Registry.BLOCK,new Identifier(MOD_ID,name),block);
+        String idName = getIdName(name);
+        Registry.register(Registry.BLOCK,new Identifier(MOD_ID,idName),block);
+        System.out.println("\"block."+MOD_ID+"."+idName+"\":\""+name+"\",");
     }
 
     public static void blockWithItem(String name, Block block, ItemGroup itemGroup){
-        Registry.register(Registry.BLOCK,new Identifier(MOD_ID,name),block);
-        Registry.register(Registry.ITEM, new Identifier(MOD_ID, name),
+        String idName = getIdName(name);
+        Registry.register(Registry.BLOCK,new Identifier(MOD_ID,idName),block);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, idName),
                 new BlockItem(block, new FabricItemSettings().group(itemGroup)));
+        System.out.println("\"block."+MOD_ID+"."+idName+"\":\""+name+"\",");
     }
 
 }

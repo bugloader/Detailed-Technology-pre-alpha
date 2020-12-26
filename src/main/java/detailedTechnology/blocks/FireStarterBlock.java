@@ -27,7 +27,6 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class FireStarterBlock extends HorizontalFacingBlock implements BlockEntityProvider {
-    private int workingTime = 0;
     public FireStarterBlock()
     {
         super(FabricBlockSettings.of(Material.STONE, MaterialColor.STONE)

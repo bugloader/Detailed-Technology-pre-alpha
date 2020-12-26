@@ -2,6 +2,7 @@ package detailedTechnology.blocks;
 
 import detailedTechnology.DetailedTechnology;
 import detailedTechnology.blockEntity.StoneMileEntity;
+import detailedTechnology.recipe.StoneMileRecipe;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tools.FabricToolTags;
 import net.minecraft.block.*;
@@ -27,10 +28,12 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Objects;
+
 public class StoneMile extends HorizontalFacingBlock implements BlockEntityProvider {
     private static final VoxelShape SHAPE =
             Block.createCuboidShape(0, 0, 0, 16, 12, 16);
-    private int workingTime = 0;
+    public int workingTime = 0;
     public StoneMile()
     {
         super(FabricBlockSettings.of(Material.STONE, MaterialColor.STONE)
@@ -102,79 +105,12 @@ public class StoneMile extends HorizontalFacingBlock implements BlockEntityProvi
 
     @Override
     public void neighborUpdate(BlockState state, World world, BlockPos pos, Block block, BlockPos fromPos, boolean notify) {
-        if(block.getClass().equals(StoneMileRunner.class))
-        {
-            System.out.println(workingTime);
-            if(++workingTime>=20)
-            {
+        if(block.getClass().equals(StoneMileRunner.class)&&
+                ((Inventory) Objects.requireNonNull(world.getBlockEntity(pos))).getStack(0).getCount()!=0) {
+            if(++workingTime>=30) {
                 workingTime=0;
-                mile((Inventory)world.getBlockEntity(pos));
+                StoneMileRecipe.tryMile((Inventory) Objects.requireNonNull(world.getBlockEntity(pos)));
             }
-        }
-    }
-
-    private boolean isMileable(Inventory inventory)
-    {
-        ItemStack stack1 = inventory.getStack(0),
-                stack2 = inventory.getStack(1);
-        boolean slot2IsEmpty = stack2.getCount()==0;
-        if(stack1.getCount()==0||stack2.getCount()>62)
-        {
-            return false;
-        }
-        String itemName = stack1.getName().getString();
-        switch (itemName) {
-            case "block.dt.copper_ore":
-                return slot2IsEmpty||stack2.getName().getString().equals("item.dt.copper_sharp");
-            case "block.dt.tin_ore":
-                return slot2IsEmpty||stack2.getName().getString().equals("item.dt.tin_sharp");
-            case "Iron Ore":
-                return slot2IsEmpty||stack2.getName().getString().equals("item.dt.iron_sharp");
-        }
-        return false;
-    }
-
-    public void mile(Inventory inventory)
-    {
-        if(isMileable(inventory))
-        {
-            ItemStack itemStack1 = inventory.getStack(0);
-            String itemName = itemStack1.getName().getString();
-            itemStack1.setCount(itemStack1.getCount()-1);
-           if(itemName.equals("block.dt.copper_ore"))
-           {
-               if(inventory.getStack(1).getCount()==0)
-               {
-                   inventory.setStack(1,new ItemStack(Ores.copperSharp));
-                   inventory.getStack(1).setCount(2);
-               }
-               else
-               {
-                   inventory.getStack(1).setCount(inventory.getStack(1).getCount()+2);
-               }
-           }else if(itemName.equals("block.dt.tin_ore"))
-           {
-               if(inventory.getStack(1).getCount()==0)
-               {
-                   inventory.setStack(1,new ItemStack(Ores.tinSharp));
-                   inventory.getStack(1).setCount(2);
-               }
-               else
-               {
-                   inventory.getStack(1).setCount(inventory.getStack(1).getCount()+2);
-               }
-           }else if(itemName.equals("Iron Ore"))
-           {
-               if(inventory.getStack(1).getCount()==0)
-               {
-                   inventory.setStack(1,new ItemStack(Ores.ironSharp));
-                   inventory.getStack(1).setCount(2);
-               }
-               else
-               {
-                   inventory.getStack(1).setCount(inventory.getStack(1).getCount()+2);
-               }
-           }
         }
     }
 }

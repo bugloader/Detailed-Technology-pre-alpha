@@ -1,26 +1,33 @@
 package detailedTechnology.gui;
 
 import detailedTechnology.DetailedTechnology;
+import detailedTechnology.recipe.KilnRecipe;
+import net.minecraft.client.font.TextRenderer;
+import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.screen.ArrayPropertyDelegate;
+import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 
 public class KilnScreenHandler extends ScreenHandler {
     private final Inventory inventory;
+    private PropertyDelegate propertyDelegate;
     public KilnScreenHandler(int syncId, PlayerInventory playerInventory) {
-        this(syncId, playerInventory, new SimpleInventory(11));
+        this(syncId, playerInventory, new SimpleInventory(11), new ArrayPropertyDelegate(2));
     }
 
-    public KilnScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory) {
+    public KilnScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate propertyDelegate) {
         super(DetailedTechnology.kilnScreenHandler, syncId);
         checkSize(inventory, 11);
         this.inventory = inventory;
+        this.propertyDelegate = propertyDelegate;
         inventory.onOpen(playerInventory.player);
-
+        this.addProperties(this.propertyDelegate);
         int m,l;
         for (m = 0; m < 3; ++m) {
             for (l = 0; l < 3; ++l) {
@@ -37,6 +44,18 @@ public class KilnScreenHandler extends ScreenHandler {
         for (m = 0; m < 9; ++m) {
             this.addSlot(new Slot(playerInventory, m, 8 + m * 18, 142));
         }
+    }
+
+    public int getTime(){
+        return propertyDelegate.get(0);
+    }
+
+    public String getName(){
+        int i = propertyDelegate.get(1);
+        if(i==-1) {
+            return "none";
+        }
+        return KilnRecipe.CONTENTS.get(i).result.getName().getString();
     }
 
     @Override
@@ -68,4 +87,6 @@ public class KilnScreenHandler extends ScreenHandler {
 
         return newStack;
     }
+
+
 }

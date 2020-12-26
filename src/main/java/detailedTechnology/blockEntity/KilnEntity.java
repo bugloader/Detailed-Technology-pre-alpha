@@ -15,6 +15,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.screen.NamedScreenHandlerFactory;
+import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
@@ -24,13 +25,34 @@ import net.minecraft.util.collection.DefaultedList;
 public class KilnEntity extends BlockEntity implements ImplementedInventory, NamedScreenHandlerFactory, Tickable {
 
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(11, ItemStack.EMPTY);
-    private int currentCraftingID;
+
+    private int currentCraftingId;
     private int workingTime;
+
+    private final PropertyDelegate propertyDelegate = new PropertyDelegate() {
+
+        @Override
+        public int get(int index) {
+            return index==0?workingTime: currentCraftingId;
+        }
+
+        @Override
+        public void set(int index, int value) {
+            workingTime = value;
+        }
+
+        //this is supposed to return the amount of integers you have in your delegate, in our example only one
+        @Override
+        public int size() {
+            return 2 ;
+        }
+    };
+
 
 
     public KilnEntity(){
         super(DetailedTechnology.kilnEntity);
-        currentCraftingID=-1;
+        currentCraftingId =-1;
         workingTime = 0;
     }
 
@@ -59,10 +81,10 @@ public class KilnEntity extends BlockEntity implements ImplementedInventory, Nam
 
     @Override
     public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
-        return new KilnScreenHandler(syncId, playerInventory, this);
+        return new KilnScreenHandler(syncId, playerInventory, this,propertyDelegate);
     }
 
-    public boolean tryCraft(Inventory inventory) {
+    public void tryCraft(Inventory inventory) {
         int stackCount = 0;
         String[] itemNames = new String[9];
         int[] itemNums = new int[9];
@@ -71,23 +93,25 @@ public class KilnEntity extends BlockEntity implements ImplementedInventory, Nam
         int fuelCount = inventory.getStack(9).getCount();
         String resultItemName = inventory.getStack(10).getName().getString();
         int resultItemNum = inventory.getStack(10).getCount();
-        if(currentCraftingID==-1) {
+        if(currentCraftingId ==-1) {
             for(int i = 0; i< KilnRecipe.CONTENTS.size(); i++) {
                 content = KilnRecipe.CONTENTS.get(i);
                 for (int j = 0; j < 9; j++) {
-                    if(!inventory.getStack(j).getName().getString().equals(content.ingredients[j])||
+                    if(!inventory.getStack(j).getName().getString().equals(content.ingredients[j].getName().getString())||
                             inventory.getStack(j).getCount()<content.ingredientsNum[j]) {
                         break;
-                    }if(j==8&&((resultItemName.equals(content.result)&&resultItemNum+content.resultNum<=64)||
-                            resultItemName.equals("Air"))){
+                    }if(j==8&&((resultItemName.equals(content.result.getName().getString())&&
+                            resultItemNum+content.resultNum<=64)||
+                            resultItemName.equals(Items.AIR.getName().getString()))){
                         if(workingTime==0){
-                            if(fuelName.equals("Charcoal")&&fuelCount>=KilnRecipe.charcoalCosts.get(i)){
+                            if(fuelName.equals(Items.CHARCOAL.getName().getString())&&
+                                    fuelCount>=KilnRecipe.charcoalCosts.get(i)){
                                 if(fuelCount==KilnRecipe.charcoalCosts.get(i)){
                                     inventory.setStack(9,Items.AIR.getDefaultStack());
                                 }else{
                                     inventory.getStack(9).setCount(fuelCount-KilnRecipe.charcoalCosts.get(i));
                                 }
-                                currentCraftingID = i;
+                                currentCraftingId = i;
                                 for (int k = 0; k < 9; k++) {
                                     if(content.ingredientsNum[k]==inventory.getStack(k).getCount()){
                                         inventory.setStack(k,Items.AIR.getDefaultStack());
@@ -103,18 +127,17 @@ public class KilnEntity extends BlockEntity implements ImplementedInventory, Nam
         }
         else if(workingTime<400){
                 workingTime++;
-            }else if(resultItemName.equals("Air")){
-                inventory.setStack(10,KilnRecipe.PRODUCTS.get(currentCraftingID).getDefaultStack());
-                inventory.getStack(10).setCount(KilnRecipe.CONTENTS.get(currentCraftingID).resultNum);
+            }else if(resultItemName.equals(Items.AIR.getName().getString())){
+                inventory.setStack(10,KilnRecipe.CONTENTS.get(currentCraftingId).result.getDefaultStack());
+                inventory.getStack(10).setCount(KilnRecipe.CONTENTS.get(currentCraftingId).resultNum);
                 workingTime=0;
-                currentCraftingID=-1;
-            }else if(resultItemName.equals(KilnRecipe.CONTENTS.get(currentCraftingID).result)&&
-                resultItemNum+KilnRecipe.CONTENTS.get(currentCraftingID).resultNum<=64){
-                inventory.getStack(10).setCount(resultItemNum+KilnRecipe.CONTENTS.get(currentCraftingID).resultNum);
+                currentCraftingId =-1;
+            }else if(resultItemName.equals(KilnRecipe.CONTENTS.get(currentCraftingId).result.getName().getString())&&
+                resultItemNum+KilnRecipe.CONTENTS.get(currentCraftingId).resultNum<=64){
+                inventory.getStack(10).setCount(resultItemNum+KilnRecipe.CONTENTS.get(currentCraftingId).resultNum);
                 workingTime=0;
-                currentCraftingID=-1;
+                currentCraftingId =-1;
             }
-        return false;
     }
 
     @Override

@@ -1,12 +1,14 @@
 package detailedTechnology.recipe;
 
+import net.minecraft.item.Item;
+
 public class ShapedRecipe {
-    public String[] ingredients;
+    public Item[] ingredients;
     public int[] ingredientsNum;
-    public String result;
+    public Item result;
     public int resultNum;
 
-    public ShapedRecipe(String[] ingredients, int[] ingredientsNum, String result, int resultNum) {
+    public ShapedRecipe(Item[] ingredients, int[] ingredientsNum, Item result, int resultNum) {
         this.ingredients = ingredients;
         this.ingredientsNum = ingredientsNum;
         this.result = result;

@@ -1,25 +1,32 @@
 package detailedTechnology.gui;
 
 import detailedTechnology.DetailedTechnology;
+import detailedTechnology.recipe.AnvilRecipe;
+import detailedTechnology.recipe.StoneMileRecipe;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.screen.ArrayPropertyDelegate;
+import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 
 public class BronzeAnvilScreenHandler extends ScreenHandler {
     private final Inventory inventory;
+    private PropertyDelegate propertyDelegate;
     public BronzeAnvilScreenHandler(int syncId, PlayerInventory playerInventory) {
-        this(syncId, playerInventory, new SimpleInventory(10));
+        this(syncId, playerInventory, new SimpleInventory(10),new ArrayPropertyDelegate(2));
     }
 
-    public BronzeAnvilScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory) {
+    public BronzeAnvilScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate propertyDelegate) {
         super(DetailedTechnology.bronzeAnvilScreenHandler, syncId);
         checkSize(inventory, 10);
         this.inventory = inventory;
+        this.propertyDelegate = propertyDelegate;
         inventory.onOpen(playerInventory.player);
+        this.addProperties(this.propertyDelegate);
 
         int m,l;
         for (m = 0; m < 3; ++m) {
@@ -36,7 +43,26 @@ public class BronzeAnvilScreenHandler extends ScreenHandler {
         for (m = 0; m < 9; ++m) {
             this.addSlot(new Slot(playerInventory, m, 8 + m * 18, 142));
         }
+    }
 
+    public int getTime(){
+        return propertyDelegate.get(0);
+    }
+
+    public String getName(){
+        int i=propertyDelegate.get(1);
+        if(i==-1) {
+            return "none";
+        }
+        return AnvilRecipe.CONTENTS.get(i).result.getName().getString();
+    }
+
+    public String getTool(){
+        int i=propertyDelegate.get(1);
+        if(i==-1) {
+            return "none";
+        }
+        return AnvilRecipe.TOOL_TYPE.get(i)+" at level "+AnvilRecipe.TOOL_LEVEL.get(i);
     }
 
     @Override

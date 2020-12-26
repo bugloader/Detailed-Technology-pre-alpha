@@ -1,11 +1,15 @@
 package detailedTechnology.gui;
 
 import detailedTechnology.DetailedTechnology;
+import detailedTechnology.recipe.KilnRecipe;
+import detailedTechnology.recipe.StoneMileRecipe;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.screen.ArrayPropertyDelegate;
+import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.screen.slot.SlotActionType;
@@ -13,22 +17,25 @@ import net.minecraft.screen.slot.SlotActionType;
 
 public class StoneMileScreenHandler extends ScreenHandler {
     private final Inventory inventory;
+    private PropertyDelegate propertyDelegate;
 
     //This constructor gets called on the client when the server wants it to open the screenHandler,
     //The client will call the other constructor with an empty Inventory and the screenHandler will automatically
     //sync this empty inventory with the inventory on the server.
     public StoneMileScreenHandler(int syncId, PlayerInventory playerInventory) {
-        this(syncId, playerInventory, new SimpleInventory(2));
+        this(syncId, playerInventory, new SimpleInventory(2),new ArrayPropertyDelegate(2));
     }
 
     //This constructor gets called from the BlockEntity on the server without calling the other constructor first, the server knows the inventory of the container
     //and can therefore directly provide it as an argument. This inventory will then be synced to the client.
-    public StoneMileScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory) {
+    public StoneMileScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory,PropertyDelegate propertyDelegate) {
         super(DetailedTechnology.stoneMileScreenHandler, syncId);
         checkSize(inventory, 2);
         this.inventory = inventory;
+        this.propertyDelegate = propertyDelegate;
         //some inventories do custom logic when a player opens it.
         inventory.onOpen(playerInventory.player);
+        this.addProperties(this.propertyDelegate);
 
         //This will place the slot in the correct locations for a 3x3 Grid. The slots exist on both server and client!
         //This will not render the background of the slots however, this is the Screens job
@@ -36,7 +43,7 @@ public class StoneMileScreenHandler extends ScreenHandler {
         int l;
         //Our inventory
         this.addSlot(new Slot(inventory,0,62,17));
-        this.addSlot(new Slot(inventory,1,62,50));
+        this.addSlot(new Slot(inventory,1,62,51));
         //The player inventory
         for (m = 0; m < 3; ++m) {
             for (l = 0; l < 9; ++l) {
@@ -47,7 +54,18 @@ public class StoneMileScreenHandler extends ScreenHandler {
         for (m = 0; m < 9; ++m) {
             this.addSlot(new Slot(playerInventory, m, 8 + m * 18, 142));
         }
+    }
 
+    public int getTime(){
+        return propertyDelegate.get(0);
+    }
+
+    public String getName(){
+        int i = propertyDelegate.get(1);
+        if(i==-1) {
+            return "none";
+        }
+        return StoneMileRecipe.products.get(i).getName().getString();
     }
 
     @Override

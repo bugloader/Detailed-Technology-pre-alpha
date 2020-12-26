@@ -58,7 +58,6 @@ public class Kiln extends HorizontalFacingBlock implements BlockEntityProvider {
             if (screenHandlerFactory != null) {
                 player.openHandledScreen(screenHandlerFactory);
             }
-            System.out.println(((Inventory) Objects.requireNonNull(world.getBlockEntity(pos))).getStack(0).getCount());
             System.out.println(((Inventory) Objects.requireNonNull(world.getBlockEntity(pos))).getStack(0).getName().getString());
         }
         return ActionResult.SUCCESS;

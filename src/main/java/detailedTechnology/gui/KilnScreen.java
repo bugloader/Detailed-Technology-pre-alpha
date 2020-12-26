@@ -11,9 +11,10 @@ import net.minecraft.util.Identifier;
 public class KilnScreen extends HandledScreen<ScreenHandler> {
     //A path to the gui texture. In this example we use the texture from the dispenser
     private static final Identifier TEXTURE = new Identifier("dt", "textures/gui/container/kiln.png");
-
+    private final KilnScreenHandler screenHandler;
     public KilnScreen(ScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
+        this.screenHandler = (KilnScreenHandler)handler;
     }
 
     @Override
@@ -26,11 +27,16 @@ public class KilnScreen extends HandledScreen<ScreenHandler> {
         drawTexture(matrices, x, y, 0, 0, backgroundWidth, backgroundHeight);
     }
 
+
     @Override
-    public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
+    public void render(MatrixStack matrices, int mouseX, int mouseY, float delta){
         renderBackground(matrices);
         super.render(matrices, mouseX, mouseY, delta);
         drawMouseoverTooltip(matrices, mouseX, mouseY);
+        textRenderer.draw(matrices, Integer.toString(screenHandler.getTime())+"/400 ticks", 41, 41, 0x000000);
+        textRenderer.draw(matrices, screenHandler.getName(), 41, 61, 0x000000);
+        textRenderer.draw(matrices, Integer.toString(screenHandler.getTime())+"/400 ticks", 40, 40, 0xffffff);
+        textRenderer.draw(matrices, screenHandler.getName(), 40, 60, 0xffffff);
     }
 
     @Override

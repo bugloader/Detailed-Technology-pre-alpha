@@ -54,7 +54,6 @@ public class BrickCrucible extends HorizontalFacingBlock implements BlockEntityP
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (!world.isClient) {
-            //If your block class does not extend BlockWithEntity, it needs to implement create ScreenHandlerFactory.
             NamedScreenHandlerFactory screenHandlerFactory = state.createScreenHandlerFactory(world, pos);
             if (screenHandlerFactory != null) {
                 player.openHandledScreen(screenHandlerFactory);
@@ -70,7 +69,6 @@ public class BrickCrucible extends HorizontalFacingBlock implements BlockEntityP
             BlockEntity blockEntity = world.getBlockEntity(pos);
             if (blockEntity instanceof BrickCrucibleEntity) {
                 ItemScatterer.spawn(world, pos, (BrickCrucibleEntity)blockEntity);
-                // update comparators
                 world.updateComparators(pos,this);
             }
             super.onStateReplaced(state, world, pos, newState, moved);

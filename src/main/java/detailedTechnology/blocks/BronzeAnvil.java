@@ -28,7 +28,7 @@ import org.jetbrains.annotations.Nullable;
 public class BronzeAnvil extends HorizontalFacingBlock implements BlockEntityProvider {
     private static final VoxelShape SHAPE1 = Block.createCuboidShape(1, 0, 3, 15, 10, 13),
             SHAPE2 = Block.createCuboidShape(3, 0, 1, 13, 10, 15);
-    private int workingTime = 0;
+
     public BronzeAnvil()
     {
         super(FabricBlockSettings.of(Material.METAL, MaterialColor.BROWN)
@@ -67,7 +67,6 @@ public class BronzeAnvil extends HorizontalFacingBlock implements BlockEntityPro
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (!world.isClient) {
-            //If your block class does not extend BlockWithEntity, it needs to implement create ScreenHandlerFactory.
             NamedScreenHandlerFactory screenHandlerFactory = state.createScreenHandlerFactory(world, pos);
             if (screenHandlerFactory != null) {
                 player.openHandledScreen(screenHandlerFactory);
@@ -76,14 +75,12 @@ public class BronzeAnvil extends HorizontalFacingBlock implements BlockEntityPro
         return ActionResult.SUCCESS;
     }
 
-    //drop inside items when break
     @Override
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         if (state.getBlock() != newState.getBlock()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
             if (blockEntity instanceof StoneMileEntity) {
                 ItemScatterer.spawn(world, pos, (StoneMileEntity)blockEntity);
-                // update comparators
                 world.updateComparators(pos,this);
             }
             super.onStateReplaced(state, world, pos, newState, moved);
