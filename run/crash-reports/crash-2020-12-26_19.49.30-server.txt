@@ -4,9 +4,9 @@
 Time: 12/26/20 7:49 PM
 Description: Ticking block entity
 
-java.lang.ClassCastException: detailedTechnology.blockEntity.FireStarterBlockEntity cannot be cast to detailedTechnology.blockEntity.FirebrickCombustionChamberEntity
-	at detailedTechnology.blockEntity.BrickCrucibleEntity.updateTemperature(BrickCrucibleEntity.java:135)
-	at detailedTechnology.blockEntity.BrickCrucibleEntity.tick(BrickCrucibleEntity.java:208)
+java.lang.ClassCastException: detailedTechnology.blockEntity.currentdone.FireStarterBlockEntity cannot be cast to detailedTechnology.blockEntity.currentdone.FirebrickCombustionChamberEntity
+	at detailedTechnology.blockEntity.currentdone.BrickCrucibleEntity.updateTemperature(BrickCrucibleEntity.java:135)
+	at detailedTechnology.blockEntity.currentdone.BrickCrucibleEntity.tick(BrickCrucibleEntity.java:208)
 	at net.minecraft.world.World.tickBlockEntities(World.java:510)
 	at net.minecraft.server.world.ServerWorld.tick(ServerWorld.java:429)
 	at net.minecraft.server.MinecraftServer.tickWorlds(MinecraftServer.java:871)
@@ -23,12 +23,12 @@ A detailed walkthrough of the error, its code path and all known details is as f
 -- Head --
 Thread: Server thread
 Stacktrace:
-	at detailedTechnology.blockEntity.BrickCrucibleEntity.updateTemperature(BrickCrucibleEntity.java:135)
-	at detailedTechnology.blockEntity.BrickCrucibleEntity.tick(BrickCrucibleEntity.java:208)
+	at detailedTechnology.blockEntity.currentdone.BrickCrucibleEntity.updateTemperature(BrickCrucibleEntity.java:135)
+	at detailedTechnology.blockEntity.currentdone.BrickCrucibleEntity.tick(BrickCrucibleEntity.java:208)
 
 -- Block entity being ticked --
 Details:
-	Name: dt:brick_crucible // detailedTechnology.blockEntity.BrickCrucibleEntity
+	Name: dt:brick_crucible // detailedTechnology.blockEntity.currentdone.BrickCrucibleEntity
 	Block: Block{dt:brick_crucible}[facing=north]
 	Block location: World: (12,5,0), Chunk: (at 12,0,0 in 0,0; contains blocks 0,0,0 to 15,255,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
 	Block: Block{dt:brick_crucible}[facing=north]

@@ -31,7 +31,7 @@ Stacktrace:
 
 -- Block entity being ticked --
 Details:
-	Name: null // detailedTechnology.blockEntity.FirebrickCombustionChamberEntity
+	Name: null // detailedTechnology.blockEntity.currentdone.FirebrickCombustionChamberEntity
 	Block: Block{dt:firebrick_combustion_chamber}[facing=north]
 	Block location: World: (12,4,0), Chunk: (at 12,0,0 in 0,0; contains blocks 0,0,0 to 15,255,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
 	Block: Block{dt:firebrick_combustion_chamber}[facing=north]

@@ -1,8 +1,7 @@
 package detailedTechnology.items.generalclass;
 
-import detailedTechnology.DetailedTechnology;
-import detailedTechnology.blockEntity.BronzeAnvilEntity;
-import detailedTechnology.group.Tools;
+import detailedTechnology.group.Pipes;
+import detailedTechnology.group.currentdone.Tools;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
@@ -16,7 +15,6 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.tag.FluidTags;
-import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.hit.BlockHitResult;
@@ -26,8 +24,6 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.Objects;
 
 public class DetailedBucketItem extends BucketItem {
     public final String material;
@@ -60,8 +56,8 @@ public class DetailedBucketItem extends BucketItem {
                             user.incrementStat(Stats.USED.getOrCreateStat(this));
                             user.playSound(fluid.isIn(FluidTags.LAVA) ? SoundEvents.ITEM_BUCKET_FILL_LAVA : SoundEvents.ITEM_BUCKET_FILL, 1.0F, 1.0F);
                             Item fullBucket = fluid.equals(Fluids.LAVA) ?
-                                    (material.equals("clay") ? Tools.clayLavaBucket : Tools.copperLavaBucket) :
-                                    (material.equals("clay") ? Tools.clayWaterBucket : Tools.copperWaterBucket);
+                                    (material.equals("clay") ? Pipes.clayLavaBucket : Pipes.copperLavaBucket) :
+                                    (material.equals("clay") ? Pipes.clayWaterBucket : Pipes.copperWaterBucket);
                             ItemStack itemStack2 = ItemUsage.method_30012(itemStack, user, new ItemStack(fullBucket));
                             if (!world.isClient) {
                                 Criteria.FILLED_BUCKET.trigger((ServerPlayerEntity)user, new ItemStack(fullBucket));

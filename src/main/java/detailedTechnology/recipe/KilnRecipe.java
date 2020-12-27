@@ -1,10 +1,9 @@
 package detailedTechnology.recipe;
 
-import detailedTechnology.DetailedTechnology;
 import detailedTechnology.group.Machines;
-import detailedTechnology.group.Materials;
-import detailedTechnology.group.Tools;
-import net.minecraft.block.Material;
+import detailedTechnology.group.currentdone.Materials;
+import detailedTechnology.group.currentdone.Tools;
+import detailedTechnology.recipe.general.ShapedRecipe;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 
@@ -49,5 +48,10 @@ public class KilnRecipe {
                 new int[]{1,1,1,1,1,1,0,0,0},fireBrick,8);
         addRecipe(2, new Item[]{air,air,air,rawFirebrickMixture,rawFirebrickMixture,rawFirebrickMixture,rawFirebrickMixture,rawFirebrickMixture,rawFirebrickMixture},
                 new int[]{0,0,0,1,1,1,1,1,1},fireBrick,8);
+
+        addRecipe(1,new Item[]{clayBall,brick,clayBall,clayBall,clayBall,clayBall,air,air,air},
+                new int[]{1,0,1,1,1,1,0,0,0},Machines.clayIngotModel.asItem(),1);
+        addRecipe(1,new Item[]{air,air,air,clayBall,brick,clayBall,clayBall,clayBall,clayBall},
+                new int[]{0,0,0,1,0,1,1,1,1},Machines.clayIngotModel.asItem(),1);
     }
 }

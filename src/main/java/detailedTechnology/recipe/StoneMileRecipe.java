@@ -1,8 +1,7 @@
 package detailedTechnology.recipe;
 
-import detailedTechnology.DetailedTechnology;
-import detailedTechnology.group.Materials;
-import detailedTechnology.group.Ores;
+import detailedTechnology.group.currentdone.Materials;
+import detailedTechnology.group.currentdone.Ores;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

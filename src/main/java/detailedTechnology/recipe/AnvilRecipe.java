@@ -1,7 +1,10 @@
 package detailedTechnology.recipe;
 
-import detailedTechnology.DetailedTechnology;
-import detailedTechnology.group.*;
+import detailedTechnology.group.currentdone.Armors;
+import detailedTechnology.group.currentdone.Materials;
+import detailedTechnology.group.currentdone.Ores;
+import detailedTechnology.group.currentdone.Tools;
+import detailedTechnology.recipe.general.ShapelessRecipe;
 import net.minecraft.block.Blocks;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.Item;

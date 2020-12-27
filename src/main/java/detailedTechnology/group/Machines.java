@@ -1,10 +1,10 @@
 package detailedTechnology.group;
 
 import detailedTechnology.DetailedTechnology;
-import detailedTechnology.Registration;
-import detailedTechnology.blockEntity.*;
-import detailedTechnology.blocks.*;
-import detailedTechnology.gui.*;
+import detailedTechnology.code.Registration;
+import detailedTechnology.blockEntity.currentdone.*;
+import detailedTechnology.blocks.currentdone.*;
+import detailedTechnology.gui.currentdone.*;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
 import net.minecraft.block.entity.BlockEntityType;
@@ -26,6 +26,7 @@ public class Machines {
     public static ScreenHandlerType<BronzeAnvilScreenHandler> bronzeAnvilScreenHandler;
     public static ScreenHandlerType<KilnScreenHandler> kilnScreenHandler;
     public static ScreenHandlerType<CombustionChamberScreenHandler> combustionChamberScreenHandler;
+    public static ScreenHandlerType<ClayModelScreenHandler> clayModelScreenHandler;
 
     public static BlockEntityType<BrickCrucibleEntity> brickCrucibleEntity;
     public static BlockEntityType<StoneMileEntity> stoneMileEntity;
@@ -38,7 +39,7 @@ public class Machines {
     public static BlockEntityType<ClayIngotModelEntity> clayIngotModelEntity;
 
 
-    public static final ClayModel clayIngotModel = new ClayModel();
+    public static final ClayModel clayIngotModel = new ClayModel("ingot");
     public static final StoneMileRunner stoneMileRunner = new StoneMileRunner();
     public static final BurningCharcoalHeap burningCharcoalHeap = new BurningCharcoalHeap();
     public static final BrickCrucible brickCrucible = new BrickCrucible();
@@ -86,13 +87,14 @@ public class Machines {
         stoneMileScreenHandler = ScreenHandlerRegistry.registerSimple(
                 new Identifier(MOD_ID, "stone_mile"),StoneMileScreenHandler::new);
         fireStarterBlockScreenHandler = ScreenHandlerRegistry.registerSimple(
-                new Identifier(MOD_ID, "fire_starter_block"),FireStarterBlockScreenHandler::new);
+                new Identifier(MOD_ID, "fire_starter_block"), FireStarterBlockScreenHandler::new);
         bronzeAnvilScreenHandler = ScreenHandlerRegistry.registerSimple(
-                new Identifier(MOD_ID, "bronze_anvil"),BronzeAnvilScreenHandler::new);
+                new Identifier(MOD_ID, "bronze_anvil"), BronzeAnvilScreenHandler::new);
         kilnScreenHandler = ScreenHandlerRegistry.registerSimple(
                 new Identifier(MOD_ID, "kiln"), KilnScreenHandler::new);
         combustionChamberScreenHandler = ScreenHandlerRegistry.registerSimple(
                 new Identifier(MOD_ID, "combustion_chamber"), CombustionChamberScreenHandler::new);
-
+        clayModelScreenHandler = ScreenHandlerRegistry.registerSimple(
+                new Identifier(MOD_ID, "clay_model"), ClayModelScreenHandler::new);
     }
 }

@@ -1,22 +1,17 @@
 package detailedTechnology;
 
-import detailedTechnology.blockEntity.*;
-import detailedTechnology.blocks.*;
-import detailedTechnology.gui.*;
-import detailedTechnology.items.*;
-import detailedTechnology.items.generalclass.*;
-import detailedTechnology.group.Recipes;
+import detailedTechnology.code.Registration;
+import detailedTechnology.group.currentdone.Recipes;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.tools.FabricToolTags;
+import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.fluid.Fluids;
+import net.minecraft.block.Material;
+import net.minecraft.block.MaterialColor;
 import net.minecraft.item.*;
-import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public class DetailedTechnology implements ModInitializer {
 
@@ -25,13 +20,16 @@ public class DetailedTechnology implements ModInitializer {
 	public static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.build(
 			new Identifier(MOD_ID, "general"), () -> new ItemStack(Blocks.COBBLESTONE));
 
-	public static final CharcoalHeap charcoalHeap = new CharcoalHeap();
+	public static final Block charcoalHeap = new Block(FabricBlockSettings.of(Material.SOIL, MaterialColor.STONE)
+			.strength(1f,1f).breakByTool(FabricToolTags.SHOVELS, 0));
+	public static final Block fireBrickBlock = new Block(FabricBlockSettings.of(Material.STONE, MaterialColor.STONE)
+			.strength(4f,8f).breakByTool(FabricToolTags.PICKAXES, 0));
 
 	@Override
 	public void onInitialize() {
 
 		Registration.blockWithItem("Charcoal Heap",charcoalHeap,ITEM_GROUP);
-
+		Registration.blockWithItem("Firebrick Block",fireBrickBlock,ITEM_GROUP);
 
 		new Recipes();
 

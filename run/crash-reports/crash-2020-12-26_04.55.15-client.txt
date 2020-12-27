@@ -6,7 +6,7 @@ Description: Unexpected error
 
 java.lang.NullPointerException: Unexpected error
 	at detailedTechnology.blockEntity.CombustionChamberEntity.<init>(CombustionChamberEntity.java:69)
-	at detailedTechnology.blocks.CombustionChamber.createBlockEntity(CombustionChamber.java:42)
+	at detailedTechnology.blocks.currentdone.CombustionChamber.createBlockEntity(CombustionChamber.java:42)
 	at net.minecraft.world.chunk.WorldChunk.setBlockState(WorldChunk.java:298)
 	at net.minecraft.world.World.setBlockState(World.java:231)
 	at net.minecraft.world.World.setBlockState(World.java:217)
@@ -38,7 +38,7 @@ A detailed walkthrough of the error, its code path and all known details is as f
 Thread: Render thread
 Stacktrace:
 	at detailedTechnology.blockEntity.CombustionChamberEntity.<init>(CombustionChamberEntity.java:69)
-	at detailedTechnology.blocks.CombustionChamber.createBlockEntity(CombustionChamber.java:42)
+	at detailedTechnology.blocks.currentdone.CombustionChamber.createBlockEntity(CombustionChamber.java:42)
 	at net.minecraft.world.chunk.WorldChunk.setBlockState(WorldChunk.java:298)
 	at net.minecraft.world.World.setBlockState(World.java:231)
 	at net.minecraft.world.World.setBlockState(World.java:217)

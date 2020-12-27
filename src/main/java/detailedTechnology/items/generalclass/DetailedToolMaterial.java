@@ -1,6 +1,6 @@
 package detailedTechnology.items.generalclass;
 
-import detailedTechnology.group.Ores;
+import detailedTechnology.group.currentdone.Ores;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.util.Lazy;
