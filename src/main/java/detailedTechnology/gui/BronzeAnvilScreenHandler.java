@@ -1,6 +1,7 @@
 package detailedTechnology.gui;
 
 import detailedTechnology.DetailedTechnology;
+import detailedTechnology.group.Machines;
 import detailedTechnology.recipe.AnvilRecipe;
 import detailedTechnology.recipe.StoneMileRecipe;
 import net.minecraft.entity.player.PlayerEntity;
@@ -21,7 +22,7 @@ public class BronzeAnvilScreenHandler extends ScreenHandler {
     }
 
     public BronzeAnvilScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate propertyDelegate) {
-        super(DetailedTechnology.bronzeAnvilScreenHandler, syncId);
+        super(Machines.bronzeAnvilScreenHandler, syncId);
         checkSize(inventory, 10);
         this.inventory = inventory;
         this.propertyDelegate = propertyDelegate;

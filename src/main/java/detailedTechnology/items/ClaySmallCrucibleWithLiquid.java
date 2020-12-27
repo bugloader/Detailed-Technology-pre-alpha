@@ -1,22 +1,20 @@
 package detailedTechnology.items;
 
 import detailedTechnology.DetailedTechnology;
-import detailedTechnology.blocks.Ores;
+import detailedTechnology.group.Ores;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.block.Blocks;
-import net.minecraft.entity.ItemEntity;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.util.ActionResult;
-import net.minecraft.world.World;
 
 public class ClaySmallCrucibleWithLiquid extends Item {
     private final String liquidType;
 
-    public ClaySmallCrucibleWithLiquid(String liquidType) {
-        super(new FabricItemSettings().group(DetailedTechnology.ITEM_GROUP).maxCount(1));
+    public ClaySmallCrucibleWithLiquid(String liquidType,Settings settings) {
+        super(settings.maxCount(1));
         this.liquidType = liquidType;
     }
 

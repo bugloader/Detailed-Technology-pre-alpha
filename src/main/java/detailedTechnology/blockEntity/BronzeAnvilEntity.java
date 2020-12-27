@@ -2,6 +2,7 @@ package detailedTechnology.blockEntity;
 
 import detailedTechnology.DetailedTechnology;
 import detailedTechnology.Interfaces.ImplementedInventory;
+import detailedTechnology.group.Machines;
 import detailedTechnology.gui.BronzeAnvilScreenHandler;
 import detailedTechnology.recipe.AnvilRecipe;
 import net.minecraft.block.BlockState;
@@ -49,7 +50,7 @@ public class BronzeAnvilEntity extends BlockEntity implements ImplementedInvento
     };
 
     public BronzeAnvilEntity(){
-        super(DetailedTechnology.bronzeAnvilEntity);
+        super(Machines.bronzeAnvilEntity);
     }
 
     @Override

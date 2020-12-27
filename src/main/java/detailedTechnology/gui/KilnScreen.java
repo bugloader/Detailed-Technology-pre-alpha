@@ -26,17 +26,19 @@ public class KilnScreen extends HandledScreen<ScreenHandler> {
         int y = (height - backgroundHeight) / 2;
         drawTexture(matrices, x, y, 0, 0, backgroundWidth, backgroundHeight);
     }
-
+    public void writeText(MatrixStack matrices,String text,int x,int y){
+        textRenderer.draw(matrices,text,x+1,y+1,0x000000);
+        textRenderer.draw(matrices,text,x,y,0xffffff);
+    }
 
     @Override
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta){
         renderBackground(matrices);
         super.render(matrices, mouseX, mouseY, delta);
         drawMouseoverTooltip(matrices, mouseX, mouseY);
-        textRenderer.draw(matrices, Integer.toString(screenHandler.getTime())+"/400 ticks", 41, 41, 0x000000);
-        textRenderer.draw(matrices, screenHandler.getName(), 41, 61, 0x000000);
-        textRenderer.draw(matrices, Integer.toString(screenHandler.getTime())+"/400 ticks", 40, 40, 0xffffff);
-        textRenderer.draw(matrices, screenHandler.getName(), 40, 60, 0xffffff);
+        writeText(matrices,Integer.toString(screenHandler.getTime())+"/400 ticks", 40, 60);
+        writeText(matrices,"Charcoal", 152, 62);
+        //textRenderer.draw(matrices,Integer.toString(mouseX)+":"+Integer.toString(mouseY),0,0,0xffffff);
     }
 
     @Override

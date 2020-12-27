@@ -1,6 +1,10 @@
 package detailedTechnology.recipe;
 
 import detailedTechnology.DetailedTechnology;
+import detailedTechnology.group.Machines;
+import detailedTechnology.group.Materials;
+import detailedTechnology.group.Tools;
+import net.minecraft.block.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 
@@ -20,11 +24,11 @@ public class KilnRecipe {
         Item clayBall = Items.CLAY_BALL;
         Item air = Items.AIR;
         Item brick = Items.BRICK;
-        Item rawFirebrickMixture = DetailedTechnology.rawFirebrickMixture;
-        Item fireBrick = DetailedTechnology.fireBrick;
+        Item rawFirebrickMixture = Materials.rawFirebrickMixture;
+        Item fireBrick = Materials.fireBrick;
 
         addRecipe(1, new Item[]{clayBall,air,clayBall,clayBall,air,clayBall,clayBall,clayBall,clayBall},
-                new int[]{1,0,1,1,0,1,1,1,1},DetailedTechnology.claySmallCrucible,8);
+                new int[]{1,0,1,1,0,1,1,1,1}, Materials.claySmallCrucible,8);
 
         addRecipe(1, new Item[]{clayBall,clayBall,clayBall,clayBall,clayBall,clayBall,air,air,air},
                 new int[]{1,1,1,1,1,1,0,0,0},brick,8);
@@ -32,14 +36,14 @@ public class KilnRecipe {
                 new int[]{0,0,0,1,1,1,1,1,1},brick,8);
 
         addRecipe(1, new Item[]{clayBall,air,clayBall,air,clayBall,air,air,air,air},
-                new int[]{1,0,1,0,1,0,0,0,0},DetailedTechnology.clayBucket,1);
+                new int[]{1,0,1,0,1,0,0,0,0}, Tools.clayBucket,1);
         addRecipe(1, new Item[]{air,air,air,clayBall,air,clayBall,air,clayBall,air},
-                new int[]{0,0,0,1,0,1,0,1,0},DetailedTechnology.clayBucket,1);
+                new int[]{0,0,0,1,0,1,0,1,0}, Tools.clayBucket,1);
 
         addRecipe(4, new Item[]{air,air,air,brick,clayBall,brick,brick,brick,brick},
-                new int[]{0,0,0,4,4,4,4,4,4},DetailedTechnology.brickCrucible.asItem(),1);
+                new int[]{0,0,0,4,4,4,4,4,4},Machines.brickCrucible.asItem(),1);
         addRecipe(4, new Item[]{brick,clayBall,brick,brick,brick,brick,air,air,air},
-                new int[]{4,4,4,4,4,4,0,0,0},DetailedTechnology.brickCrucible.asItem(),1);
+                new int[]{4,4,4,4,4,4,0,0,0}, Machines.brickCrucible.asItem(),1);
 
         addRecipe(2, new Item[]{rawFirebrickMixture,rawFirebrickMixture,rawFirebrickMixture,rawFirebrickMixture,rawFirebrickMixture,rawFirebrickMixture,air,air,air},
                 new int[]{1,1,1,1,1,1,0,0,0},fireBrick,8);

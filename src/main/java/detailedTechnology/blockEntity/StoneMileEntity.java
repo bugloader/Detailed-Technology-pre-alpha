@@ -3,6 +3,7 @@ package detailedTechnology.blockEntity;
 import detailedTechnology.DetailedTechnology;
 import detailedTechnology.Interfaces.ImplementedInventory;
 import detailedTechnology.blocks.StoneMile;
+import detailedTechnology.group.Machines;
 import detailedTechnology.gui.StoneMileScreenHandler;
 import detailedTechnology.recipe.StoneMileRecipe;
 import net.minecraft.block.BlockState;
@@ -49,7 +50,7 @@ public class StoneMileEntity extends BlockEntity implements ImplementedInventory
     };
 
     public StoneMileEntity(){
-        super(DetailedTechnology.stoneMileEntity);
+        super(Machines.stoneMileEntity);
 
     }
 

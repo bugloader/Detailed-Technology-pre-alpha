@@ -2,6 +2,7 @@ package detailedTechnology.items;
 
 import detailedTechnology.DetailedTechnology;
 import detailedTechnology.blockEntity.BronzeAnvilEntity;
+import detailedTechnology.group.Machines;
 import detailedTechnology.recipe.AnvilRecipe;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemUsageContext;
@@ -28,7 +29,7 @@ public class RasperItem extends ToolItem {
     @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
         if(context.getWorld().getBlockState(context.getBlockPos()).getBlock().getName().getString()
-                .equals(DetailedTechnology.bronzeAnvil.getName().getString())) {
+                .equals(Machines.bronzeAnvil.getName().getString())) {
             if(!((BronzeAnvilEntity) Objects.requireNonNull(context.getWorld().getBlockEntity(context.getBlockPos())))
                     .addWorkingTime("rasper",rasperLevel,context.getPlayer())) {
                 Objects.requireNonNull(context.getPlayer()).playSound(SoundEvents.BLOCK_ANVIL_BREAK,0.5f,1.0f);

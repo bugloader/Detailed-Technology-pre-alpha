@@ -2,6 +2,7 @@ package detailedTechnology.blocks;
 
 import detailedTechnology.DetailedTechnology;
 import detailedTechnology.blockEntity.FireStarterBlockEntity;
+import detailedTechnology.group.Machines;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tools.FabricToolTags;
 import net.minecraft.block.*;
@@ -10,6 +11,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.Items;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.state.StateManager;
@@ -78,7 +80,7 @@ public class FireStarterBlock extends HorizontalFacingBlock implements BlockEnti
                             blockName.equals(Blocks.STRIPPED_OAK_LOG.getName())||
                             blockName.equals(Blocks.STRIPPED_JUNGLE_LOG.getName())||
                             blockName.equals(Blocks.STRIPPED_SPRUCE_LOG.getName())) {
-                        world.setBlockState(backPos,DetailedTechnology.burningCharcoalHeap.getDefaultState());
+                        world.setBlockState(backPos, Machines.burningCharcoalHeap.getDefaultState());
                     }
                 }
             } else {

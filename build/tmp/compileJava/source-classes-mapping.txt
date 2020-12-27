@@ -1,5 +1,5 @@
-detailedTechnology/items/DetailedSwordItem.java
- detailedTechnology.items.DetailedSwordItem
+detailedTechnology/items/generalclass/DetailedArmorMaterial.java
+ detailedTechnology.items.generalclass.DetailedArmorMaterial
 detailedTechnology/items/SawItem.java
  detailedTechnology.items.SawItem
 detailedTechnology/gui/BronzeAnvilScreenHandler.java
@@ -10,6 +10,8 @@ detailedTechnology/blocks/CharcoalHeap.java
  detailedTechnology.blocks.CharcoalHeap
 detailedTechnology/items/HammerItem.java
  detailedTechnology.items.HammerItem
+detailedTechnology/group/Materials.java
+ detailedTechnology.group.Materials
 detailedTechnology/blockEntity/StoneMileEntity.java
  detailedTechnology.blockEntity.StoneMileEntity
  detailedTechnology.blockEntity.StoneMileEntity$1
@@ -17,6 +19,11 @@ detailedTechnology/gui/KilnScreen.java
  detailedTechnology.gui.KilnScreen
 detailedTechnology/items/RasperItem.java
  detailedTechnology.items.RasperItem
+detailedTechnology/blockEntity/BronzeCombustionChamberEntity.java
+ detailedTechnology.blockEntity.BronzeCombustionChamberEntity
+ detailedTechnology.blockEntity.BronzeCombustionChamberEntity$1
+detailedTechnology/gui/CombustionChamberScreen.java
+ detailedTechnology.gui.CombustionChamberScreen
 detailedTechnology/blocks/BurningCharcoalHeap.java
  detailedTechnology.blocks.BurningCharcoalHeap
 detailedTechnology/DetailedTechnology.java
@@ -27,20 +34,21 @@ detailedTechnology/DetailedTechnologyModClient.java
  detailedTechnology.DetailedTechnologyModClient
 detailedTechnology/blockEntity/BrickCrucibleEntity.java
  detailedTechnology.blockEntity.BrickCrucibleEntity
+ detailedTechnology.blockEntity.BrickCrucibleEntity$1
 detailedTechnology/blockEntity/BurningCharcoalHeapEntity.java
  detailedTechnology.blockEntity.BurningCharcoalHeapEntity
 detailedTechnology/recipe/KilnRecipe.java
  detailedTechnology.recipe.KilnRecipe
 detailedTechnology/gui/KilnScreenHandler.java
  detailedTechnology.gui.KilnScreenHandler
+detailedTechnology/group/Armors.java
+ detailedTechnology.group.Armors
 detailedTechnology/gui/CrucibleScreenHandler.java
  detailedTechnology.gui.CrucibleScreenHandler
-detailedTechnology/items/DetailedArmorMaterial.java
- detailedTechnology.items.DetailedArmorMaterial
+detailedTechnology/items/generalclass/DetailedMaterialStatus.java
+ detailedTechnology.items.generalclass.DetailedMaterialStatus
 detailedTechnology/Interfaces/ImplementedInventory.java
  detailedTechnology.Interfaces.ImplementedInventory
-detailedTechnology/items/DetailedToolMaterial.java
- detailedTechnology.items.DetailedToolMaterial
 detailedTechnology/blockEntity/BronzeAnvilEntity.java
  detailedTechnology.blockEntity.BronzeAnvilEntity
  detailedTechnology.blockEntity.BronzeAnvilEntity$1
@@ -49,48 +57,65 @@ detailedTechnology/blocks/BronzeAnvil.java
  detailedTechnology.blocks.BronzeAnvil$1
 detailedTechnology/gui/FireStarterBlockScreenHandler.java
  detailedTechnology.gui.FireStarterBlockScreenHandler
-detailedTechnology/items/BasicFireStarter.java
- detailedTechnology.items.BasicFireStarter
+detailedTechnology/items/generalclass/DetailedHoeItem.java
+ detailedTechnology.items.generalclass.DetailedHoeItem
+detailedTechnology/group/Recipes.java
+ detailedTechnology.group.Recipes
 detailedTechnology/recipe/ShapedRecipe.java
  detailedTechnology.recipe.ShapedRecipe
 detailedTechnology/Registration.java
  detailedTechnology.Registration
-detailedTechnology/items/BeginnerFireStarter.java
- detailedTechnology.items.BeginnerFireStarter
+detailedTechnology/items/generalclass/DetailedBucketItem.java
+ detailedTechnology.items.generalclass.DetailedBucketItem
+detailedTechnology/items/generalclass/DetailedSwordItem.java
+ detailedTechnology.items.generalclass.DetailedSwordItem
 detailedTechnology/blocks/FireStarterBlock.java
  detailedTechnology.blocks.FireStarterBlock
  detailedTechnology.blocks.FireStarterBlock$1
 detailedTechnology/blocks/StoneMileRunner.java
  detailedTechnology.blocks.StoneMileRunner
-detailedTechnology/items/DetailedShovelItem.java
- detailedTechnology.items.DetailedShovelItem
 detailedTechnology/recipe/StoneMileRecipe.java
  detailedTechnology.recipe.StoneMileRecipe
+detailedTechnology/items/generalclass/DetailedPickaxeItem.java
+ detailedTechnology.items.generalclass.DetailedPickaxeItem
 detailedTechnology/blocks/StoneMile.java
  detailedTechnology.blocks.StoneMile
+detailedTechnology/group/Machines.java
+ detailedTechnology.group.Machines
 detailedTechnology/gui/StoneMileScreenHandler.java
  detailedTechnology.gui.StoneMileScreenHandler
 detailedTechnology/mixin/ExampleMixin.java
  detailedTechnology.mixin.ExampleMixin
+detailedTechnology/items/generalclass/DetailedAxeItem.java
+ detailedTechnology.items.generalclass.DetailedAxeItem
+detailedTechnology/gui/CombustionChamberScreenHandler.java
+ detailedTechnology.gui.CombustionChamberScreenHandler
 detailedTechnology/recipe/AnvilRecipe.java
  detailedTechnology.recipe.AnvilRecipe
 detailedTechnology/gui/BronzeAnvilScreen.java
  detailedTechnology.gui.BronzeAnvilScreen
 detailedTechnology/blockEntity/FireStarterBlockEntity.java
  detailedTechnology.blockEntity.FireStarterBlockEntity
-detailedTechnology/items/DetailedHoeItem.java
- detailedTechnology.items.DetailedHoeItem
 detailedTechnology/gui/CrucibleScreen.java
  detailedTechnology.gui.CrucibleScreen
 detailedTechnology/blocks/BrickCrucible.java
  detailedTechnology.blocks.BrickCrucible
-detailedTechnology/items/DetailedBucketItem.java
- detailedTechnology.items.DetailedBucketItem
 detailedTechnology/recipe/ShapelessRecipe.java
  detailedTechnology.recipe.ShapelessRecipe
+detailedTechnology/items/FireStarter.java
+ detailedTechnology.items.FireStarter
+detailedTechnology/group/Tools.java
+ detailedTechnology.group.Tools
+detailedTechnology/blockEntity/FirebrickCombustionChamberEntity.java
+ detailedTechnology.blockEntity.FirebrickCombustionChamberEntity
+ detailedTechnology.blockEntity.FirebrickCombustionChamberEntity$1
 detailedTechnology/blocks/ClayModelIngot.java
  detailedTechnology.blocks.ClayModelIngot
  detailedTechnology.blocks.ClayModelIngot$1
+detailedTechnology/items/generalclass/DetailedToolMaterial.java
+ detailedTechnology.items.generalclass.DetailedToolMaterial
+detailedTechnology/items/generalclass/DetailedShovelItem.java
+ detailedTechnology.items.generalclass.DetailedShovelItem
 detailedTechnology/gui/StoneMileScreen.java
  detailedTechnology.gui.StoneMileScreen
 detailedTechnology/blockEntity/KilnEntity.java
@@ -98,11 +123,7 @@ detailedTechnology/blockEntity/KilnEntity.java
  detailedTechnology.blockEntity.KilnEntity$1
 detailedTechnology/gui/FireStarterBlockScreen.java
  detailedTechnology.gui.FireStarterBlockScreen
-detailedTechnology/items/DetailedPickaxeItem.java
- detailedTechnology.items.DetailedPickaxeItem
-detailedTechnology/blocks/Ores.java
- detailedTechnology.blocks.Ores
-detailedTechnology/recipe/Recipes.java
- detailedTechnology.recipe.Recipes
-detailedTechnology/items/DetailedAxeItem.java
- detailedTechnology.items.DetailedAxeItem
+detailedTechnology/group/Ores.java
+ detailedTechnology.group.Ores
+detailedTechnology/blocks/CombustionChamber.java
+ detailedTechnology.blocks.CombustionChamber

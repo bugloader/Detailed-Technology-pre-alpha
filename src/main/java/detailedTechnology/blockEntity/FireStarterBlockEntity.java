@@ -2,6 +2,7 @@ package detailedTechnology.blockEntity;
 
 import detailedTechnology.DetailedTechnology;
 import detailedTechnology.Interfaces.ImplementedInventory;
+import detailedTechnology.group.Machines;
 import detailedTechnology.gui.FireStarterBlockScreenHandler;
 import detailedTechnology.gui.StoneMileScreenHandler;
 import net.minecraft.block.BlockState;
@@ -22,7 +23,7 @@ public class FireStarterBlockEntity extends BlockEntity implements ImplementedIn
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(1, ItemStack.EMPTY);
 
     public FireStarterBlockEntity(){
-        super(DetailedTechnology.fireStarterBlockEntity);
+        super(Machines.fireStarterBlockEntity);
     }
 
     @Override

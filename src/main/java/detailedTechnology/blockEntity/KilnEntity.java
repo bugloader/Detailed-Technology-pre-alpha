@@ -2,6 +2,7 @@ package detailedTechnology.blockEntity;
 
 import detailedTechnology.DetailedTechnology;
 import detailedTechnology.Interfaces.ImplementedInventory;
+import detailedTechnology.group.Machines;
 import detailedTechnology.gui.KilnScreenHandler;
 import detailedTechnology.recipe.KilnRecipe;
 import detailedTechnology.recipe.ShapedRecipe;
@@ -48,10 +49,8 @@ public class KilnEntity extends BlockEntity implements ImplementedInventory, Nam
         }
     };
 
-
-
     public KilnEntity(){
-        super(DetailedTechnology.kilnEntity);
+        super(Machines.kilnEntity);
         currentCraftingId =-1;
         workingTime = 0;
     }

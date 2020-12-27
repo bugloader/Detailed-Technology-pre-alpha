@@ -1,11 +1,15 @@
 package detailedTechnology.gui;
 
 import detailedTechnology.DetailedTechnology;
+import detailedTechnology.group.Machines;
+import detailedTechnology.group.Materials;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.screen.ArrayPropertyDelegate;
+import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.text.Text;
@@ -13,22 +17,25 @@ import net.minecraft.text.Text;
 
 public class CrucibleScreenHandler extends ScreenHandler {
     private final Inventory inventory;
+    private final PropertyDelegate propertyDelegate;
 
     //This constructor gets called on the client when the server wants it to open the screenHandler,
     //The client will call the other constructor with an empty Inventory and the screenHandler will automatically
     //sync this empty inventory with the inventory on the server.
     public CrucibleScreenHandler(int syncId, PlayerInventory playerInventory) {
-        this(syncId, playerInventory, new SimpleInventory(1));
+        this(syncId, playerInventory, new SimpleInventory(1),new ArrayPropertyDelegate(4));
     }
 
     //This constructor gets called from the BlockEntity on the server without calling the other constructor first, the server knows the inventory of the container
     //and can therefore directly provide it as an argument. This inventory will then be synced to the client.
-    public CrucibleScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory) {
-        super(DetailedTechnology.crucibleScreenHandler, syncId);
+    public CrucibleScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory,PropertyDelegate propertyDelegate) {
+        super(Machines.crucibleScreenHandler, syncId);
         checkSize(inventory, 1);
         this.inventory = inventory;
         //some inventories do custom logic when a player opens it.
         inventory.onOpen(playerInventory.player);
+        this.propertyDelegate = propertyDelegate;
+        this.addProperties(propertyDelegate);
 
         //This will place the slot in the correct locations for a 3x3 Grid. The slots exist on both server and client!
         //This will not render the background of the slots however, this is the Screens job
@@ -47,6 +54,24 @@ public class CrucibleScreenHandler extends ScreenHandler {
             this.addSlot(new Slot(playerInventory, m, 8 + m * 18, 142));
         }
 
+    }
+
+    public int getTemperature(){
+        return propertyDelegate.get(0);
+    }
+
+    public int getHeatCapacitance(){
+        return propertyDelegate.get(1);
+    }
+
+    public String getLiquid(){
+        int i = propertyDelegate.get(2);
+        if(i==-1) return "air";
+        return Materials.MATERIAL_STATUSES.get(i).getName();
+    }
+
+    public int getLiquidAmount(){
+        return propertyDelegate.get(3);
     }
 
     @Override

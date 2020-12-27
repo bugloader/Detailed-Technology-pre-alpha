@@ -1,6 +1,7 @@
 package detailedTechnology.gui;
 
 import detailedTechnology.DetailedTechnology;
+import detailedTechnology.group.Machines;
 import detailedTechnology.recipe.KilnRecipe;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.util.math.MatrixStack;
@@ -16,13 +17,13 @@ import net.minecraft.screen.slot.Slot;
 
 public class KilnScreenHandler extends ScreenHandler {
     private final Inventory inventory;
-    private PropertyDelegate propertyDelegate;
+    private final PropertyDelegate propertyDelegate;
     public KilnScreenHandler(int syncId, PlayerInventory playerInventory) {
         this(syncId, playerInventory, new SimpleInventory(11), new ArrayPropertyDelegate(2));
     }
 
     public KilnScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate propertyDelegate) {
-        super(DetailedTechnology.kilnScreenHandler, syncId);
+        super(Machines.kilnScreenHandler, syncId);
         checkSize(inventory, 11);
         this.inventory = inventory;
         this.propertyDelegate = propertyDelegate;

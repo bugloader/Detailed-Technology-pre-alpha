@@ -1,6 +1,7 @@
 package detailedTechnology.blockEntity;
 
 import detailedTechnology.DetailedTechnology;
+import detailedTechnology.group.Machines;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.text.MutableText;
@@ -12,7 +13,7 @@ public class BurningCharcoalHeapEntity extends BlockEntity implements Tickable {
 
     private int time = 0;
 
-    public BurningCharcoalHeapEntity(){ super(DetailedTechnology.burningCharcoalHeapEntity); }
+    public BurningCharcoalHeapEntity(){ super(Machines.burningCharcoalHeapEntity); }
 
     private boolean isStripedLog(MutableText blockName){
         return blockName.equals(Blocks.STRIPPED_ACACIA_LOG.getName())||blockName.equals(Blocks.STRIPPED_BIRCH_LOG.getName())||
@@ -26,17 +27,17 @@ public class BurningCharcoalHeapEntity extends BlockEntity implements Tickable {
 
     private void burnOtherStripedLog(World world,BlockPos pos) {
         if(isStripedLog(getBlockName(world,pos.up()))) {
-            world.setBlockState(pos.up(), DetailedTechnology.burningCharcoalHeap.getDefaultState());
+            world.setBlockState(pos.up(), Machines.burningCharcoalHeap.getDefaultState());
         }if(isStripedLog(getBlockName(world,pos.down()))) {
-            world.setBlockState(pos.down(), DetailedTechnology.burningCharcoalHeap.getDefaultState());
+            world.setBlockState(pos.down(), Machines.burningCharcoalHeap.getDefaultState());
         }if(isStripedLog(getBlockName(world,pos.west()))) {
-            world.setBlockState(pos.west(), DetailedTechnology.burningCharcoalHeap.getDefaultState());
+            world.setBlockState(pos.west(), Machines.burningCharcoalHeap.getDefaultState());
         }if(isStripedLog(getBlockName(world,pos.east()))) {
-            world.setBlockState(pos.east(), DetailedTechnology.burningCharcoalHeap.getDefaultState());
+            world.setBlockState(pos.east(), Machines.burningCharcoalHeap.getDefaultState());
         }if(isStripedLog(getBlockName(world,pos.north()))) {
-            world.setBlockState(pos.north(), DetailedTechnology.burningCharcoalHeap.getDefaultState());
+            world.setBlockState(pos.north(), Machines.burningCharcoalHeap.getDefaultState());
         }if(isStripedLog(getBlockName(world,pos.south()))) {
-            world.setBlockState(pos.south(), DetailedTechnology.burningCharcoalHeap.getDefaultState());
+            world.setBlockState(pos.south(), Machines.burningCharcoalHeap.getDefaultState());
         }
     }
 

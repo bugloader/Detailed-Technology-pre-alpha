@@ -1,6 +1,7 @@
 package detailedTechnology.gui;
 
 import detailedTechnology.DetailedTechnology;
+import detailedTechnology.group.Machines;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
@@ -18,7 +19,7 @@ public class FireStarterBlockScreenHandler extends ScreenHandler {
     }
 
     public FireStarterBlockScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory) {
-        super(DetailedTechnology.fireStarterBlockScreenHandler, syncId);
+        super(Machines.fireStarterBlockScreenHandler, syncId);
         checkSize(inventory, 1);
         this.inventory = inventory;
         inventory.onOpen(playerInventory.player);

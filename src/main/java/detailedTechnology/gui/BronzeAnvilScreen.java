@@ -27,17 +27,20 @@ public class BronzeAnvilScreen extends HandledScreen<ScreenHandler> {
         drawTexture(matrices, x, y, 0, 0, backgroundWidth, backgroundHeight);
     }
 
+    public void writeText(MatrixStack matrices,String text,int x,int y){
+        textRenderer.draw(matrices,text,x+1,y+1,0x000000);
+        textRenderer.draw(matrices,text,x,y,0xffffff);
+    }
+
     @Override
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta){
         renderBackground(matrices);
         super.render(matrices, mouseX, mouseY, delta);
         drawMouseoverTooltip(matrices, mouseX, mouseY);
-        textRenderer.draw(matrices, Integer.toString(screenHandler.getTime())+"/8 times", 41, 41, 0x000000);
-        textRenderer.draw(matrices, screenHandler.getName(), 41, 61, 0x000000);
-        textRenderer.draw(matrices, screenHandler.getTool(), 41, 81, 0x000000);
-        textRenderer.draw(matrices, Integer.toString(screenHandler.getTime())+"/8 times", 40, 40, 0xffffff);
-        textRenderer.draw(matrices, screenHandler.getName(), 40, 60, 0xffffff);
-        textRenderer.draw(matrices, screenHandler.getTool(), 40, 80, 0xffffff);
+
+        writeText(matrices,Integer.toString(screenHandler.getTime())+"/8 times", 41, 41);
+        writeText(matrices,screenHandler.getName(), 41, 61);
+        writeText(matrices,screenHandler.getTool(), 41, 81);
     }
 
     @Override

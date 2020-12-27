@@ -1,6 +1,7 @@
 package detailedTechnology.gui;
 
 import detailedTechnology.DetailedTechnology;
+import detailedTechnology.group.Machines;
 import detailedTechnology.recipe.KilnRecipe;
 import detailedTechnology.recipe.StoneMileRecipe;
 import net.minecraft.entity.player.PlayerEntity;
@@ -17,7 +18,7 @@ import net.minecraft.screen.slot.SlotActionType;
 
 public class StoneMileScreenHandler extends ScreenHandler {
     private final Inventory inventory;
-    private PropertyDelegate propertyDelegate;
+    private final PropertyDelegate propertyDelegate;
 
     //This constructor gets called on the client when the server wants it to open the screenHandler,
     //The client will call the other constructor with an empty Inventory and the screenHandler will automatically
@@ -29,7 +30,7 @@ public class StoneMileScreenHandler extends ScreenHandler {
     //This constructor gets called from the BlockEntity on the server without calling the other constructor first, the server knows the inventory of the container
     //and can therefore directly provide it as an argument. This inventory will then be synced to the client.
     public StoneMileScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory,PropertyDelegate propertyDelegate) {
-        super(DetailedTechnology.stoneMileScreenHandler, syncId);
+        super(Machines.stoneMileScreenHandler, syncId);
         checkSize(inventory, 2);
         this.inventory = inventory;
         this.propertyDelegate = propertyDelegate;
