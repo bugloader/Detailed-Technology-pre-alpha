@@ -30,7 +30,7 @@ public class BronzeBarrelEntity extends BlockEntity implements ImplementedInvent
 
     public String liquidName;
     public int liquidAmount;
-    private TankUtilties tankUtilties;
+    public TankUtilties tankUtilties;
 
     private final PropertyDelegate propertyDelegate = new PropertyDelegate() {
 
@@ -103,6 +103,12 @@ public class BronzeBarrelEntity extends BlockEntity implements ImplementedInvent
             assert world != null;
             world.breakBlock(pos, false);
         }
+    }
+
+    public void loadTank(TankUtilties tankUtilties){
+        this.tankUtilties = tankUtilties;
+        this.liquidName = tankUtilties.liquidName;
+        this.liquidAmount = tankUtilties.liquidAmount;
     }
 
     @Override

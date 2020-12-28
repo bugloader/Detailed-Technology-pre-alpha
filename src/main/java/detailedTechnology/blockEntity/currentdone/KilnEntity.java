@@ -148,6 +148,4 @@ public class KilnEntity extends BlockEntity implements ImplementedInventory, Nam
         tryCraft((Inventory) this);
     }
 
-
-
 }

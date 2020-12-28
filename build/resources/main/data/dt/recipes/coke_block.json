@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "W W",
-    "W W",
+    "WWW",
+    "WWW",
     "WWW"
   ],
   "key": {
     "W": {
-      "item": "dt:firebrick"
+      "item": "dt:coke"
     }
   },
   "result": {
-    "item": "dt:firebrick_barrel",
+    "item": "dt:coke_block",
     "count": 1
   }
 }

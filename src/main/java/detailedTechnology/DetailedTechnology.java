@@ -22,14 +22,17 @@ public class DetailedTechnology implements ModInitializer {
 
 	public static final Block charcoalHeap = new Block(FabricBlockSettings.of(Material.SOIL, MaterialColor.STONE)
 			.strength(1f,1f).breakByTool(FabricToolTags.SHOVELS, 0));
-	public static final Block fireBrickBlock = new Block(FabricBlockSettings.of(Material.STONE, MaterialColor.STONE)
+	public static final Block firebrickBlock = new Block(FabricBlockSettings.of(Material.STONE, MaterialColor.STONE)
+			.strength(4f,8f).breakByTool(FabricToolTags.PICKAXES, 0));
+	public static final Block cokeBlock = new Block(FabricBlockSettings.of(Material.STONE, MaterialColor.STONE)
 			.strength(4f,8f).breakByTool(FabricToolTags.PICKAXES, 0));
 
 	@Override
 	public void onInitialize() {
 
 		Registration.blockWithItem("Charcoal Heap",charcoalHeap,ITEM_GROUP);
-		Registration.blockWithItem("Firebrick Block",fireBrickBlock,ITEM_GROUP);
+		Registration.blockWithItem("Firebrick Block", firebrickBlock,ITEM_GROUP);
+		Registration.blockWithItem("Coke Block", cokeBlock, ITEM_GROUP);
 
 		new Recipes();
 

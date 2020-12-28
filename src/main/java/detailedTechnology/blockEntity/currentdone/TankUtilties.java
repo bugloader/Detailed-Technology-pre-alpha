@@ -5,6 +5,7 @@ import detailedTechnology.group.currentdone.Tools;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import org.lwjgl.system.CallbackI;
 
 public class TankUtilties {
     public int MaximumCapacitance;
@@ -29,6 +30,18 @@ public class TankUtilties {
         return false;
     }
 
+    public boolean recieveLiquie(String liquidName,int liquidAmount){
+        if (liquidAmount <= MaximumCapacitance - liquidAmount && this.liquidName.equals(liquidName)) {
+            this.liquidAmount += liquidAmount;
+            return true;
+        } else if (this.liquidAmount == 0&&liquidAmount<MaximumCapacitance) {
+            this.liquidName = liquidName;
+            this.liquidAmount = liquidAmount;
+            return true;
+        }
+        return false;
+    }
+
     public String giveLiquidBucket() {
         if (liquidAmount < 1000) {
             return "air";
@@ -44,22 +57,25 @@ public class TankUtilties {
         }
     }
 
-    public void InventoryManipulate(Inventory inventory) {
+    public boolean inputOnlyInventoryManipulate(Inventory inventory) {
         String name0 = inventory.getStack(0).getName().getString();
         String name1 = inventory.getStack(1).getName().getString();
         int num0 = inventory.getStack(0).getCount();
         int num1 = inventory.getStack(1).getCount();
+
         if (inventory.getStack(0).getCount() == 1) {
             if (name0.equals(Items.WATER_BUCKET.getName().getString())) {
                 if (name1.equals(Items.BUCKET.getName().getString()) && num1 < 16) {
                     if (receiveBucketLiquid("water")) {
                         inventory.setStack(0, Items.AIR.getDefaultStack());
                         inventory.getStack(1).setCount(num1 + 1);
+                        return true;
                     }
                 } else if (name1.equals(Items.AIR.getName().getString())) {
                     if (receiveBucketLiquid("water")) {
                         inventory.setStack(0, Items.AIR.getDefaultStack());
                         inventory.setStack(1, Items.BUCKET.getDefaultStack());
+                        return true;
                     }
                 }
             } else if (name0.equals(Items.LAVA_BUCKET.getName().getString())) {
@@ -67,11 +83,13 @@ public class TankUtilties {
                     if (receiveBucketLiquid("lava")) {
                         inventory.setStack(0, Items.AIR.getDefaultStack());
                         inventory.getStack(1).setCount(num1 + 1);
+                        return true;
                     }
                 } else if (name1.equals(Items.AIR.getName().getString())) {
                     if (receiveBucketLiquid("lava")) {
                         inventory.setStack(0, Items.AIR.getDefaultStack());
                         inventory.setStack(1, Items.BUCKET.getDefaultStack());
+                        return true;
                     }
                 }
             } else if (name0.equals(Pipes.copperWaterBucket.getName().getString())) {
@@ -79,11 +97,13 @@ public class TankUtilties {
                     if (receiveBucketLiquid("water")) {
                         inventory.setStack(0, Items.AIR.getDefaultStack());
                         inventory.getStack(1).setCount(num1 + 1);
+                        return true;
                     }
                 } else if (name1.equals(Items.AIR.getName().getString())) {
                     if (receiveBucketLiquid("water")) {
                         inventory.setStack(0, Items.AIR.getDefaultStack());
                         inventory.setStack(1, Tools.copperBucket.getDefaultStack());
+                        return true;
                     }
                 }
             } else if (name0.equals(Pipes.copperLavaBucket.getName().getString())) {
@@ -91,11 +111,13 @@ public class TankUtilties {
                     if (receiveBucketLiquid("lava")) {
                         inventory.setStack(0, Items.AIR.getDefaultStack());
                         inventory.getStack(1).setCount(num1 + 1);
+                        return true;
                     }
                 } else if (name1.equals(Items.AIR.getName().getString())) {
                     if (receiveBucketLiquid("lava")) {
                         inventory.setStack(0, Items.AIR.getDefaultStack());
                         inventory.setStack(1, Tools.copperBucket.getDefaultStack());
+                        return true;
                     }
                 }
             } else if (name0.equals(Pipes.clayWaterBucket.getName().getString())) {
@@ -103,11 +125,13 @@ public class TankUtilties {
                     if (receiveBucketLiquid("water")) {
                         inventory.setStack(0, Items.AIR.getDefaultStack());
                         inventory.getStack(1).setCount(num1 + 1);
+                        return true;
                     }
                 } else if (name1.equals(Items.AIR.getName().getString())) {
                     if (receiveBucketLiquid("water")) {
                         inventory.setStack(0, Items.AIR.getDefaultStack());
                         inventory.setStack(1, Tools.clayBucket.getDefaultStack());
+                        return true;
                     }
                 }
             } else if (name0.equals(Pipes.clayLavaBucket.getName().getString())) {
@@ -115,14 +139,28 @@ public class TankUtilties {
                     if (receiveBucketLiquid("lava")) {
                         inventory.setStack(0, Items.AIR.getDefaultStack());
                         inventory.getStack(1).setCount(num1 + 1);
+                        return true;
                     }
                 } else if (name1.equals(Items.AIR.getName().getString())) {
                     if (receiveBucketLiquid("lava")) {
                         inventory.setStack(0, Items.AIR.getDefaultStack());
                         inventory.setStack(1, Tools.clayBucket.getDefaultStack());
+                        return true;
                     }
                 }
-            } else if (num1 == 0) {
+            }
+        }
+        return false;
+    }
+
+    public void InventoryManipulate(Inventory inventory) {
+        String name0 = inventory.getStack(0).getName().getString();
+        String name1 = inventory.getStack(1).getName().getString();
+        int num0 = inventory.getStack(0).getCount();
+        int num1 = inventory.getStack(1).getCount();
+        if (inventory.getStack(0).getCount() == 1) {
+            if(inputOnlyInventoryManipulate(inventory)) return;
+            if (num1 == 0) {
                 String liquidName;
                 if (name0.equals(Items.BUCKET.getName().getString())) {
                     liquidName = giveLiquidBucket();

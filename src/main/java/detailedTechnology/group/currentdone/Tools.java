@@ -2,6 +2,7 @@ package detailedTechnology.group.currentdone;
 
 import detailedTechnology.DetailedTechnology;
 import detailedTechnology.code.Registration;
+import detailedTechnology.items.FlintKnife;
 import detailedTechnology.items.currentdone.FireStarter;
 import detailedTechnology.items.currentdone.HammerItem;
 import detailedTechnology.items.currentdone.RasperItem;
@@ -57,7 +58,10 @@ public class Tools {
     public static final Item basicFireStarter =
             new FireStarter(new FabricItemSettings().group(ITEM_GROUP),1);
 
+    public static final Item flintKnife = new FlintKnife(new FabricItemSettings().group(ITEM_GROUP));
+
     static {
+        Registration.item("Flint Knife",flintKnife);
         Registration.item("Beginner Fire Starter",beginnerFireStarter);
         Registration.item("Basic Fire Starter",basicFireStarter);
 

@@ -20,5 +20,7 @@ public class DetailedTechnologyModClient implements ClientModInitializer {
         ScreenRegistry.register(Machines.combustionChamberScreenHandler, CombustionChamberScreen::new);
         ScreenRegistry.register(Machines.clayModelScreenHandler, ClayModelScreen::new);
         ScreenRegistry.register(Pipes.barrelScreenHandler,BarrelScreen::new);
+        ScreenRegistry.register(Machines.cokeOvenScreenHandler,CokeOvenScreen::new);
+        ScreenRegistry.register(Machines.bronzeBoilerScreenHandler,BronzeBoilerScreen::new);
     }
 }

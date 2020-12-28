@@ -21,7 +21,7 @@ import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Tickable;
 import net.minecraft.util.collection.DefaultedList;
 
-public class ClayIngotModelEntity extends BlockEntity implements ImplementedInventory, NamedScreenHandlerFactory, Tickable{
+public class ClayIngotModelEntity extends BlockEntity implements ImplementedInventory, NamedScreenHandlerFactory, Tickable {
 
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(1, ItemStack.EMPTY);
 
@@ -32,14 +32,15 @@ public class ClayIngotModelEntity extends BlockEntity implements ImplementedInve
 
         @Override
         public int get(int index) {
-            if(index==0){
-                return (int)temperature;
+            if (index == 0) {
+                return (int) temperature;
             }
-                for (int i = 0; i < Materials.MATERIAL_STATUSES.size(); i++) {
-                    if(liquidName.equals(Materials.MATERIAL_STATUSES.get(i).getName())) return i;
-                }
-                return -1;
+            for (int i = 0; i < Materials.MATERIAL_STATUSES.size(); i++) {
+                if (liquidName.equals(Materials.MATERIAL_STATUSES.get(i).getName())) return i;
+            }
+            return -1;
         }
+
         @Override
         public void set(int index, int value) {
             temperature = value;
@@ -52,7 +53,7 @@ public class ClayIngotModelEntity extends BlockEntity implements ImplementedInve
         }
     };
 
-    public ClayIngotModelEntity(){
+    public ClayIngotModelEntity() {
         super(Machines.clayIngotModelEntity);
         liquidName = "air";
         temperature = 20;
@@ -69,9 +70,9 @@ public class ClayIngotModelEntity extends BlockEntity implements ImplementedInve
     }
 
     @Override
-    public void fromTag(BlockState state,CompoundTag tag) {
-        super.fromTag(state,tag);
-        Inventories.fromTag(tag,inventory);
+    public void fromTag(BlockState state, CompoundTag tag) {
+        super.fromTag(state, tag);
+        Inventories.fromTag(tag, inventory);
         liquidName = tag.getString("liquid name");
         temperature = tag.getFloat("temperature");
     }
@@ -80,30 +81,41 @@ public class ClayIngotModelEntity extends BlockEntity implements ImplementedInve
     public CompoundTag toTag(CompoundTag tag) {
         super.toTag(tag);
         Inventories.toTag(tag, this.inventory);
-        tag.putString("liquid name",liquidName);
-        tag.putFloat("temperature",temperature);
+        tag.putString("liquid name", liquidName);
+        tag.putFloat("temperature", temperature);
         return tag;
     }
 
     @Override
     public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
-        return new ClayModelScreenHandler(syncId, playerInventory, this,propertyDelegate);
+        return new ClayModelScreenHandler(syncId, playerInventory, this, propertyDelegate);
     }
 
-    private void updateTemperature(){
-        float temperature = 20;
-        this.temperature+=(temperature-this.temperature)/1000.0;
-    }
-
-    private void updateLiquid(Inventory inventory){
-        float solidifyTemp=0;
+    public void receiveUnitLiquid(String liquidName, float temperature) {
+        float heatCapacitance = 15;
         for (int i = 0; i < Materials.MATERIAL_STATUSES.size(); i++) {
-            if(Materials.MATERIAL_STATUSES.get(i).getName().equals(liquidName)){
+            if (liquidName.equals(Materials.MATERIAL_STATUSES.get(i).getName())) {
+                heatCapacitance = Materials.MATERIAL_STATUSES.get(i).getSpecificHeatCapacityOfVolume() / 9;
+            }
+        }
+        this.temperature = (this.temperature * 15 + temperature * heatCapacitance) / (15 + heatCapacitance);
+        this.liquidName = liquidName;
+    }
+
+    private void updateTemperature() {
+        float temperature = 20;
+        this.temperature += (temperature - this.temperature) / 1000.0;
+    }
+
+    private void updateLiquid(Inventory inventory) {
+        float solidifyTemp = 0;
+        for (int i = 0; i < Materials.MATERIAL_STATUSES.size(); i++) {
+            if (Materials.MATERIAL_STATUSES.get(i).getName().equals(liquidName)) {
                 solidifyTemp = Materials.MATERIAL_STATUSES.get(i).getMeltingPoint();
                 break;
             }
         }
-        if(temperature<=solidifyTemp){
+        if (temperature <= solidifyTemp) {
             int itemCount = inventory.getStack(0).getCount();
             switch (liquidName) {
                 case "copper":
@@ -149,7 +161,7 @@ public class ClayIngotModelEntity extends BlockEntity implements ImplementedInve
     @Override
     public void tick() {
         updateTemperature();
-        updateLiquid((Inventory)this);
+        updateLiquid((Inventory) this);
         checkBreak();
     }
 }

@@ -19,6 +19,8 @@ public class Materials {
             new Identifier("dt", "material"),() -> new ItemStack(Items.SUGAR));
     public static final String MOD_ID = DetailedTechnology.MOD_ID;
 
+    public static final Item tinder = new Item(new FabricItemSettings().group(ITEM_GROUP));
+
     public static final Item wetClaySmallCrucible = new Item(new FabricItemSettings().group(ITEM_GROUP));
     public static final Item claySmallCrucible = new Item(new FabricItemSettings().group(ITEM_GROUP));
     public static final Item claySmallCrucibleWithCopper = new Item(new FabricItemSettings().group(ITEM_GROUP));
@@ -30,6 +32,7 @@ public class Materials {
     public static final Item brickDust = new Item(new FabricItemSettings().group(ITEM_GROUP));
     public static final Item rawFirebrickMixture = new Item(new FabricItemSettings().group(ITEM_GROUP));
     public static final Item fireBrick = new Item(new FabricItemSettings().group(ITEM_GROUP));
+    public static final Item coke = new Item(new FabricItemSettings().group(ITEM_GROUP));
 
     public static final ClaySmallCrucibleWithLiquid claySmallCrucibleWithMeltingCopper
             = new ClaySmallCrucibleWithLiquid("copper",new FabricItemSettings().group(ITEM_GROUP));
@@ -48,12 +51,18 @@ public class Materials {
             "brick",1.7f,750,1280,3000);
     public static final DetailedMaterialStatus FIREBRICK = new DetailedMaterialStatus(
             "firebrick",2f,858,1580,3000);
+    public static final DetailedMaterialStatus WATER = new DetailedMaterialStatus(
+            "water",1f,4200,0,100);
+
+    public static final float R = 8.31446261815324f;
+
 
     public static final ArrayList<String> LiquidList = new ArrayList<>();
 
     public static final ArrayList<DetailedMaterialStatus> MATERIAL_STATUSES = new ArrayList<>();
 
     static {
+        Registration.item("Tinder",tinder);
 
         Registration.item("Wet Clay Small Crucible", wetClaySmallCrucible);
         Registration.item("Clay Small Crucible", claySmallCrucible);
@@ -69,6 +78,7 @@ public class Materials {
         Registration.item("Brick Dust",brickDust);
         Registration.item("Raw Firebrick Mixture", rawFirebrickMixture);
         Registration.item("Firebrick",fireBrick);
+        Registration.item("Coke",coke);
 
         MATERIAL_STATUSES.add(COPPER);
         MATERIAL_STATUSES.add(TIN);

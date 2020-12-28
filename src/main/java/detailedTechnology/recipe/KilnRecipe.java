@@ -1,7 +1,9 @@
 package detailedTechnology.recipe;
 
 import detailedTechnology.group.Machines;
+import detailedTechnology.group.Pipes;
 import detailedTechnology.group.currentdone.Materials;
+import detailedTechnology.group.currentdone.Ores;
 import detailedTechnology.group.currentdone.Tools;
 import detailedTechnology.recipe.general.ShapedRecipe;
 import net.minecraft.item.Item;
@@ -49,9 +51,16 @@ public class KilnRecipe {
         addRecipe(2, new Item[]{air,air,air,rawFirebrickMixture,rawFirebrickMixture,rawFirebrickMixture,rawFirebrickMixture,rawFirebrickMixture,rawFirebrickMixture},
                 new int[]{0,0,0,1,1,1,1,1,1},fireBrick,8);
 
+        addRecipe(1,new Item[]{fireBrick,air,fireBrick,fireBrick,air,fireBrick,fireBrick,fireBrick,fireBrick},
+                new int[]{1,0,1,1,0,1,1,1,1}, Pipes.firebrickBarrel.asItem(),1);
+
         addRecipe(1,new Item[]{clayBall,brick,clayBall,clayBall,clayBall,clayBall,air,air,air},
                 new int[]{1,0,1,1,1,1,0,0,0},Machines.clayIngotModel.asItem(),1);
         addRecipe(1,new Item[]{air,air,air,clayBall,brick,clayBall,clayBall,clayBall,clayBall},
                 new int[]{0,0,0,1,0,1,1,1,1},Machines.clayIngotModel.asItem(),1);
+        addRecipe(1,new Item[]{clayBall,Ores.copperPlate,clayBall,clayBall,clayBall,clayBall,air,air,air},
+                new int[]{1,0,1,1,1,1,0,0,0},Machines.clayPlateModel.asItem(),1);
+        addRecipe(1,new Item[]{air,air,air,clayBall,Ores.copperPlate,clayBall,clayBall,clayBall,clayBall},
+                new int[]{0,0,0,1,0,1,1,1,1},Machines.clayPlateModel.asItem(),1);
     }
 }

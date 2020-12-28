@@ -30,7 +30,7 @@ public class FirebrickBarrelEntity extends BlockEntity implements ImplementedInv
 
     public String liquidName;
     public int liquidAmount;
-    private TankUtilties tankUtilties;
+    public TankUtilties tankUtilties;
 
     private final PropertyDelegate propertyDelegate = new PropertyDelegate() {
 
@@ -99,6 +99,12 @@ public class FirebrickBarrelEntity extends BlockEntity implements ImplementedInv
 
 
     private void checkBreak() {
+    }
+
+    public void loadTank(TankUtilties tankUtilties){
+        this.tankUtilties = tankUtilties;
+        this.liquidName = tankUtilties.liquidName;
+        this.liquidAmount = tankUtilties.liquidAmount;
     }
 
     @Override

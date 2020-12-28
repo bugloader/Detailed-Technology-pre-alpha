@@ -28,10 +28,8 @@ public class FirebrickCombustionChamberEntity extends BlockEntity implements Imp
 
     public static final float charcoalUnitTemperature = 550;
     public static final float cokeUnitTemperature = 1000;
-    public static final int charcoalUnitTime = 300;
-    public static final int cokeUnitTime = 600;
-
-    //1648
+    public static final int charcoalUnitTime = 3600;
+    public static final int cokeUnitTime = 2000;
 
     private final float burningRate=1.75f;
     private int burningTime;
@@ -47,7 +45,9 @@ public class FirebrickCombustionChamberEntity extends BlockEntity implements Imp
                 case 1: return (int)temperature;
                 case 2: if(fuelName.equals(Items.CHARCOAL.getName().getString())){
                     return (int)(burningRate*charcoalUnitTemperature);
-                }else{
+                } else if(fuelName.equals(Materials.coke.getName().getString())){
+                    return (int)(burningRate*cokeUnitTemperature);
+                } else{
                     return 20;
                 }
                 default: return 0;
@@ -115,12 +115,21 @@ public class FirebrickCombustionChamberEntity extends BlockEntity implements Imp
             }else{
                 inventory.getStack(0).setCount(inventory.getStack(0).getCount()-1);
             }
+        }else if(fuelName.equals(Materials.coke.getName().getString())){
+            this.burningTime=(int)(cokeUnitTime/burningRate);
+            if(inventory.getStack(0).getCount()==1){
+                inventory.setStack(0,Items.AIR.getDefaultStack());
+            }else{
+                inventory.getStack(0).setCount(inventory.getStack(0).getCount()-1);
+            }
         }
     }
 
     private void getNextTemp(){
         if(fuelName.equals(Items.CHARCOAL.getName().getString())){
-            temperature+=(charcoalUnitTemperature*burningRate-temperature)/50.0;
+            temperature+=(charcoalUnitTemperature*burningRate-temperature)/100.0;
+        }else if(fuelName.equals(Materials.coke.getName().getString())){
+            temperature+=(cokeUnitTemperature*burningRate-temperature)/100.0;
         }
         burningTime--;
     }

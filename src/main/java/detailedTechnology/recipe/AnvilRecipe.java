@@ -1,5 +1,6 @@
 package detailedTechnology.recipe;
 
+import detailedTechnology.group.Machines;
 import detailedTechnology.group.currentdone.Armors;
 import detailedTechnology.group.currentdone.Materials;
 import detailedTechnology.group.currentdone.Ores;
@@ -174,6 +175,9 @@ public class AnvilRecipe {
 
         addRecipe("hammer",1,new Item[]{copperPlate, copperPlate,copperPlate},
                 new int[]{1,1,1}, Tools.copperBucket,1);
+        addRecipe("hammer",1,new Item[]{bronzePlate, bronzePlate, bronzePlate},
+                new int[]{2,2,2}, Machines.bronzeBoiler.asItem(),1);
+
         addRecipe("hammer",1,new Item[]{bronzePlate, bronzePlate,bronzePlate, bronzePlate},
                 new int[]{1,1,1,1}, Armors.bronzeBoots,1);
         addRecipe("hammer",1,new Item[]{copperPlate, copperPlate,copperPlate, copperPlate},

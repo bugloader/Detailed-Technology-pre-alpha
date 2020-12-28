@@ -24,7 +24,7 @@ import net.minecraft.util.collection.DefaultedList;
 
 import java.util.Objects;
 
-public class BrickCrucibleEntity extends BlockEntity implements ImplementedInventory, NamedScreenHandlerFactory, Tickable{
+public class BrickCrucibleEntity extends BlockEntity implements ImplementedInventory, NamedScreenHandlerFactory, Tickable {
 
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(1, ItemStack.EMPTY);
 
@@ -39,21 +39,22 @@ public class BrickCrucibleEntity extends BlockEntity implements ImplementedInven
 
         @Override
         public int get(int index) {
-            if(index==0){
-                return (int)temperature;
+            if (index == 0) {
+                return (int) temperature;
             }
-            if(index==1){
-                return (int)heatCapacitance;
+            if (index == 1) {
+                return (int) heatCapacitance;
             }
-            if(index==2){
+            if (index == 2) {
                 for (int i = 0; i < Materials.MATERIAL_STATUSES.size(); i++) {
-                    if(liquidName.equals(Materials.MATERIAL_STATUSES.get(i).getName())) return i;
+                    if (liquidName.equals(Materials.MATERIAL_STATUSES.get(i).getName())) return i;
                 }
                 return -1;
-            } else{
+            } else {
                 return liquidAmount;
             }
         }
+
         @Override
         public void set(int index, int value) {
             liquidAmount = value;
@@ -66,12 +67,12 @@ public class BrickCrucibleEntity extends BlockEntity implements ImplementedInven
         }
     };
 
-    public BrickCrucibleEntity(){
+    public BrickCrucibleEntity() {
         super(Machines.brickCrucibleEntity);
-        liquidName="air";
-        temperature=20;
-        liquidAmount=0;
-        heatCapacitance=OriginalHeatCapacitance;
+        liquidName = "air";
+        temperature = 20;
+        liquidAmount = 0;
+        heatCapacitance = OriginalHeatCapacitance;
     }
 
     @Override
@@ -85,8 +86,8 @@ public class BrickCrucibleEntity extends BlockEntity implements ImplementedInven
     }
 
     @Override
-    public void fromTag(BlockState state,CompoundTag tag) {
-        super.fromTag(state,tag);
+    public void fromTag(BlockState state, CompoundTag tag) {
+        super.fromTag(state, tag);
         liquidName = tag.getString("liquid name");
         liquidAmount = tag.getInt("liquid amount");
         temperature = tag.getFloat("temperature");
@@ -96,108 +97,109 @@ public class BrickCrucibleEntity extends BlockEntity implements ImplementedInven
     public CompoundTag toTag(CompoundTag tag) {
         super.toTag(tag);
         Inventories.toTag(tag, this.inventory);
-        Inventories.fromTag(tag,inventory);
-        tag.putString("liquid name",liquidName);
-        tag.putInt("liquid amount",liquidAmount);
-        tag.putFloat("temperature",temperature);
+        Inventories.fromTag(tag, inventory);
+        tag.putString("liquid name", liquidName);
+        tag.putInt("liquid amount", liquidAmount);
+        tag.putFloat("temperature", temperature);
         return tag;
     }
 
     @Override
     public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
-        return new CrucibleScreenHandler(syncId, playerInventory, this,propertyDelegate);
+        return new CrucibleScreenHandler(syncId, playerInventory, this, propertyDelegate);
     }
 
-    private void updateHeatCapacitance(Inventory inventory){
-        if(inventory.getStack(0).getName().getString().equals(Ores.copperDust.getName().getString())){
-            heatCapacitance=OriginalHeatCapacitance+Materials.COPPER.getSpecificHeatCapacityOfVolume()/9;
-        }else if(inventory.getStack(0).getName().getString().equals(Ores.tinDust.getName().getString())){
-            heatCapacitance=OriginalHeatCapacitance+Materials.TIN.getSpecificHeatCapacityOfVolume()/9;
-        }else if(inventory.getStack(0).getName().getString().equals(Ores.bronzeDust.getName().getString())){
-            heatCapacitance=OriginalHeatCapacitance+Materials.BRONZE.getSpecificHeatCapacityOfVolume()/9;
-        }else{
-            heatCapacitance=OriginalHeatCapacitance;
+    private void updateHeatCapacitance(Inventory inventory) {
+        if (inventory.getStack(0).getName().getString().equals(Ores.copperDust.getName().getString())) {
+            heatCapacitance = OriginalHeatCapacitance + Materials.COPPER.getSpecificHeatCapacityOfVolume() / 9;
+        } else if (inventory.getStack(0).getName().getString().equals(Ores.tinDust.getName().getString())) {
+            heatCapacitance = OriginalHeatCapacitance + Materials.TIN.getSpecificHeatCapacityOfVolume() / 9;
+        } else if (inventory.getStack(0).getName().getString().equals(Ores.bronzeDust.getName().getString())) {
+            heatCapacitance = OriginalHeatCapacitance + Materials.BRONZE.getSpecificHeatCapacityOfVolume() / 9;
+        } else {
+            heatCapacitance = OriginalHeatCapacitance;
         }
 
-        if(liquidName.equals("copper")){//144*9=1296
-            heatCapacitance+=((float)liquidAmount/1296)*Materials.COPPER.getSpecificHeatCapacityOfVolume();
-        }else if(liquidName.equals("tin")){
-            heatCapacitance+=((float)liquidAmount/1296)*Materials.TIN.getSpecificHeatCapacityOfVolume();
-        }else if(liquidName.equals("bronze")){
-            heatCapacitance+=((float)liquidAmount/1296)*Materials.BRONZE.getSpecificHeatCapacityOfVolume();
+        if (liquidName.equals("copper")) {//144*9=1296
+            heatCapacitance += ((float) liquidAmount / 1296) * Materials.COPPER.getSpecificHeatCapacityOfVolume();
+        } else if (liquidName.equals("tin")) {
+            heatCapacitance += ((float) liquidAmount / 1296) * Materials.TIN.getSpecificHeatCapacityOfVolume();
+        } else if (liquidName.equals("bronze")) {
+            heatCapacitance += ((float) liquidAmount / 1296) * Materials.BRONZE.getSpecificHeatCapacityOfVolume();
         }
     }
 
-    private void updateTemperature(){
+    private void updateTemperature() {
         float temperature = 20;
-        float specificHeatRatio = 0.1f;
+        double specificHeatRatio = 0.1f;
         assert this.world != null;
         if (this.world.getBlockState(pos.down()).getBlock().getName().getString().equals(
-                Machines.bronzeCombustionChamber.getName().getString())){
+                Machines.bronzeCombustionChamber.getName().getString())) {
             temperature = ((BronzeCombustionChamberEntity) Objects.requireNonNull(
                     this.world.getBlockEntity(this.pos.down()))).temperature;
-            specificHeatRatio = Materials.BRONZE.getSpecificHeatCapacityOfVolume()/9/heatCapacitance;
+            specificHeatRatio = Materials.BRONZE.getSpecificHeatCapacityOfVolume()/2 / heatCapacitance;
             ((BronzeCombustionChamberEntity) Objects.requireNonNull(this.world.getBlockEntity(this.pos.down())))
-                    .temperature-= (temperature-this.temperature)/50.0/specificHeatRatio;
-        }else if (this.world.getBlockState(pos.down()).getBlock().getName().getString().equals(
-                Machines.firebrickCombustionChamber.getName().getString())){
+                    .temperature -= (temperature - this.temperature) / 50.0 / specificHeatRatio;
+            this.temperature += (temperature - this.temperature) / 50.0 * specificHeatRatio;
+        } else if (this.world.getBlockState(pos.down()).getBlock().getName().getString().equals(
+                Machines.firebrickCombustionChamber.getName().getString())) {
             temperature = ((FirebrickCombustionChamberEntity) Objects.requireNonNull(
                     this.world.getBlockEntity(this.pos.down()))).temperature;
-            specificHeatRatio = Materials.FIREBRICK.getSpecificHeatCapacityOfVolume()/9/heatCapacitance;
+            specificHeatRatio = Materials.FIREBRICK.getSpecificHeatCapacityOfVolume()/2 / heatCapacitance;
             ((FirebrickCombustionChamberEntity) Objects.requireNonNull(this.world.getBlockEntity(this.pos.down())))
-                    .temperature-= (temperature-this.temperature)/50.0/specificHeatRatio;
+                    .temperature -= (temperature - this.temperature) / 50.0 / specificHeatRatio;
+            this.temperature += (temperature - this.temperature) / 50.0 * specificHeatRatio;
         }
-        this.temperature+=(temperature-this.temperature)/50.0*specificHeatRatio;
     }
 
-    private void updateLiquid(Inventory inventory){
+    private void updateLiquid(Inventory inventory) {
         int itemCount = inventory.getStack(0).getCount();
-        if(inventory.getStack(0).getName().getString().equals(Ores.copperDust.getName().getString())){
-            if(temperature>Materials.COPPER.getMeltingPoint()){
-                if(this.liquidName.equals("air")||(this.liquidName.equals("copper")&&liquidAmount+144<=576)){//can melt
-                    if(itemCount==1){
-                        inventory.setStack(0,Items.AIR.getDefaultStack());
-                    }else{
-                        inventory.getStack(0).setCount(itemCount-1);
+        if (inventory.getStack(0).getName().getString().equals(Ores.copperDust.getName().getString())) {
+            if (temperature > Materials.COPPER.getMeltingPoint()) {
+                if (this.liquidName.equals("air") || (this.liquidName.equals("copper") && liquidAmount + 144 <= 576)) {//can melt
+                    if (itemCount == 1) {
+                        inventory.setStack(0, Items.AIR.getDefaultStack());
+                    } else {
+                        inventory.getStack(0).setCount(itemCount - 1);
                     }
-                    this.liquidAmount+=144;
-                    if(this.liquidName.equals("air")){
+                    this.liquidAmount += 144;
+                    if (this.liquidName.equals("air")) {
                         liquidName = "copper";
                     }
                 }
             }
-        }else if(inventory.getStack(0).getName().getString().equals(Ores.tinDust.getName().getString())){
-            if(temperature>Materials.TIN.getMeltingPoint()){
-                if(this.liquidName.equals("air")||(this.liquidName.equals("tin")&&liquidAmount+144<=576)){//can melt
-                    if(itemCount==1){
-                        inventory.setStack(0,Items.AIR.getDefaultStack());
-                    }else{
-                        inventory.getStack(0).setCount(itemCount-1);
+        } else if (inventory.getStack(0).getName().getString().equals(Ores.tinDust.getName().getString())) {
+            if (temperature > Materials.TIN.getMeltingPoint()) {
+                if (this.liquidName.equals("air") || (this.liquidName.equals("tin") && liquidAmount + 144 <= 576)) {//can melt
+                    if (itemCount == 1) {
+                        inventory.setStack(0, Items.AIR.getDefaultStack());
+                    } else {
+                        inventory.getStack(0).setCount(itemCount - 1);
                     }
-                    this.liquidAmount+=144;
-                    if(this.liquidName.equals("air")){
+                    this.liquidAmount += 144;
+                    if (this.liquidName.equals("air")) {
                         liquidName = "tin";
                     }
-                }else if(this.liquidName.equals("copper")&&liquidAmount==432){
-                    if(itemCount==1){
-                        inventory.setStack(0,Items.AIR.getDefaultStack());
-                    }else{
-                        inventory.getStack(0).setCount(itemCount-1);
+                } else if (this.liquidName.equals("copper") && liquidAmount == 432) {
+                    if (itemCount == 1) {
+                        inventory.setStack(0, Items.AIR.getDefaultStack());
+                    } else {
+                        inventory.getStack(0).setCount(itemCount - 1);
                     }
-                    this.liquidName="bronze";
-                    liquidAmount=576;
+                    this.liquidName = "bronze";
+                    liquidAmount = 576;
                 }
             }
-        }else if(inventory.getStack(0).getName().getString().equals(Ores.bronzeDust.getName().getString())){
-            if(temperature>Materials.BRONZE.getMeltingPoint()){
-                if(this.liquidName.equals("air")||(this.liquidName.equals("bronze")&&liquidAmount+144<=576)){//can melt
-                    if(itemCount==1){
-                        inventory.setStack(0,Items.AIR.getDefaultStack());
-                    }else{
-                        inventory.getStack(0).setCount(itemCount-1);
+        } else if (inventory.getStack(0).getName().getString().equals(Ores.bronzeDust.getName().getString())) {
+            if (temperature > Materials.BRONZE.getMeltingPoint()) {
+                if (this.liquidName.equals("air") || (this.liquidName.equals("bronze") && liquidAmount + 144 <= 576)) {//can melt
+                    if (itemCount == 1) {
+                        inventory.setStack(0, Items.AIR.getDefaultStack());
+                    } else {
+                        inventory.getStack(0).setCount(itemCount - 1);
                     }
-                    this.liquidAmount+=144;
-                    if(this.liquidName.equals("air")){
+                    this.liquidAmount += 144;
+                    if (this.liquidName.equals("air")) {
                         liquidName = "bronze";
                     }
                 }
@@ -205,23 +207,23 @@ public class BrickCrucibleEntity extends BlockEntity implements ImplementedInven
         }
     }
 
-    public String getUnitLiquid(){
-        float meltingPoint=0;
-        if(liquidAmount<144){
+    public String getUnitLiquid() {
+        float meltingPoint = 0;
+        if (liquidAmount < 144) {
             return "air";
-        }else{
+        } else {
             for (int i = 0; i < Materials.MATERIAL_STATUSES.size(); i++) {
-                if(Materials.MATERIAL_STATUSES.get(i).getName().equals(liquidName)){
-                    if(temperature<Materials.MATERIAL_STATUSES.get(i).getMeltingPoint())return "air";
+                if (Materials.MATERIAL_STATUSES.get(i).getName().equals(liquidName)) {
+                    if (temperature < Materials.MATERIAL_STATUSES.get(i).getMeltingPoint()) return "air";
                     break;
                 }
             }
             String result = liquidName;
-            if(liquidAmount==144){
+            if (liquidAmount == 144) {
                 liquidName = "air";
-                liquidAmount=0;
-            }else{
-                liquidAmount-=144;
+                liquidAmount = 0;
+            } else {
+                liquidAmount -= 144;
             }
             return result;
         }
@@ -236,11 +238,11 @@ public class BrickCrucibleEntity extends BlockEntity implements ImplementedInven
 
     @Override
     public void tick() {
-        Inventory inventory = (Inventory)this;
+        Inventory inventory = (Inventory) this;
         float currentHeatCapacitance = heatCapacitance;
         updateHeatCapacitance(inventory);
-        if(heatCapacitance>currentHeatCapacitance){
-            temperature = (temperature-20)*currentHeatCapacitance/heatCapacitance+20;
+        if (heatCapacitance > currentHeatCapacitance) {
+            temperature = (temperature - 20) * currentHeatCapacitance / heatCapacitance + 20;
         }
         updateTemperature();
         updateLiquid(inventory);

@@ -1,13 +1,20 @@
 detailedTechnology/blockEntity/currentdone/BronzeCombustionChamberEntity.java
  detailedTechnology.blockEntity.currentdone.BronzeCombustionChamberEntity
  detailedTechnology.blockEntity.currentdone.BronzeCombustionChamberEntity$1
+detailedTechnology/recipe/CokeOvenRecipe.java
+ detailedTechnology.recipe.CokeOvenRecipe
 detailedTechnology/items/generalclass/DetailedArmorMaterial.java
  detailedTechnology.items.generalclass.DetailedArmorMaterial
 detailedTechnology/items/SawItem.java
  detailedTechnology.items.SawItem
+detailedTechnology/items/FlintKnife.java
+ detailedTechnology.items.FlintKnife
 detailedTechnology/blockEntity/currentdone/StoneMileEntity.java
  detailedTechnology.blockEntity.currentdone.StoneMileEntity
  detailedTechnology.blockEntity.currentdone.StoneMileEntity$1
+detailedTechnology/blocks/currentdone/ClayIngotModel.java
+ detailedTechnology.blocks.currentdone.ClayIngotModel
+ detailedTechnology.blocks.currentdone.ClayIngotModel$1
 detailedTechnology/gui/currentdone/StoneMileScreen.java
  detailedTechnology.gui.currentdone.StoneMileScreen
 detailedTechnology/blocks/currentdone/Barrel.java
@@ -35,6 +42,11 @@ detailedTechnology/blockEntity/currentdone/KilnEntity.java
  detailedTechnology.blockEntity.currentdone.KilnEntity$1
 detailedTechnology/items/generalclass/DetailedMaterialStatus.java
  detailedTechnology.items.generalclass.DetailedMaterialStatus
+detailedTechnology/gui/currentdone/BronzeBoilerScreen.java
+ detailedTechnology.gui.currentdone.BronzeBoilerScreen
+detailedTechnology/blockEntity/currentdone/CokeOvenEntity.java
+ detailedTechnology.blockEntity.currentdone.CokeOvenEntity
+ detailedTechnology.blockEntity.currentdone.CokeOvenEntity$1
 detailedTechnology/blockEntity/currentdone/WoodBarrelEntity.java
  detailedTechnology.blockEntity.currentdone.WoodBarrelEntity
  detailedTechnology.blockEntity.currentdone.WoodBarrelEntity$1
@@ -53,6 +65,9 @@ detailedTechnology/blocks/currentdone/BronzeAnvil.java
 detailedTechnology/blockEntity/currentdone/FirebrickCombustionChamberEntity.java
  detailedTechnology.blockEntity.currentdone.FirebrickCombustionChamberEntity
  detailedTechnology.blockEntity.currentdone.FirebrickCombustionChamberEntity$1
+detailedTechnology/blockEntity/currentdone/ClayPlateModelEntity.java
+ detailedTechnology.blockEntity.currentdone.ClayPlateModelEntity
+ detailedTechnology.blockEntity.currentdone.ClayPlateModelEntity$1
 detailedTechnology/blocks/currentdone/StoneMileRunner.java
  detailedTechnology.blocks.currentdone.StoneMileRunner
 detailedTechnology/blocks/currentdone/FireStarterBlock.java
@@ -71,20 +86,27 @@ detailedTechnology/items/generalclass/DetailedBucketItem.java
  detailedTechnology.items.generalclass.DetailedBucketItem
 detailedTechnology/items/generalclass/DetailedSwordItem.java
  detailedTechnology.items.generalclass.DetailedSwordItem
-detailedTechnology/blocks/currentdone/ClayModel.java
- detailedTechnology.blocks.currentdone.ClayModel
- detailedTechnology.blocks.currentdone.ClayModel$1
 detailedTechnology/blockEntity/currentdone/BronzeBarrelEntity.java
  detailedTechnology.blockEntity.currentdone.BronzeBarrelEntity
  detailedTechnology.blockEntity.currentdone.BronzeBarrelEntity$1
+detailedTechnology/gui/currentdone/CokeOvenScreenHandler.java
+ detailedTechnology.gui.currentdone.CokeOvenScreenHandler
 detailedTechnology/group/currentdone/Recipes.java
  detailedTechnology.group.currentdone.Recipes
 detailedTechnology/gui/currentdone/KilnScreenHandler.java
  detailedTechnology.gui.currentdone.KilnScreenHandler
+detailedTechnology/blockEntity/currentdone/BronzeBoilerEntity.java
+ detailedTechnology.blockEntity.currentdone.BronzeBoilerEntity
+ detailedTechnology.blockEntity.currentdone.BronzeBoilerEntity$1
+detailedTechnology/blocks/CokeOven.java
+ detailedTechnology.blocks.CokeOven
 detailedTechnology/recipe/StoneMileRecipe.java
  detailedTechnology.recipe.StoneMileRecipe
 detailedTechnology/blockEntity/currentdone/BurningCharcoalHeapEntity.java
  detailedTechnology.blockEntity.currentdone.BurningCharcoalHeapEntity
+detailedTechnology/blocks/currentdone/ClayPlateModel.java
+ detailedTechnology.blocks.currentdone.ClayPlateModel
+ detailedTechnology.blocks.currentdone.ClayPlateModel$1
 detailedTechnology/items/generalclass/DetailedPickaxeItem.java
  detailedTechnology.items.generalclass.DetailedPickaxeItem
 detailedTechnology/items/currentdone/FireStarter.java
@@ -145,9 +167,18 @@ detailedTechnology/recipe/general/ShapedRecipe.java
  detailedTechnology.recipe.general.ShapedRecipe
 detailedTechnology/gui/currentdone/CrucibleScreen.java
  detailedTechnology.gui.currentdone.CrucibleScreen
+detailedTechnology/structure/CokeOvenStructure.java
+ detailedTechnology.structure.CokeOvenStructure
+ detailedTechnology.structure.CokeOvenStructure$1
 detailedTechnology/gui/currentdone/FireStarterBlockScreenHandler.java
  detailedTechnology.gui.currentdone.FireStarterBlockScreenHandler
 detailedTechnology/gui/currentdone/ClayModelScreen.java
  detailedTechnology.gui.currentdone.ClayModelScreen
+detailedTechnology/blocks/BronzeBoiler.java
+ detailedTechnology.blocks.BronzeBoiler
 detailedTechnology/blocks/currentdone/BurningCharcoalHeap.java
  detailedTechnology.blocks.currentdone.BurningCharcoalHeap
+detailedTechnology/gui/currentdone/CokeOvenScreen.java
+ detailedTechnology.gui.currentdone.CokeOvenScreen
+detailedTechnology/gui/currentdone/BronzeBoilerScreenHandler.java
+ detailedTechnology.gui.currentdone.BronzeBoilerScreenHandler

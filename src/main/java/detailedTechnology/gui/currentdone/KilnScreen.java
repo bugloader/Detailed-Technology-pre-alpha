@@ -37,7 +37,7 @@ public class KilnScreen extends HandledScreen<ScreenHandler> {
         super.render(matrices, mouseX, mouseY, delta);
         drawMouseoverTooltip(matrices, mouseX, mouseY);
         writeText(matrices,Integer.toString(screenHandler.getTime())+"/400 ticks", 40, 60);
-        writeText(matrices,"Goal:"+screenHandler.getName(), 40, 60);
+        writeText(matrices,"Goal:"+screenHandler.getName(), 40, 80);
         writeText(matrices,"Charcoal", 152, 62);
         //textRenderer.draw(matrices,Integer.toString(mouseX)+":"+Integer.toString(mouseY),0,0,0xffffff);
     }

@@ -101,7 +101,7 @@ public class StoneMile extends HorizontalFacingBlock implements BlockEntityProvi
 
     @Override
     public void neighborUpdate(BlockState state, World world, BlockPos pos, Block block, BlockPos fromPos, boolean notify) {
-        if(block.getClass().equals(StoneMileRunner.class)&&
+        if(block.getClass().equals(StoneMileRunner.class)&&fromPos.equals(pos.up())&&
                 ((Inventory) Objects.requireNonNull(world.getBlockEntity(pos))).getStack(0).getCount()!=0) {
             if(++workingTime>=30) {
                 workingTime=0;

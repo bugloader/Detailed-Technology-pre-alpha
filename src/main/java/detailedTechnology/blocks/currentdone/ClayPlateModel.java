@@ -2,7 +2,7 @@ package detailedTechnology.blocks.currentdone;
 
 import detailedTechnology.blockEntity.currentdone.BrickCrucibleEntity;
 import detailedTechnology.blockEntity.currentdone.ClayIngotModelEntity;
-import detailedTechnology.blockEntity.currentdone.StoneMileEntity;
+import detailedTechnology.blockEntity.currentdone.ClayPlateModelEntity;
 import detailedTechnology.group.Machines;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tools.FabricToolTags;
@@ -27,19 +27,15 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
 
-public class ClayModel extends HorizontalFacingBlock implements BlockEntityProvider{
-    private static final VoxelShape SHAPE1 =
-            Block.createCuboidShape(0, 0, 4, 16, 4, 12),
-    SHAPE2 = Block.createCuboidShape(4, 0, 0, 12, 4, 16);
+public class ClayPlateModel extends HorizontalFacingBlock implements BlockEntityProvider{
+    private static final VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 4, 16);
     boolean useTime=false;
-    public String type;
-    public ClayModel(String type)
+    public ClayPlateModel()
     {
         super(FabricBlockSettings.of(Material.STONE, MaterialColor.STONE)
                 .strength(2f,3f)
                 .requiresTool().breakByTool(FabricToolTags.PICKAXES, 2));
         setDefaultState(this.stateManager.getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH));
-        this.type = type;
     }
 
     @Override
@@ -50,19 +46,12 @@ public class ClayModel extends HorizontalFacingBlock implements BlockEntityProvi
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         Direction dir = state.get(FACING);
-        switch(dir) {
-            case NORTH:
-                return SHAPE2;
-            case SOUTH:
-                return SHAPE2;
-            default:
-                return SHAPE1;
-        }
+        return SHAPE;
     }
 
     @Override
     public BlockEntity createBlockEntity(BlockView blockView) {
-        return new ClayIngotModelEntity();
+        return new ClayPlateModelEntity();
     }
 
     @Override
@@ -80,15 +69,13 @@ public class ClayModel extends HorizontalFacingBlock implements BlockEntityProvi
                         break;
                     case WEST:
                         backPos = pos.west();
-                }
-                if (world.getBlockState(backPos).getBlock().getName().getString().equals(
+                }if (world.getBlockState(backPos).getBlock().getName().getString().equals(
                         Machines.brickCrucible.getName().getString())&&
-                        ((ClayIngotModelEntity)world.getBlockEntity(pos)).liquidName.equals("air")) {
+                        ((ClayPlateModelEntity) Objects.requireNonNull(world.getBlockEntity(pos))).liquidName.equals("air")) {
                     if(useTime){
-                        ((ClayIngotModelEntity) Objects.requireNonNull(world.getBlockEntity(pos))).liquidName=
-                                ((BrickCrucibleEntity) Objects.requireNonNull(world.getBlockEntity(backPos))).getUnitLiquid();
-                        ((ClayIngotModelEntity) Objects.requireNonNull(world.getBlockEntity(pos))).temperature=
-                                ((BrickCrucibleEntity) Objects.requireNonNull(world.getBlockEntity(backPos))).temperature;
+                        ((ClayPlateModelEntity) Objects.requireNonNull(world.getBlockEntity(pos))).receiveUnitLiquid(
+                                ((BrickCrucibleEntity) Objects.requireNonNull(world.getBlockEntity(backPos))).getUnitLiquid(),
+                                ((BrickCrucibleEntity) Objects.requireNonNull(world.getBlockEntity(backPos))).temperature);
                     }
                     useTime=!useTime;
                 }
@@ -107,8 +94,8 @@ public class ClayModel extends HorizontalFacingBlock implements BlockEntityProvi
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         if (state.getBlock() != newState.getBlock()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            if (blockEntity instanceof StoneMileEntity) {
-                ItemScatterer.spawn(world, pos, (StoneMileEntity)blockEntity);
+            if (blockEntity instanceof ClayPlateModelEntity) {
+                ItemScatterer.spawn(world, pos, (ClayPlateModelEntity)blockEntity);
                 // update comparators
                 world.updateComparators(pos,this);
             }
