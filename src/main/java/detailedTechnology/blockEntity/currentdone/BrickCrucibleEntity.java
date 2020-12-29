@@ -28,7 +28,7 @@ public class BrickCrucibleEntity extends BlockEntity implements ImplementedInven
 
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(1, ItemStack.EMPTY);
 
-    public static final float OriginalHeatCapacitance = 15;
+    public static final float OriginalHeatCapacitance = 20;
 
     public String liquidName;
     public int liquidAmount;
@@ -130,7 +130,7 @@ public class BrickCrucibleEntity extends BlockEntity implements ImplementedInven
     }
 
     private void updateTemperature() {
-        float temperature = 20;
+        float temperature = 15;
         double specificHeatRatio = 0.1f;
         assert this.world != null;
         if (this.world.getBlockState(pos.down()).getBlock().getName().getString().equals(
@@ -148,6 +148,8 @@ public class BrickCrucibleEntity extends BlockEntity implements ImplementedInven
             specificHeatRatio = Materials.FIREBRICK.getSpecificHeatCapacityOfVolume()/2 / heatCapacitance;
             ((FirebrickCombustionChamberEntity) Objects.requireNonNull(this.world.getBlockEntity(this.pos.down())))
                     .temperature -= (temperature - this.temperature) / 50.0 / specificHeatRatio;
+            this.temperature += (temperature - this.temperature) / 50.0 * specificHeatRatio;
+        }else{
             this.temperature += (temperature - this.temperature) / 50.0 * specificHeatRatio;
         }
     }

@@ -23,6 +23,7 @@ public class Machines {
     public static final String MOD_ID = DetailedTechnology.MOD_ID;
 
     public static ScreenHandlerType<CrucibleScreenHandler> crucibleScreenHandler;
+    public static ScreenHandlerType<CarpenterWorkbenchScreenHandler> carpenterWorkbenchScreenHandler;
     public static ScreenHandlerType<StoneMileScreenHandler> stoneMileScreenHandler;
     public static ScreenHandlerType<FireStarterBlockScreenHandler> fireStarterBlockScreenHandler;
     public static ScreenHandlerType<BronzeAnvilScreenHandler> bronzeAnvilScreenHandler;
@@ -33,6 +34,7 @@ public class Machines {
     public static ScreenHandlerType<BronzeBoilerScreenHandler> bronzeBoilerScreenHandler;
 
     public static BlockEntityType<BrickCrucibleEntity> brickCrucibleEntity;
+    public static BlockEntityType<CarpenterWorkbenchEntity> carpenterWorkbenchEntity;
     public static BlockEntityType<StoneMileEntity> stoneMileEntity;
     public static BlockEntityType<BurningCharcoalHeapEntity> burningCharcoalHeapEntity;
     public static BlockEntityType<FireStarterBlockEntity> fireStarterBlockEntity;
@@ -42,11 +44,16 @@ public class Machines {
     public static BlockEntityType<BronzeCombustionChamberEntity> bronzeCombustionChamberEntity;
     public static BlockEntityType<ClayIngotModelEntity> clayIngotModelEntity;
     public static BlockEntityType<ClayPlateModelEntity> clayPlateModelEntity;
+    public static BlockEntityType<ClayGearModelEntity> clayGearModelEntity;
+    public static BlockEntityType<ClayRodModelEntity> clayRodModelEntity;
     public static BlockEntityType<CokeOvenEntity> cokeOvenEntity;
     public static BlockEntityType<BronzeBoilerEntity> bronzeBoilerEntity;
 
+    public static final CarpenterWorkbench carpenterWorkbench = new CarpenterWorkbench();
     public static final ClayIngotModel clayIngotModel = new ClayIngotModel();
     public static final ClayPlateModel clayPlateModel = new ClayPlateModel();
+    public static final ClayRodModel clayRodModel = new ClayRodModel();
+    public static final ClayGearModel clayGearModel = new ClayGearModel();
     public static final StoneMileRunner stoneMileRunner = new StoneMileRunner();
     public static final BurningCharcoalHeap burningCharcoalHeap = new BurningCharcoalHeap();
     public static final BrickCrucible brickCrucible = new BrickCrucible();
@@ -62,6 +69,8 @@ public class Machines {
     static{
         brickCrucibleEntity = Registry.register(Registry.BLOCK_ENTITY_TYPE,MOD_ID+":brick_crucible",
                 BlockEntityType.Builder.create(BrickCrucibleEntity::new,brickCrucible).build(null));
+        carpenterWorkbenchEntity = Registry.register(Registry.BLOCK_ENTITY_TYPE,MOD_ID+":carpenter_workbench",
+                BlockEntityType.Builder.create(CarpenterWorkbenchEntity::new,carpenterWorkbench).build(null));
         stoneMileEntity = Registry.register(Registry.BLOCK_ENTITY_TYPE,MOD_ID+":stone_mile",
                 BlockEntityType.Builder.create(StoneMileEntity::new,stoneMile).build(null));
         burningCharcoalHeapEntity = Registry.register(Registry.BLOCK_ENTITY_TYPE,MOD_ID+":burning_charcoal_heap",
@@ -80,18 +89,25 @@ public class Machines {
                 BlockEntityType.Builder.create(ClayIngotModelEntity::new,clayIngotModel).build(null));
         clayPlateModelEntity = Registry.register(Registry.BLOCK_ENTITY_TYPE,MOD_ID+":clay_plate_model",
                 BlockEntityType.Builder.create(ClayPlateModelEntity::new,clayPlateModel).build(null));
+        clayGearModelEntity = Registry.register(Registry.BLOCK_ENTITY_TYPE,MOD_ID+":clay_gear_model",
+                BlockEntityType.Builder.create(ClayGearModelEntity::new,clayGearModel).build(null));
+        clayRodModelEntity = Registry.register(Registry.BLOCK_ENTITY_TYPE,MOD_ID+":clay_rod_model",
+                BlockEntityType.Builder.create(ClayRodModelEntity::new,clayRodModel).build(null));
         cokeOvenEntity = Registry.register(Registry.BLOCK_ENTITY_TYPE,MOD_ID+":coke_oven",
                 BlockEntityType.Builder.create(CokeOvenEntity::new,cokeOven).build(null));
         bronzeBoilerEntity = Registry.register(Registry.BLOCK_ENTITY_TYPE,MOD_ID+":bronze_boiler",
                 BlockEntityType.Builder.create(BronzeBoilerEntity::new,bronzeBoiler).build(null));
 
         Registration.blockWithItem("Brick Crucible",brickCrucible,ITEM_GROUP);
+        Registration.blockWithItem("Carpenter Workbench",carpenterWorkbench,ITEM_GROUP);
         Registration.blockWithItem("Stone Mile",stoneMile,ITEM_GROUP);
         Registration.blockWithItem("Stone Mile Runner",stoneMileRunner,ITEM_GROUP);
         Registration.block("Burning Charcoal Heap",burningCharcoalHeap);
         Registration.blockWithItem("Fire Starter Block",fireStarterBlock,ITEM_GROUP);
         Registration.blockWithItem("Clay Ingot Model", clayIngotModel,ITEM_GROUP);
         Registration.blockWithItem("Clay Plate Model", clayPlateModel,ITEM_GROUP);
+        Registration.blockWithItem("Clay Rod Model", clayRodModel,ITEM_GROUP);
+        Registration.blockWithItem("Clay Gear Model", clayGearModel,ITEM_GROUP);
         Registration.blockWithItem("Bronze Anvil",bronzeAnvil,ITEM_GROUP);
         Registration.blockWithItem("Kiln",kiln,ITEM_GROUP);
         Registration.blockWithItem("Bronze Combustion Chamber",bronzeCombustionChamber,ITEM_GROUP);
@@ -101,6 +117,8 @@ public class Machines {
 
         crucibleScreenHandler = ScreenHandlerRegistry.registerSimple(
                 new Identifier(MOD_ID, "brick_crucible"),CrucibleScreenHandler::new);
+        carpenterWorkbenchScreenHandler = ScreenHandlerRegistry.registerSimple(
+                new Identifier(MOD_ID, "carpenter_workbench"),CarpenterWorkbenchScreenHandler::new);
         stoneMileScreenHandler = ScreenHandlerRegistry.registerSimple(
                 new Identifier(MOD_ID, "stone_mile"),StoneMileScreenHandler::new);
         fireStarterBlockScreenHandler = ScreenHandlerRegistry.registerSimple(

@@ -15,7 +15,7 @@ public class FireStarter extends FlintAndSteelItem {
     int level;
 
     public FireStarter(Settings setting,int level) {
-        super(setting.maxCount((int)(Math.pow(4,level))));
+        super(setting.maxCount(1));
         this.level = level;
     }
 

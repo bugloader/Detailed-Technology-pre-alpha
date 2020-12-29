@@ -3,6 +3,7 @@ package detailedTechnology.group.currentdone;
 import detailedTechnology.DetailedTechnology;
 import detailedTechnology.code.Registration;
 import detailedTechnology.items.FlintKnife;
+import detailedTechnology.items.SawItem;
 import detailedTechnology.items.currentdone.FireStarter;
 import detailedTechnology.items.currentdone.HammerItem;
 import detailedTechnology.items.currentdone.RasperItem;
@@ -20,6 +21,11 @@ public class Tools {
     public static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.build(
             new Identifier("dt", "tool"),() -> new ItemStack(Items.DIAMOND_PICKAXE));
     public static final String MOD_ID = DetailedTechnology.MOD_ID;
+
+    public static final SawItem copperSaw = new SawItem(DetailedToolMaterial.COPPER,
+            new FabricItemSettings().group(ITEM_GROUP));
+    public static final SawItem bronzeSaw = new SawItem(DetailedToolMaterial.BRONZE,
+            new FabricItemSettings().group(ITEM_GROUP));
 
     public static final HammerItem bronzeHammer = new HammerItem(DetailedToolMaterial.BRONZE,
             new FabricItemSettings().group(ITEM_GROUP));
@@ -54,9 +60,11 @@ public class Tools {
             .maxCount(16),"clay", Fluids.EMPTY);
 
     public static final Item beginnerFireStarter =
-            new FireStarter(new FabricItemSettings().group(ITEM_GROUP),0);
-    public static final Item basicFireStarter =
             new FireStarter(new FabricItemSettings().group(ITEM_GROUP),1);
+    public static final Item basicFireStarter =
+            new FireStarter(new FabricItemSettings().group(ITEM_GROUP),2);
+    public static final Item advancedFireStarter =
+            new FireStarter(new FabricItemSettings().group(ITEM_GROUP),3);
 
     public static final Item flintKnife = new FlintKnife(new FabricItemSettings().group(ITEM_GROUP));
 
@@ -64,6 +72,10 @@ public class Tools {
         Registration.item("Flint Knife",flintKnife);
         Registration.item("Beginner Fire Starter",beginnerFireStarter);
         Registration.item("Basic Fire Starter",basicFireStarter);
+        Registration.item("Advanced Fire Starter",advancedFireStarter);
+
+        Registration.item("Copper Saw",copperSaw);
+        Registration.item("Bronze Saw",bronzeSaw);
 
         Registration.item("Bronze Hammer",bronzeHammer);
         Registration.item("Bronze Rasper",bronzeRasper);

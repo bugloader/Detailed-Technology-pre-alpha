@@ -12,6 +12,8 @@ detailedTechnology/items/FlintKnife.java
 detailedTechnology/blockEntity/currentdone/StoneMileEntity.java
  detailedTechnology.blockEntity.currentdone.StoneMileEntity
  detailedTechnology.blockEntity.currentdone.StoneMileEntity$1
+detailedTechnology/gui/currentdone/CarpenterWorkbenchScreen.java
+ detailedTechnology.gui.currentdone.CarpenterWorkbenchScreen
 detailedTechnology/blocks/currentdone/ClayIngotModel.java
  detailedTechnology.blocks.currentdone.ClayIngotModel
  detailedTechnology.blocks.currentdone.ClayIngotModel$1
@@ -23,6 +25,9 @@ detailedTechnology/gui/currentdone/BronzeAnvilScreen.java
  detailedTechnology.gui.currentdone.BronzeAnvilScreen
 detailedTechnology/gui/currentdone/KilnScreen.java
  detailedTechnology.gui.currentdone.KilnScreen
+detailedTechnology/blockEntity/currentdone/ClayGearModelEntity.java
+ detailedTechnology.blockEntity.currentdone.ClayGearModelEntity
+ detailedTechnology.blockEntity.currentdone.ClayGearModelEntity$1
 detailedTechnology/gui/currentdone/BarrelScreenHandler.java
  detailedTechnology.gui.currentdone.BarrelScreenHandler
 detailedTechnology/gui/currentdone/CrucibleScreenHandler.java
@@ -68,6 +73,9 @@ detailedTechnology/blockEntity/currentdone/FirebrickCombustionChamberEntity.java
 detailedTechnology/blockEntity/currentdone/ClayPlateModelEntity.java
  detailedTechnology.blockEntity.currentdone.ClayPlateModelEntity
  detailedTechnology.blockEntity.currentdone.ClayPlateModelEntity$1
+detailedTechnology/blocks/currentdone/ClayGearModel.java
+ detailedTechnology.blocks.currentdone.ClayGearModel
+ detailedTechnology.blocks.currentdone.ClayGearModel$1
 detailedTechnology/blocks/currentdone/StoneMileRunner.java
  detailedTechnology.blocks.currentdone.StoneMileRunner
 detailedTechnology/blocks/currentdone/FireStarterBlock.java
@@ -78,12 +86,17 @@ detailedTechnology/blockEntity/currentdone/FirebrickBarrelEntity.java
  detailedTechnology.blockEntity.currentdone.FirebrickBarrelEntity$1
 detailedTechnology/blocks/currentdone/BrickCrucible.java
  detailedTechnology.blocks.currentdone.BrickCrucible
+detailedTechnology/blocks/currentdone/CarpenterWorkbench.java
+ detailedTechnology.blocks.currentdone.CarpenterWorkbench
+ detailedTechnology.blocks.currentdone.CarpenterWorkbench$1
 detailedTechnology/items/generalclass/DetailedHoeItem.java
  detailedTechnology.items.generalclass.DetailedHoeItem
 detailedTechnology/items/currentdone/ClaySmallCrucibleWithLiquid.java
  detailedTechnology.items.currentdone.ClaySmallCrucibleWithLiquid
 detailedTechnology/items/generalclass/DetailedBucketItem.java
  detailedTechnology.items.generalclass.DetailedBucketItem
+detailedTechnology/gui/currentdone/CarpenterWorkbenchScreenHandler.java
+ detailedTechnology.gui.currentdone.CarpenterWorkbenchScreenHandler
 detailedTechnology/items/generalclass/DetailedSwordItem.java
  detailedTechnology.items.generalclass.DetailedSwordItem
 detailedTechnology/blockEntity/currentdone/BronzeBarrelEntity.java
@@ -111,6 +124,9 @@ detailedTechnology/items/generalclass/DetailedPickaxeItem.java
  detailedTechnology.items.generalclass.DetailedPickaxeItem
 detailedTechnology/items/currentdone/FireStarter.java
  detailedTechnology.items.currentdone.FireStarter
+detailedTechnology/blockEntity/currentdone/ClayRodModelEntity.java
+ detailedTechnology.blockEntity.currentdone.ClayRodModelEntity
+ detailedTechnology.blockEntity.currentdone.ClayRodModelEntity$1
 detailedTechnology/recipe/general/ShapelessRecipe.java
  detailedTechnology.recipe.general.ShapelessRecipe
 detailedTechnology/items/currentdone/HammerItem.java
@@ -159,6 +175,11 @@ detailedTechnology/gui/currentdone/StoneMileScreenHandler.java
 detailedTechnology/blockEntity/currentdone/BrickCrucibleEntity.java
  detailedTechnology.blockEntity.currentdone.BrickCrucibleEntity
  detailedTechnology.blockEntity.currentdone.BrickCrucibleEntity$1
+detailedTechnology/recipe/CarpenterRecipe.java
+ detailedTechnology.recipe.CarpenterRecipe
+detailedTechnology/blocks/currentdone/ClayRodModel.java
+ detailedTechnology.blocks.currentdone.ClayRodModel
+ detailedTechnology.blocks.currentdone.ClayRodModel$1
 detailedTechnology/blocks/currentdone/CombustionChamber.java
  detailedTechnology.blocks.currentdone.CombustionChamber
 detailedTechnology/group/currentdone/Ores.java
@@ -180,5 +201,8 @@ detailedTechnology/blocks/currentdone/BurningCharcoalHeap.java
  detailedTechnology.blocks.currentdone.BurningCharcoalHeap
 detailedTechnology/gui/currentdone/CokeOvenScreen.java
  detailedTechnology.gui.currentdone.CokeOvenScreen
+detailedTechnology/blockEntity/currentdone/CarpenterWorkbenchEntity.java
+ detailedTechnology.blockEntity.currentdone.CarpenterWorkbenchEntity
+ detailedTechnology.blockEntity.currentdone.CarpenterWorkbenchEntity$1
 detailedTechnology/gui/currentdone/BronzeBoilerScreenHandler.java
  detailedTechnology.gui.currentdone.BronzeBoilerScreenHandler

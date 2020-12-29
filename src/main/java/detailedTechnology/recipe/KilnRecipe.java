@@ -58,9 +58,20 @@ public class KilnRecipe {
                 new int[]{1,0,1,1,1,1,0,0,0},Machines.clayIngotModel.asItem(),1);
         addRecipe(1,new Item[]{air,air,air,clayBall,brick,clayBall,clayBall,clayBall,clayBall},
                 new int[]{0,0,0,1,0,1,1,1,1},Machines.clayIngotModel.asItem(),1);
+
         addRecipe(1,new Item[]{clayBall,Ores.copperPlate,clayBall,clayBall,clayBall,clayBall,air,air,air},
                 new int[]{1,0,1,1,1,1,0,0,0},Machines.clayPlateModel.asItem(),1);
         addRecipe(1,new Item[]{air,air,air,clayBall,Ores.copperPlate,clayBall,clayBall,clayBall,clayBall},
                 new int[]{0,0,0,1,0,1,1,1,1},Machines.clayPlateModel.asItem(),1);
+
+        addRecipe(1,new Item[]{Ores.copperRod,clayBall,Ores.copperRod,clayBall,clayBall,clayBall,air,air,air},
+                new int[]{0,1,0,1,1,1,0,0,0},Machines.clayRodModel.asItem(),1);
+        addRecipe(1,new Item[]{air,air,air,Ores.copperRod,clayBall,Ores.copperRod,clayBall,clayBall,clayBall},
+                new int[]{0,0,0,0,1,0,1,1,1},Machines.clayRodModel.asItem(),1);
+
+        addRecipe(1,new Item[]{clayBall,Ores.copperGear,clayBall,clayBall,clayBall,clayBall,air,air,air},
+                new int[]{1,0,1,1,1,1,0,0,0},Machines.clayGearModel.asItem(),1);
+        addRecipe(1,new Item[]{air,air,air,clayBall,Ores.copperGear,clayBall,clayBall,clayBall,clayBall},
+                new int[]{0,0,0,1,0,1,1,1,1},Machines.clayGearModel.asItem(),1);
     }
 }

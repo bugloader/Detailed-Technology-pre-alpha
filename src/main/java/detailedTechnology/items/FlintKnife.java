@@ -1,11 +1,14 @@
 package detailedTechnology.items;
 
 import detailedTechnology.DetailedTechnology;
+import detailedTechnology.blockEntity.currentdone.CarpenterWorkbenchEntity;
+import detailedTechnology.group.Machines;
 import detailedTechnology.group.currentdone.Materials;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.*;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.MutableText;
 import net.minecraft.util.ActionResult;
 
@@ -60,7 +63,13 @@ public class FlintKnife extends ToolItem {
             }else if(blockName.equals(Blocks.OAK_LOG.getName())){
                 Objects.requireNonNull(context.getPlayer()).giveItemStack(Materials.tinder.getDefaultStack());
                 if(change){
-                    context.getWorld().setBlockState(context.getBlockPos(),Blocks.STRIPPED_DARK_OAK_LOG.getDefaultState());
+                    context.getWorld().setBlockState(context.getBlockPos(),Blocks.STRIPPED_OAK_LOG.getDefaultState());
+                }
+            }else if(context.getWorld().getBlockState(context.getBlockPos()).getBlock().getName().getString()
+                    .equals(Machines.carpenterWorkbench.getName().getString())) {
+                if(!((CarpenterWorkbenchEntity) Objects.requireNonNull(context.getWorld().getBlockEntity(context.getBlockPos())))
+                        .addWorkingTime("knife",0, context.getPlayer())) {
+                    Objects.requireNonNull(context.getPlayer()).playSound(SoundEvents.BLOCK_WOOD_BREAK,0.5f,1.0f);
                 }
             }
             Objects.requireNonNull(context.getPlayer()).getStackInHand(context.getHand()).damage(1,

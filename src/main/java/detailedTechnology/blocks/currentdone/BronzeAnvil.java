@@ -24,8 +24,8 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class BronzeAnvil extends HorizontalFacingBlock implements BlockEntityProvider {
-    private static final VoxelShape SHAPE1 = Block.createCuboidShape(1, 0, 3, 15, 10, 13),
-            SHAPE2 = Block.createCuboidShape(3, 0, 1, 13, 10, 15);
+    private static final VoxelShape SHAPE1 = Block.createCuboidShape(0, 0, 3, 16, 10, 13),
+            SHAPE2 = Block.createCuboidShape(3, 0, 0, 13, 10, 16);
 
     public BronzeAnvil()
     {
@@ -77,8 +77,8 @@ public class BronzeAnvil extends HorizontalFacingBlock implements BlockEntityPro
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         if (state.getBlock() != newState.getBlock()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            if (blockEntity instanceof StoneMileEntity) {
-                ItemScatterer.spawn(world, pos, (StoneMileEntity)blockEntity);
+            if (blockEntity instanceof BronzeAnvilEntity) {
+                ItemScatterer.spawn(world, pos, (BronzeAnvilEntity)blockEntity);
                 world.updateComparators(pos,this);
             }
             super.onStateReplaced(state, world, pos, newState, moved);

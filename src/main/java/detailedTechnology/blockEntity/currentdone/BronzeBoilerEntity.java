@@ -30,7 +30,7 @@ public class BronzeBoilerEntity extends BlockEntity implements ImplementedInvent
     public static final int MaximumCapacitance = 1000;
     public static final float BoilerHeatCapacitance = 14.08f;
     public static final String liquidName = "water";
-    public static final int MaximumPressure = 3000;
+    public static final int MaximumPressure = 1000;
     public int liquidAmount;
     public int miliLiquidAmount;
     public float temperature;
@@ -39,6 +39,7 @@ public class BronzeBoilerEntity extends BlockEntity implements ImplementedInvent
     public TankUtilties tankUtilties;
     float heatCapacitance;
     boolean stable=false;
+    float boilingPoint;
 
     private final PropertyDelegate propertyDelegate = new PropertyDelegate() {
 
@@ -77,6 +78,7 @@ public class BronzeBoilerEntity extends BlockEntity implements ImplementedInvent
         steamPressure = 101;
         tempEnergy = 0;
         miliLiquidAmount = 0;
+        boilingPoint = Materials.WATER.getBoilingPoint();
     }
 
     @Override
@@ -99,6 +101,7 @@ public class BronzeBoilerEntity extends BlockEntity implements ImplementedInvent
         heatCapacitance = liquidAmount * Materials.WATER.getSpecificHeatCapacity() / 1000 + BoilerHeatCapacitance;
         tempEnergy = 0;
         miliLiquidAmount = 0;
+        boilingPoint = Materials.WATER.getBoilingPoint();
     }
 
     @Override
@@ -154,13 +157,17 @@ public class BronzeBoilerEntity extends BlockEntity implements ImplementedInvent
             ((FirebrickCombustionChamberEntity) Objects.requireNonNull(this.world.getBlockEntity(this.pos.down())))
                     .temperature -= (temperature - this.temperature) / 100.0 / specificHeatRatio;
             this.temperature += (temperature - this.temperature) / 100.0 * specificHeatRatio;
+        }else{
+            this.temperature += (temperature - this.temperature) / 50.0 * specificHeatRatio;
         }
     }
 
     private void updateTempEnergy() {
-        if (liquidAmount > 0 && temperature > Materials.WATER.getBoilingPoint()) {
-            tempEnergy += (this.temperature - Materials.WATER.getBoilingPoint()) * heatCapacitance;
-            this.temperature = Materials.WATER.getBoilingPoint();
+        double c = Math.log10(steamPressure/0.611);
+        boilingPoint = (float)(235*(c/(7.45-c)));
+        if (liquidAmount > 0 && temperature > boilingPoint) {
+            tempEnergy += (this.temperature - boilingPoint) * heatCapacitance;
+            this.temperature = boilingPoint;
         }
     }
 
@@ -169,7 +176,7 @@ public class BronzeBoilerEntity extends BlockEntity implements ImplementedInvent
     //delta pv = delta n rt
     //delta p = delta n rt/v
     private void updateSteam() {
-        if (temperature < Materials.WATER.getBoilingPoint()) {
+        if (temperature < boilingPoint) {
             steamPressure = 101;
         } else {
             int waterLost = (int) (tempEnergy / 2266);

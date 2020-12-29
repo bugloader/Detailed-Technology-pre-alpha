@@ -13,6 +13,7 @@ public class DetailedTechnologyModClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         ScreenRegistry.register(Machines.crucibleScreenHandler, CrucibleScreen::new);
+        ScreenRegistry.register(Machines.carpenterWorkbenchScreenHandler, CarpenterWorkbenchScreen::new);
         ScreenRegistry.register(Machines.stoneMileScreenHandler, StoneMileScreen::new);
         ScreenRegistry.register(Machines.fireStarterBlockScreenHandler, FireStarterBlockScreen::new);
         ScreenRegistry.register(Machines.bronzeAnvilScreenHandler, BronzeAnvilScreen::new);

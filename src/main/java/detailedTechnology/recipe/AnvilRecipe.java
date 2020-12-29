@@ -200,6 +200,10 @@ public class AnvilRecipe {
                 new int[]{1,1,1}, Tools.copperSword,1);
         addRecipe("rasper",1,new Item[]{bronzePlate, bronzePlate,stick},
                 new int[]{1,1,1}, Tools.bronzeSword,1);
+        addRecipe("rasper",1,new Item[]{copperPlate, copperPlate,stick,stick,stick},
+                new int[]{1,1,1,1,1}, Tools.copperSaw,1);
+        addRecipe("rasper",1,new Item[]{bronzePlate, bronzePlate,stick,stick,stick},
+                new int[]{1,1,1,1,1}, Tools.bronzeSaw,1);
         addRecipe("rasper",1,new Item[]{copperPlate,stick,stick},
                 new int[]{1,1,1}, Tools.copperShovel,1);
         addRecipe("rasper",1,new Item[]{bronzePlate,stick,stick},
@@ -223,5 +227,12 @@ public class AnvilRecipe {
                 new int[]{1, 1}, tinRod,1);
         addRecipe("rasper",1,new Item[]{bronzeIngot},
                 new int[]{1, 1}, bronzeRod,1);
+
+        addRecipe("rasper",1,new Item[]{copperPlate},
+                new int[]{1}, Ores.copperGear,1 );
+        addRecipe("rasper",1,new Item[]{tinPlate},
+                new int[]{1}, Ores.tinGear,1);
+        addRecipe("rasper",1,new Item[]{bronzePlate},
+                new int[]{1}, Ores.bronzeGear,1);
     }
 }

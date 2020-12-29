@@ -103,7 +103,7 @@ public class ClayPlateModelEntity extends BlockEntity implements ImplementedInve
 
     private void updateTemperature(){
         float temperature = 20;
-        this.temperature+=(temperature-this.temperature)/1000.0;
+        this.temperature+=(temperature-this.temperature)/100.0;
     }
 
     private void updateLiquid(Inventory inventory){
@@ -121,16 +121,17 @@ public class ClayPlateModelEntity extends BlockEntity implements ImplementedInve
                     if (itemCount == 0) {
                         inventory.setStack(0, Ores.copperPlate.getDefaultStack());
                         liquidName = "air";
-                    } else if (itemCount < 64) {
+                    } else if (itemCount < 64&&
+                            inventory.getStack(0).getName().getString().equals(Ores.copperPlate.getName().getString())) {
                         inventory.getStack(0).setCount(itemCount + 1);
                         liquidName = "air";
                     }
-                    break;
                 case "tin":
                     if (itemCount == 0) {
                         inventory.setStack(0, Ores.tinPlate.getDefaultStack());
                         liquidName = "air";
-                    } else if (itemCount < 64) {
+                    } else if (itemCount < 64&&
+                            inventory.getStack(0).getName().getString().equals(Ores.tinPlate.getName().getString())) {
                         inventory.getStack(0).setCount(itemCount + 1);
                         liquidName = "air";
                     }
@@ -139,7 +140,8 @@ public class ClayPlateModelEntity extends BlockEntity implements ImplementedInve
                     if (itemCount == 0) {
                         inventory.setStack(0, Ores.bronzePlate.getDefaultStack());
                         liquidName = "air";
-                    } else if (itemCount < 64) {
+                    } else if (itemCount < 64&&
+                            inventory.getStack(0).getName().getString().equals(Ores.bronzePlate.getName().getString())) {
                         inventory.getStack(0).setCount(itemCount + 1);
                         liquidName = "air";
                     }

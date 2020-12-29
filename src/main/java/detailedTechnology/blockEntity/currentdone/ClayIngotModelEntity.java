@@ -104,7 +104,7 @@ public class ClayIngotModelEntity extends BlockEntity implements ImplementedInve
 
     private void updateTemperature() {
         float temperature = 20;
-        this.temperature += (temperature - this.temperature) / 1000.0;
+        this.temperature += (temperature - this.temperature) / 100.0;
     }
 
     private void updateLiquid(Inventory inventory) {
@@ -119,31 +119,34 @@ public class ClayIngotModelEntity extends BlockEntity implements ImplementedInve
             int itemCount = inventory.getStack(0).getCount();
             switch (liquidName) {
                 case "copper":
-                    if (itemCount == 0) {
-                        inventory.setStack(0, Ores.copperIngot.getDefaultStack());
-                        liquidName = "air";
-                    } else if (itemCount < 64) {
-                        inventory.getStack(0).setCount(itemCount + 1);
-                        liquidName = "air";
-                    }
+                        if (itemCount == 0) {
+                            inventory.setStack(0, Ores.copperIngot.getDefaultStack());
+                            liquidName = "air";
+                        } else if (itemCount < 64&&
+                                inventory.getStack(0).getName().getString().equals(Ores.copperIngot.getName().getString())) {
+                            inventory.getStack(0).setCount(itemCount + 1);
+                            liquidName = "air";
+                        }
                     break;
                 case "tin":
-                    if (itemCount == 0) {
-                        inventory.setStack(0, Ores.tinIngot.getDefaultStack());
-                        liquidName = "air";
-                    } else if (itemCount < 64) {
-                        inventory.getStack(0).setCount(itemCount + 1);
-                        liquidName = "air";
-                    }
+                        if (itemCount == 0) {
+                            inventory.setStack(0, Ores.tinIngot.getDefaultStack());
+                            liquidName = "air";
+                        } else if (itemCount < 64&&
+                                inventory.getStack(0).getName().getString().equals(Ores.tinIngot.getName().getString())) {
+                            inventory.getStack(0).setCount(itemCount + 1);
+                            liquidName = "air";
+                        }
                     break;
                 case "bronze":
-                    if (itemCount == 0) {
-                        inventory.setStack(0, Ores.bronzeIngot.getDefaultStack());
-                        liquidName = "air";
-                    } else if (itemCount < 64) {
-                        inventory.getStack(0).setCount(itemCount + 1);
-                        liquidName = "air";
-                    }
+                        if (itemCount == 0) {
+                            inventory.setStack(0, Ores.bronzeIngot.getDefaultStack());
+                            liquidName = "air";
+                        } else if (itemCount < 64&&
+                                inventory.getStack(0).getName().getString().equals(Ores.bronzeIngot.getName().getString())) {
+                            inventory.getStack(0).setCount(itemCount + 1);
+                            liquidName = "air";
+                        }
                     break;
             }
 
