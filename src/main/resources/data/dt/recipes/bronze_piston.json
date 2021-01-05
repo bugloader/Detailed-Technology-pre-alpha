@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "dt:bronze_cylinder"
+    },{
+      "item": "dt:small_bronze_plate"
+    },{
+      "item": "dt:bronze_rod"
+    }
+  ],
+  "result": {
+    "item": "dt:bronze_piston",
+    "count": 1
+  }
+}

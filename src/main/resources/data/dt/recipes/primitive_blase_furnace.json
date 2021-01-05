@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WBW",
+    "WAW",
+    "WWW"
+  ],
+  "key": {
+    "B": {
+      "item": "dt:copper_plate"
+    },
+    "A": {
+      "item": "dt:fire_starter_block"
+    },
+    "W": {
+      "item": "dt:high_alumina_firebrick"
+    }
+  },
+  "result": {
+    "item": "dt:primitive_blast_furnace",
+    "count": 1
+  }
+}

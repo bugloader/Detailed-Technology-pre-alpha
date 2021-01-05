@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "dt:stone_mile_runner"
+    },{
+      "item": "dt:bronze_gear"
+    }
+  ],
+  "result": {
+    "item": "dt:stone_mile_runner_with_gear",
+    "count": 1
+  }
+}

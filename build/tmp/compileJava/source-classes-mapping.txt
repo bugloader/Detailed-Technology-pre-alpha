@@ -1,208 +1,285 @@
-detailedTechnology/blockEntity/currentdone/BronzeCombustionChamberEntity.java
- detailedTechnology.blockEntity.currentdone.BronzeCombustionChamberEntity
- detailedTechnology.blockEntity.currentdone.BronzeCombustionChamberEntity$1
-detailedTechnology/recipe/CokeOvenRecipe.java
- detailedTechnology.recipe.CokeOvenRecipe
-detailedTechnology/items/generalclass/DetailedArmorMaterial.java
- detailedTechnology.items.generalclass.DetailedArmorMaterial
-detailedTechnology/items/SawItem.java
- detailedTechnology.items.SawItem
-detailedTechnology/items/FlintKnife.java
- detailedTechnology.items.FlintKnife
-detailedTechnology/blockEntity/currentdone/StoneMileEntity.java
- detailedTechnology.blockEntity.currentdone.StoneMileEntity
- detailedTechnology.blockEntity.currentdone.StoneMileEntity$1
-detailedTechnology/gui/currentdone/CarpenterWorkbenchScreen.java
- detailedTechnology.gui.currentdone.CarpenterWorkbenchScreen
-detailedTechnology/blocks/currentdone/ClayIngotModel.java
- detailedTechnology.blocks.currentdone.ClayIngotModel
- detailedTechnology.blocks.currentdone.ClayIngotModel$1
-detailedTechnology/gui/currentdone/StoneMileScreen.java
- detailedTechnology.gui.currentdone.StoneMileScreen
-detailedTechnology/blocks/currentdone/Barrel.java
- detailedTechnology.blocks.currentdone.Barrel
-detailedTechnology/gui/currentdone/BronzeAnvilScreen.java
- detailedTechnology.gui.currentdone.BronzeAnvilScreen
-detailedTechnology/gui/currentdone/KilnScreen.java
- detailedTechnology.gui.currentdone.KilnScreen
-detailedTechnology/blockEntity/currentdone/ClayGearModelEntity.java
- detailedTechnology.blockEntity.currentdone.ClayGearModelEntity
- detailedTechnology.blockEntity.currentdone.ClayGearModelEntity$1
-detailedTechnology/gui/currentdone/BarrelScreenHandler.java
- detailedTechnology.gui.currentdone.BarrelScreenHandler
-detailedTechnology/gui/currentdone/CrucibleScreenHandler.java
- detailedTechnology.gui.currentdone.CrucibleScreenHandler
-detailedTechnology/gui/currentdone/FireStarterBlockScreen.java
- detailedTechnology.gui.currentdone.FireStarterBlockScreen
-detailedTechnology/DetailedTechnology.java
- detailedTechnology.DetailedTechnology
-detailedTechnology/DetailedTechnologyModClient.java
- detailedTechnology.DetailedTechnologyModClient
-detailedTechnology/recipe/KilnRecipe.java
- detailedTechnology.recipe.KilnRecipe
-detailedTechnology/gui/currentdone/CombustionChamberScreen.java
- detailedTechnology.gui.currentdone.CombustionChamberScreen
-detailedTechnology/blockEntity/currentdone/KilnEntity.java
- detailedTechnology.blockEntity.currentdone.KilnEntity
- detailedTechnology.blockEntity.currentdone.KilnEntity$1
-detailedTechnology/items/generalclass/DetailedMaterialStatus.java
- detailedTechnology.items.generalclass.DetailedMaterialStatus
-detailedTechnology/gui/currentdone/BronzeBoilerScreen.java
- detailedTechnology.gui.currentdone.BronzeBoilerScreen
-detailedTechnology/blockEntity/currentdone/CokeOvenEntity.java
- detailedTechnology.blockEntity.currentdone.CokeOvenEntity
- detailedTechnology.blockEntity.currentdone.CokeOvenEntity$1
-detailedTechnology/blockEntity/currentdone/WoodBarrelEntity.java
- detailedTechnology.blockEntity.currentdone.WoodBarrelEntity
- detailedTechnology.blockEntity.currentdone.WoodBarrelEntity$1
-detailedTechnology/blockEntity/currentdone/FireStarterBlockEntity.java
- detailedTechnology.blockEntity.currentdone.FireStarterBlockEntity
-detailedTechnology/items/currentdone/RasperItem.java
- detailedTechnology.items.currentdone.RasperItem
-detailedTechnology/gui/currentdone/BarrelScreen.java
- detailedTechnology.gui.currentdone.BarrelScreen
-detailedTechnology/blockEntity/currentdone/ClayIngotModelEntity.java
- detailedTechnology.blockEntity.currentdone.ClayIngotModelEntity
- detailedTechnology.blockEntity.currentdone.ClayIngotModelEntity$1
-detailedTechnology/blocks/currentdone/BronzeAnvil.java
- detailedTechnology.blocks.currentdone.BronzeAnvil
- detailedTechnology.blocks.currentdone.BronzeAnvil$1
-detailedTechnology/blockEntity/currentdone/FirebrickCombustionChamberEntity.java
- detailedTechnology.blockEntity.currentdone.FirebrickCombustionChamberEntity
- detailedTechnology.blockEntity.currentdone.FirebrickCombustionChamberEntity$1
-detailedTechnology/blockEntity/currentdone/ClayPlateModelEntity.java
- detailedTechnology.blockEntity.currentdone.ClayPlateModelEntity
- detailedTechnology.blockEntity.currentdone.ClayPlateModelEntity$1
-detailedTechnology/blocks/currentdone/ClayGearModel.java
- detailedTechnology.blocks.currentdone.ClayGearModel
- detailedTechnology.blocks.currentdone.ClayGearModel$1
-detailedTechnology/blocks/currentdone/StoneMileRunner.java
- detailedTechnology.blocks.currentdone.StoneMileRunner
-detailedTechnology/blocks/currentdone/FireStarterBlock.java
- detailedTechnology.blocks.currentdone.FireStarterBlock
- detailedTechnology.blocks.currentdone.FireStarterBlock$1
-detailedTechnology/blockEntity/currentdone/FirebrickBarrelEntity.java
- detailedTechnology.blockEntity.currentdone.FirebrickBarrelEntity
- detailedTechnology.blockEntity.currentdone.FirebrickBarrelEntity$1
-detailedTechnology/blocks/currentdone/BrickCrucible.java
- detailedTechnology.blocks.currentdone.BrickCrucible
-detailedTechnology/blocks/currentdone/CarpenterWorkbench.java
- detailedTechnology.blocks.currentdone.CarpenterWorkbench
- detailedTechnology.blocks.currentdone.CarpenterWorkbench$1
-detailedTechnology/items/generalclass/DetailedHoeItem.java
- detailedTechnology.items.generalclass.DetailedHoeItem
-detailedTechnology/items/currentdone/ClaySmallCrucibleWithLiquid.java
- detailedTechnology.items.currentdone.ClaySmallCrucibleWithLiquid
-detailedTechnology/items/generalclass/DetailedBucketItem.java
- detailedTechnology.items.generalclass.DetailedBucketItem
-detailedTechnology/gui/currentdone/CarpenterWorkbenchScreenHandler.java
- detailedTechnology.gui.currentdone.CarpenterWorkbenchScreenHandler
+detailedTechnology/blocks/machines/auto/screen/PrimitiveBlastFurnaceScreen.java
+ detailedTechnology.blocks.machines.auto.screen.PrimitiveBlastFurnaceScreen
+detailedTechnology/items/toolItem/crafting/RasperItem.java
+ detailedTechnology.items.toolItem.crafting.RasperItem
+detailedTechnology/blocks/machines/manual/Model/block/Model.java
+ detailedTechnology.blocks.machines.manual.Model.block.Model
+ detailedTechnology.blocks.machines.manual.Model.block.Model$1
+detailedTechnology/blocks/machines/auto/block/PrimitiveBlastFurnace.java
+ detailedTechnology.blocks.machines.auto.block.PrimitiveBlastFurnace
+detailedTechnology/blocks/machines/auto/screen/KilnScreen.java
+ detailedTechnology.blocks.machines.auto.screen.KilnScreen
+detailedTechnology/blocks/currentdone/BurningCharcoalHeapEntity.java
+ detailedTechnology.blocks.currentdone.BurningCharcoalHeapEntity
+detailedTechnology/items/toolItem/crafting/HammerItem.java
+ detailedTechnology.items.toolItem.crafting.HammerItem
+detailedTechnology/items/toolItem/vanilla/DetailedAxeItem.java
+ detailedTechnology.items.toolItem.vanilla.DetailedAxeItem
+detailedTechnology/blocks/machines/auto/blockEntity/SteelCombustionChamberEntity.java
+ detailedTechnology.blocks.machines.auto.blockEntity.SteelCombustionChamberEntity
+detailedTechnology/blocks/machines/auto/blockEntity/BronzeCombustionChamberEntity.java
+ detailedTechnology.blocks.machines.auto.blockEntity.BronzeCombustionChamberEntity
+detailedTechnology/blocks/machines/manual/block/StoneMileRunner.java
+ detailedTechnology.blocks.machines.manual.block.StoneMileRunner
+detailedTechnology/blocks/machines/auto/screenHandler/KilnScreenHandler.java
+ detailedTechnology.blocks.machines.auto.screenHandler.KilnScreenHandler
+detailedTechnology/blocks/machines/auto/utilities/CrucibleUtilities.java
+ detailedTechnology.blocks.machines.auto.utilities.CrucibleUtilities
+ detailedTechnology.blocks.machines.auto.utilities.CrucibleUtilities$1
+detailedTechnology/blocks/machines/auto/blockEntity/CokeOvenEntity.java
+ detailedTechnology.blocks.machines.auto.blockEntity.CokeOvenEntity
+ detailedTechnology.blocks.machines.auto.blockEntity.CokeOvenEntity$1
+detailedTechnology/blocks/machines/auto/screenHandler/CrucibleScreenHandler.java
+ detailedTechnology.blocks.machines.auto.screenHandler.CrucibleScreenHandler
+detailedTechnology/group/machine/Pipes.java
+ detailedTechnology.group.machine.Pipes
+detailedTechnology/blocks/machines/auto/blockEntity/BronzeBoilerEntity.java
+ detailedTechnology.blocks.machines.auto.blockEntity.BronzeBoilerEntity
+ detailedTechnology.blocks.machines.auto.blockEntity.BronzeBoilerEntity$1
+detailedTechnology/blocks/machines/auto/blockEntity/BronzeWattDoubleActingSteamEngineEntity.java
+ detailedTechnology.blocks.machines.auto.blockEntity.BronzeWattDoubleActingSteamEngineEntity
+ detailedTechnology.blocks.machines.auto.blockEntity.BronzeWattDoubleActingSteamEngineEntity$1
+detailedTechnology/items/toolItem/FireStarter.java
+ detailedTechnology.items.toolItem.FireStarter
+detailedTechnology/group/items/Materials.java
+ detailedTechnology.group.items.Materials
+detailedTechnology/items/toolItem/WrenchItem.java
+ detailedTechnology.items.toolItem.WrenchItem
+ detailedTechnology.items.toolItem.WrenchItem$1
+detailedTechnology/blocks/pipes/block/TPipe.java
+ detailedTechnology.blocks.pipes.block.TPipe
+ detailedTechnology.blocks.pipes.block.TPipe$1
+detailedTechnology/blocks/machines/auto/screenHandler/CombustionChamberScreenHandler.java
+ detailedTechnology.blocks.machines.auto.screenHandler.CombustionChamberScreenHandler
+detailedTechnology/blocks/pipes/block/SixWayPipe.java
+ detailedTechnology.blocks.pipes.block.SixWayPipe
+detailedTechnology/blocks/machines/manual/Model/blockEntity/ClayGearModelEntity.java
+ detailedTechnology.blocks.machines.manual.Model.blockEntity.ClayGearModelEntity
+detailedTechnology/items/material/DetailedToolMaterial.java
+ detailedTechnology.items.material.DetailedToolMaterial
+detailedTechnology/items/toolItem/instant/KnifeItem.java
+ detailedTechnology.items.toolItem.instant.KnifeItem
+detailedTechnology/blocks/machines/manual/screen/AnvilScreen.java
+ detailedTechnology.blocks.machines.manual.screen.AnvilScreen
+detailedTechnology/blocks/machines/auto/screenHandler/PrimitiveBlastFurnaceScreenHandler.java
+ detailedTechnology.blocks.machines.auto.screenHandler.PrimitiveBlastFurnaceScreenHandler
 detailedTechnology/items/generalclass/DetailedSwordItem.java
  detailedTechnology.items.generalclass.DetailedSwordItem
-detailedTechnology/blockEntity/currentdone/BronzeBarrelEntity.java
- detailedTechnology.blockEntity.currentdone.BronzeBarrelEntity
- detailedTechnology.blockEntity.currentdone.BronzeBarrelEntity$1
-detailedTechnology/gui/currentdone/CokeOvenScreenHandler.java
- detailedTechnology.gui.currentdone.CokeOvenScreenHandler
-detailedTechnology/group/currentdone/Recipes.java
- detailedTechnology.group.currentdone.Recipes
-detailedTechnology/gui/currentdone/KilnScreenHandler.java
- detailedTechnology.gui.currentdone.KilnScreenHandler
-detailedTechnology/blockEntity/currentdone/BronzeBoilerEntity.java
- detailedTechnology.blockEntity.currentdone.BronzeBoilerEntity
- detailedTechnology.blockEntity.currentdone.BronzeBoilerEntity$1
-detailedTechnology/blocks/CokeOven.java
- detailedTechnology.blocks.CokeOven
-detailedTechnology/recipe/StoneMileRecipe.java
- detailedTechnology.recipe.StoneMileRecipe
-detailedTechnology/blockEntity/currentdone/BurningCharcoalHeapEntity.java
- detailedTechnology.blockEntity.currentdone.BurningCharcoalHeapEntity
-detailedTechnology/blocks/currentdone/ClayPlateModel.java
- detailedTechnology.blocks.currentdone.ClayPlateModel
- detailedTechnology.blocks.currentdone.ClayPlateModel$1
-detailedTechnology/items/generalclass/DetailedPickaxeItem.java
- detailedTechnology.items.generalclass.DetailedPickaxeItem
-detailedTechnology/items/currentdone/FireStarter.java
- detailedTechnology.items.currentdone.FireStarter
-detailedTechnology/blockEntity/currentdone/ClayRodModelEntity.java
- detailedTechnology.blockEntity.currentdone.ClayRodModelEntity
- detailedTechnology.blockEntity.currentdone.ClayRodModelEntity$1
-detailedTechnology/recipe/general/ShapelessRecipe.java
- detailedTechnology.recipe.general.ShapelessRecipe
-detailedTechnology/items/currentdone/HammerItem.java
- detailedTechnology.items.currentdone.HammerItem
-detailedTechnology/group/currentdone/Armors.java
- detailedTechnology.group.currentdone.Armors
-detailedTechnology/group/Machines.java
- detailedTechnology.group.Machines
+detailedTechnology/blocks/machines/auto/screen/CokeOvenScreen.java
+ detailedTechnology.blocks.machines.auto.screen.CokeOvenScreen
+detailedTechnology/blocks/machines/auto/block/Crucible.java
+ detailedTechnology.blocks.machines.auto.block.Crucible
+detailedTechnology/group/items/Tools.java
+ detailedTechnology.group.items.Tools
+detailedTechnology/blocks/machines/auto/block/BronzeArchimedesScrew.java
+ detailedTechnology.blocks.machines.auto.block.BronzeArchimedesScrew
+ detailedTechnology.blocks.machines.auto.block.BronzeArchimedesScrew$1
+detailedTechnology/blocks/machines/manual/Model/blockEntity/HighAluminaFirebrickRodModelEntity.java
+ detailedTechnology.blocks.machines.manual.Model.blockEntity.HighAluminaFirebrickRodModelEntity
+detailedTechnology/blocks/machines/manual/blockEntity/BronzeAnvilEntity.java
+ detailedTechnology.blocks.machines.manual.blockEntity.BronzeAnvilEntity
+ detailedTechnology.blocks.machines.manual.blockEntity.BronzeAnvilEntity$1
+detailedTechnology/blocks/machines/manual/screenHandler/FireStarterBlockScreenHandler.java
+ detailedTechnology.blocks.machines.manual.screenHandler.FireStarterBlockScreenHandler
+detailedTechnology/blocks/machines/auto/block/CokeOven.java
+ detailedTechnology.blocks.machines.auto.block.CokeOven
+detailedTechnology/recipe/auto/CokeOvenRecipe.java
+ detailedTechnology.recipe.auto.CokeOvenRecipe
 detailedTechnology/mixin/ExampleMixin.java
  detailedTechnology.mixin.ExampleMixin
-detailedTechnology/blocks/currentdone/StoneMile.java
- detailedTechnology.blocks.currentdone.StoneMile
-detailedTechnology/items/generalclass/DetailedAxeItem.java
- detailedTechnology.items.generalclass.DetailedAxeItem
-detailedTechnology/group/currentdone/Tools.java
- detailedTechnology.group.currentdone.Tools
-detailedTechnology/recipe/AnvilRecipe.java
- detailedTechnology.recipe.AnvilRecipe
-detailedTechnology/gui/currentdone/CombustionChamberScreenHandler.java
- detailedTechnology.gui.currentdone.CombustionChamberScreenHandler
+detailedTechnology/blocks/machines/auto/block/StoneMileRunnerWithGear.java
+ detailedTechnology.blocks.machines.auto.block.StoneMileRunnerWithGear
+detailedTechnology/blocks/machines/auto/blockEntity/BrickCrucibleEntity.java
+ detailedTechnology.blocks.machines.auto.blockEntity.BrickCrucibleEntity
+detailedTechnology/blocks/machines/auto/screenHandler/StoneMileScreenHandler.java
+ detailedTechnology.blocks.machines.auto.screenHandler.StoneMileScreenHandler
+detailedTechnology/recipe/manual/CarpenterRecipe.java
+ detailedTechnology.recipe.manual.CarpenterRecipe
+detailedTechnology/blocks/machines/manual/screen/ModelScreen.java
+ detailedTechnology.blocks.machines.manual.screen.ModelScreen
 detailedTechnology/code/Registration.java
  detailedTechnology.code.Registration
-detailedTechnology/blockEntity/currentdone/BronzeAnvilEntity.java
- detailedTechnology.blockEntity.currentdone.BronzeAnvilEntity
- detailedTechnology.blockEntity.currentdone.BronzeAnvilEntity$1
-detailedTechnology/blockEntity/currentdone/TankUtilties.java
- detailedTechnology.blockEntity.currentdone.TankUtilties
-detailedTechnology/code/ImplementedInventory.java
- detailedTechnology.code.ImplementedInventory
-detailedTechnology/group/currentdone/Materials.java
- detailedTechnology.group.currentdone.Materials
-detailedTechnology/gui/currentdone/ClayModelScreenHandler.java
- detailedTechnology.gui.currentdone.ClayModelScreenHandler
-detailedTechnology/group/Pipes.java
- detailedTechnology.group.Pipes
-detailedTechnology/blocks/currentdone/Kiln.java
- detailedTechnology.blocks.currentdone.Kiln
-detailedTechnology/items/generalclass/DetailedToolMaterial.java
- detailedTechnology.items.generalclass.DetailedToolMaterial
-detailedTechnology/items/generalclass/DetailedShovelItem.java
- detailedTechnology.items.generalclass.DetailedShovelItem
-detailedTechnology/gui/currentdone/BronzeAnvilScreenHandler.java
- detailedTechnology.gui.currentdone.BronzeAnvilScreenHandler
-detailedTechnology/gui/currentdone/StoneMileScreenHandler.java
- detailedTechnology.gui.currentdone.StoneMileScreenHandler
-detailedTechnology/blockEntity/currentdone/BrickCrucibleEntity.java
- detailedTechnology.blockEntity.currentdone.BrickCrucibleEntity
- detailedTechnology.blockEntity.currentdone.BrickCrucibleEntity$1
-detailedTechnology/recipe/CarpenterRecipe.java
- detailedTechnology.recipe.CarpenterRecipe
-detailedTechnology/blocks/currentdone/ClayRodModel.java
- detailedTechnology.blocks.currentdone.ClayRodModel
- detailedTechnology.blocks.currentdone.ClayRodModel$1
-detailedTechnology/blocks/currentdone/CombustionChamber.java
- detailedTechnology.blocks.currentdone.CombustionChamber
+detailedTechnology/blocks/machines/manual/blockEntity/BrickModelEntity.java
+ detailedTechnology.blocks.machines.manual.blockEntity.BrickModelEntity
+detailedTechnology/blocks/machines/auto/utilities/CombustionChamberUtilities.java
+ detailedTechnology.blocks.machines.auto.utilities.CombustionChamberUtilities
+ detailedTechnology.blocks.machines.auto.utilities.CombustionChamberUtilities$1
+detailedTechnology/blocks/tanks/blockEntity/FirebrickBarrelEntity.java
+ detailedTechnology.blocks.tanks.blockEntity.FirebrickBarrelEntity
+ detailedTechnology.blocks.tanks.blockEntity.FirebrickBarrelEntity$1
+detailedTechnology/blocks/tanks/block/Barrel.java
+ detailedTechnology.blocks.tanks.block.Barrel
+detailedTechnology/items/material/ClaySmallCrucibleWithLiquid.java
+ detailedTechnology.items.material.ClaySmallCrucibleWithLiquid
+detailedTechnology/blocks/machines/manual/screen/FireStarterBlockScreen.java
+ detailedTechnology.blocks.machines.manual.screen.FireStarterBlockScreen
+detailedTechnology/blocks/machines/auto/blockEntity/QuartzCrucibleEntity.java
+ detailedTechnology.blocks.machines.auto.blockEntity.QuartzCrucibleEntity
+detailedTechnology/blocks/machines/auto/block/BronzeBoiler.java
+ detailedTechnology.blocks.machines.auto.block.BronzeBoiler
+detailedTechnology/blocks/machines/manual/Model/blockEntity/HighAluminaFirebrickPlateModelEntity.java
+ detailedTechnology.blocks.machines.manual.Model.blockEntity.HighAluminaFirebrickPlateModelEntity
+detailedTechnology/blocks/machines/manual/screen/CarpenterWorkbenchScreen.java
+ detailedTechnology.blocks.machines.manual.screen.CarpenterWorkbenchScreen
 detailedTechnology/group/currentdone/Ores.java
  detailedTechnology.group.currentdone.Ores
+detailedTechnology/blocks/machines/manual/block/Anvil.java
+ detailedTechnology.blocks.machines.manual.block.Anvil
+ detailedTechnology.blocks.machines.manual.block.Anvil$1
+detailedTechnology/blocks/tanks/blockEntity/WoodBarrelEntity.java
+ detailedTechnology.blocks.tanks.blockEntity.WoodBarrelEntity
+ detailedTechnology.blocks.tanks.blockEntity.WoodBarrelEntity$1
+detailedTechnology/blocks/machines/auto/block/BronzeWattDoubleActingSteamEngine.java
+ detailedTechnology.blocks.machines.auto.block.BronzeWattDoubleActingSteamEngine
+ detailedTechnology.blocks.machines.auto.block.BronzeWattDoubleActingSteamEngine$1
+detailedTechnology/blocks/machines/manual/Model/blockEntity/ClayIngotModelEntity.java
+ detailedTechnology.blocks.machines.manual.Model.blockEntity.ClayIngotModelEntity
+detailedTechnology/blocks/machines/manual/utilities/ModelUtilities.java
+ detailedTechnology.blocks.machines.manual.utilities.ModelUtilities
+ detailedTechnology.blocks.machines.manual.utilities.ModelUtilities$1
+detailedTechnology/blocks/pipes/block/StraightPipe.java
+ detailedTechnology.blocks.pipes.block.StraightPipe
+ detailedTechnology.blocks.pipes.block.StraightPipe$1
+detailedTechnology/recipe/general/Recipes.java
+ detailedTechnology.recipe.general.Recipes
+detailedTechnology/group/machine/Manual.java
+ detailedTechnology.group.machine.Manual
+detailedTechnology/blocks/machines/auto/screenHandler/BronzeBoilerScreenHandler.java
+ detailedTechnology.blocks.machines.auto.screenHandler.BronzeBoilerScreenHandler
+detailedTechnology/blocks/pipes/blockEntity/BronzeCrossPipeEntity.java
+ detailedTechnology.blocks.pipes.blockEntity.BronzeCrossPipeEntity
+detailedTechnology/recipe/auto/PrimitiveBlaseFurnaceRecipe.java
+ detailedTechnology.recipe.auto.PrimitiveBlaseFurnaceRecipe
+detailedTechnology/blocks/pipes/block/BentPipe.java
+ detailedTechnology.blocks.pipes.block.BentPipe
+ detailedTechnology.blocks.pipes.block.BentPipe$1
+detailedTechnology/blocks/machines/manual/block/CarpenterWorkbench.java
+ detailedTechnology.blocks.machines.manual.block.CarpenterWorkbench
+ detailedTechnology.blocks.machines.manual.block.CarpenterWorkbench$1
+detailedTechnology/items/toolItem/vanilla/DetailedPickaxeItem.java
+ detailedTechnology.items.toolItem.vanilla.DetailedPickaxeItem
+detailedTechnology/blocks/machines/auto/blockEntity/StoneMileEntity.java
+ detailedTechnology.blocks.machines.auto.blockEntity.StoneMileEntity
+ detailedTechnology.blocks.machines.auto.blockEntity.StoneMileEntity$1
+detailedTechnology/blocks/machines/manual/blockEntity/FireStarterBlockEntity.java
+ detailedTechnology.blocks.machines.manual.blockEntity.FireStarterBlockEntity
+detailedTechnology/blocks/machines/manual/screenHandler/AnvilScreenHandler.java
+ detailedTechnology.blocks.machines.manual.screenHandler.AnvilScreenHandler
+detailedTechnology/blocks/pipes/blockEntity/BronzeStraightPipeEntity.java
+ detailedTechnology.blocks.pipes.blockEntity.BronzeStraightPipeEntity
+detailedTechnology/DetailedTechnology.java
+ detailedTechnology.DetailedTechnology
+detailedTechnology/blocks/machines/auto/structure/PrimitiveBlastFurnaceStructure.java
+ detailedTechnology.blocks.machines.auto.structure.PrimitiveBlastFurnaceStructure
+ detailedTechnology.blocks.machines.auto.structure.PrimitiveBlastFurnaceStructure$1
+detailedTechnology/DetailedTechnologyModClient.java
+ detailedTechnology.DetailedTechnologyModClient
+detailedTechnology/blocks/machines/auto/screen/StoneMileScreen.java
+ detailedTechnology.blocks.machines.auto.screen.StoneMileScreen
+detailedTechnology/blocks/machines/auto/block/CombustionChamber.java
+ detailedTechnology.blocks.machines.auto.block.CombustionChamber
+detailedTechnology/blocks/machines/manual/Model/blockEntity/HighAluminaFirebrickIngotModelEntity.java
+ detailedTechnology.blocks.machines.manual.Model.blockEntity.HighAluminaFirebrickIngotModelEntity
+detailedTechnology/blocks/machines/manual/blockEntity/CarpenterWorkbenchEntity.java
+ detailedTechnology.blocks.machines.manual.blockEntity.CarpenterWorkbenchEntity
+ detailedTechnology.blocks.machines.manual.blockEntity.CarpenterWorkbenchEntity$1
+detailedTechnology/items/material/DetailedArmorMaterial.java
+ detailedTechnology.items.material.DetailedArmorMaterial
+detailedTechnology/blocks/machines/auto/blockEntity/HighAluminaFirebrickCombustionChamberEntity.java
+ detailedTechnology.blocks.machines.auto.blockEntity.HighAluminaFirebrickCombustionChamberEntity
+detailedTechnology/blocks/pipes/blockEntity/BronzeFiveWayPipeEntity.java
+ detailedTechnology.blocks.pipes.blockEntity.BronzeFiveWayPipeEntity
+detailedTechnology/blocks/machines/auto/screenHandler/CokeOvenScreenHandler.java
+ detailedTechnology.blocks.machines.auto.screenHandler.CokeOvenScreenHandler
+detailedTechnology/blocks/machines/manual/block/BrickModel.java
+ detailedTechnology.blocks.machines.manual.block.BrickModel
+ detailedTechnology.blocks.machines.manual.block.BrickModel$1
+detailedTechnology/blocks/machines/auto/blockEntity/KilnEntity.java
+ detailedTechnology.blocks.machines.auto.blockEntity.KilnEntity
+ detailedTechnology.blocks.machines.auto.blockEntity.KilnEntity$1
+detailedTechnology/blocks/pipes/block/FiveWayPipe.java
+ detailedTechnology.blocks.pipes.block.FiveWayPipe
+ detailedTechnology.blocks.pipes.block.FiveWayPipe$1
+detailedTechnology/blocks/machines/auto/screen/BronzeBoilerScreen.java
+ detailedTechnology.blocks.machines.auto.screen.BronzeBoilerScreen
+detailedTechnology/blocks/machines/manual/Model/blockEntity/ClayPlateModelEntity.java
+ detailedTechnology.blocks.machines.manual.Model.blockEntity.ClayPlateModelEntity
+detailedTechnology/blocks/machines/auto/blockEntity/PrimitiveBlastFurnaceEntity.java
+ detailedTechnology.blocks.machines.auto.blockEntity.PrimitiveBlastFurnaceEntity
+ detailedTechnology.blocks.machines.auto.blockEntity.PrimitiveBlastFurnaceEntity$1
+detailedTechnology/blocks/machines/manual/blockEntity/SteelAnvilEntity.java
+ detailedTechnology.blocks.machines.manual.blockEntity.SteelAnvilEntity
+ detailedTechnology.blocks.machines.manual.blockEntity.SteelAnvilEntity$1
+detailedTechnology/recipe/general/ShapelessRecipe.java
+ detailedTechnology.recipe.general.ShapelessRecipe
+detailedTechnology/blocks/tanks/blockEntity/BronzeBarrelEntity.java
+ detailedTechnology.blocks.tanks.blockEntity.BronzeBarrelEntity
+ detailedTechnology.blocks.tanks.blockEntity.BronzeBarrelEntity$1
+detailedTechnology/mixin/RecipeEdit.java
+ detailedTechnology.mixin.RecipeEdit
+detailedTechnology/blocks/pipes/block/CrossPipe.java
+ detailedTechnology.blocks.pipes.block.CrossPipe
+detailedTechnology/items/toolItem/vanilla/DetailedBucketItem.java
+ detailedTechnology.items.toolItem.vanilla.DetailedBucketItem
+detailedTechnology/blocks/machines/auto/block/StoneMile.java
+ detailedTechnology.blocks.machines.auto.block.StoneMile
+detailedTechnology/blocks/machines/manual/screenHandler/CarpenterWorkbenchScreenHandler.java
+ detailedTechnology.blocks.machines.manual.screenHandler.CarpenterWorkbenchScreenHandler
+detailedTechnology/blocks/tanks/screen/BarrelScreen.java
+ detailedTechnology.blocks.tanks.screen.BarrelScreen
+detailedTechnology/group/items/Armors.java
+ detailedTechnology.group.items.Armors
+detailedTechnology/code/ImplementedInventory.java
+ detailedTechnology.code.ImplementedInventory
+detailedTechnology/items/toolItem/vanilla/DetailedShovelItem.java
+ detailedTechnology.items.toolItem.vanilla.DetailedShovelItem
+detailedTechnology/code/TankUtilities.java
+ detailedTechnology.code.TankUtilities
+detailedTechnology/items/material/DetailedMaterialStatus.java
+ detailedTechnology.items.material.DetailedMaterialStatus
+detailedTechnology/blocks/machines/auto/block/Kiln.java
+ detailedTechnology.blocks.machines.auto.block.Kiln
+detailedTechnology/items/toolItem/crafting/SawItem.java
+ detailedTechnology.items.toolItem.crafting.SawItem
+detailedTechnology/code/PipeUtilities.java
+ detailedTechnology.code.PipeUtilities
+detailedTechnology/blocks/pipes/blockEntity/BronzeSixWayPipeEntity.java
+ detailedTechnology.blocks.pipes.blockEntity.BronzeSixWayPipeEntity
+detailedTechnology/blocks/machines/manual/block/FireStarterBlock.java
+ detailedTechnology.blocks.machines.manual.block.FireStarterBlock
+ detailedTechnology.blocks.machines.manual.block.FireStarterBlock$1
+detailedTechnology/blocks/machines/auto/blockEntity/FirebrickCombustionChamberEntity.java
+ detailedTechnology.blocks.machines.auto.blockEntity.FirebrickCombustionChamberEntity
+detailedTechnology/blocks/machines/manual/Model/blockEntity/HighAluminaFirebrickGearModelEntity.java
+ detailedTechnology.blocks.machines.manual.Model.blockEntity.HighAluminaFirebrickGearModelEntity
+detailedTechnology/blocks/machines/auto/screen/CombustionChamberScreen.java
+ detailedTechnology.blocks.machines.auto.screen.CombustionChamberScreen
+detailedTechnology/recipe/auto/KilnRecipe.java
+ detailedTechnology.recipe.auto.KilnRecipe
 detailedTechnology/recipe/general/ShapedRecipe.java
  detailedTechnology.recipe.general.ShapedRecipe
-detailedTechnology/gui/currentdone/CrucibleScreen.java
- detailedTechnology.gui.currentdone.CrucibleScreen
-detailedTechnology/structure/CokeOvenStructure.java
- detailedTechnology.structure.CokeOvenStructure
- detailedTechnology.structure.CokeOvenStructure$1
-detailedTechnology/gui/currentdone/FireStarterBlockScreenHandler.java
- detailedTechnology.gui.currentdone.FireStarterBlockScreenHandler
-detailedTechnology/gui/currentdone/ClayModelScreen.java
- detailedTechnology.gui.currentdone.ClayModelScreen
-detailedTechnology/blocks/BronzeBoiler.java
- detailedTechnology.blocks.BronzeBoiler
+detailedTechnology/group/machine/Auto.java
+ detailedTechnology.group.machine.Auto
+detailedTechnology/blocks/machines/manual/screenHandler/ModelScreenHandler.java
+ detailedTechnology.blocks.machines.manual.screenHandler.ModelScreenHandler
+detailedTechnology/blocks/pipes/blockEntity/BronzeBentPipeEntity.java
+ detailedTechnology.blocks.pipes.blockEntity.BronzeBentPipeEntity
+detailedTechnology/blocks/tanks/screenHandler/BarrelScreenHandler.java
+ detailedTechnology.blocks.tanks.screenHandler.BarrelScreenHandler
+detailedTechnology/recipe/manual/AnvilRecipe.java
+ detailedTechnology.recipe.manual.AnvilRecipe
+detailedTechnology/blocks/machines/auto/structure/CokeOvenStructure.java
+ detailedTechnology.blocks.machines.auto.structure.CokeOvenStructure
+ detailedTechnology.blocks.machines.auto.structure.CokeOvenStructure$1
 detailedTechnology/blocks/currentdone/BurningCharcoalHeap.java
  detailedTechnology.blocks.currentdone.BurningCharcoalHeap
-detailedTechnology/gui/currentdone/CokeOvenScreen.java
- detailedTechnology.gui.currentdone.CokeOvenScreen
-detailedTechnology/blockEntity/currentdone/CarpenterWorkbenchEntity.java
- detailedTechnology.blockEntity.currentdone.CarpenterWorkbenchEntity
- detailedTechnology.blockEntity.currentdone.CarpenterWorkbenchEntity$1
-detailedTechnology/gui/currentdone/BronzeBoilerScreenHandler.java
- detailedTechnology.gui.currentdone.BronzeBoilerScreenHandler
+detailedTechnology/blocks/machines/auto/screen/CrucibleScreen.java
+ detailedTechnology.blocks.machines.auto.screen.CrucibleScreen
+detailedTechnology/blocks/machines/manual/Model/blockEntity/ClayRodModelEntity.java
+ detailedTechnology.blocks.machines.manual.Model.blockEntity.ClayRodModelEntity
+detailedTechnology/recipe/auto/StoneMileRecipe.java
+ detailedTechnology.recipe.auto.StoneMileRecipe
+detailedTechnology/items/toolItem/vanilla/DetailedHoeItem.java
+ detailedTechnology.items.toolItem.vanilla.DetailedHoeItem
+detailedTechnology/blocks/pipes/blockEntity/BronzeTPipeEntity.java
+ detailedTechnology.blocks.pipes.blockEntity.BronzeTPipeEntity

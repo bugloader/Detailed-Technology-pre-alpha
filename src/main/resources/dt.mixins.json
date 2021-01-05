@@ -4,6 +4,7 @@
   "package": "detailedTechnology.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "RecipeEdit"
   ],
   "client": [
     "ExampleMixin"

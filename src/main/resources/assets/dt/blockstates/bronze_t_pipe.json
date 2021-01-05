@@ -1,0 +1,48 @@
+{
+  "variants": {
+    "pf=0": {
+      "model": "dt:block/bronze_t_pipe",
+      "y": 180
+    },
+    "pf=1": {
+      "model": "dt:block/bronze_t_pipe"
+    },
+    "pf=2": {
+      "model": "dt:block/bronze_t_pipe",
+      "y": 90
+    },
+    "pf=3": {
+      "model": "dt:block/bronze_t_pipe",
+      "y": 270
+    },
+    "pf=4": {
+      "model": "dt:block/bronze_t_pipe2"
+    },
+    "pf=5": {
+      "model": "dt:block/bronze_t_pipe2",
+      "y": 90
+    },
+    "pf=6": {
+      "model": "dt:block/bronze_t_pipe3"
+    },
+    "pf=7": {
+      "model": "dt:block/bronze_t_pipe3",
+      "y": 90
+    },
+    "pf=8": {
+      "model": "dt:block/bronze_t_pipe4",
+      "y": 180
+    },
+    "pf=9": {
+      "model": "dt:block/bronze_t_pipe4"
+    },
+    "pf=10": {
+      "model": "dt:block/bronze_t_pipe4",
+      "y": 90
+    },
+    "pf=11": {
+      "model": "dt:block/bronze_t_pipe4",
+      "y": 270
+    }
+  }
+}

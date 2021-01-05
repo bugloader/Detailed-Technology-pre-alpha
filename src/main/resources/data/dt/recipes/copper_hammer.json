@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WW ",
+    "WWA",
+    "WW "
+  ],
+  "key": {
+    "W": {
+      "item": "dt:copper_ingot"
+    },
+    "A": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "dt:copper_hammer",
+    "count": 1
+  }
+}

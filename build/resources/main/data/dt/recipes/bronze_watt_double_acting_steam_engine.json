@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "dt:bronze_piston"
+    },{
+      "item": "dt:bronze_half_pipe"
+    },{
+      "item": "dt:bronze_rod"
+    },{
+      "item": "dt:bronze_gear"
+    }
+  ],
+  "result": {
+    "item": "dt:bronze_watt_double_acting_steam_engine",
+    "count": 1
+  }
+}

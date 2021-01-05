@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "pf=0": { "model": "dt:block/bronze_five_way_pipe"},
+    "pf=1": { "model": "dt:block/bronze_five_way_pipe","y":180},
+    "pf=2": { "model": "dt:block/bronze_five_way_pipe","y":270},
+    "pf=3": { "model": "dt:block/bronze_five_way_pipe","y":90},
+    "pf=4": { "model": "dt:block/bronze_five_way_pipe2"},
+    "pf=5": { "model": "dt:block/bronze_five_way_pipe3"}
+  }
+}

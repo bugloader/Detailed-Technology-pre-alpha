@@ -1,1 +1,3 @@
 v1	named	intermediary
+FIELD	detailedTechnology/mixin/ExampleMixin	Lnet/minecraft/util/Identifier;	EDITION_TITLE_TEXTURE	field_2594
+FIELD	detailedTechnology/mixin/RecipeEdit	Lnet/minecraft/item/ItemStack;	output	field_9053

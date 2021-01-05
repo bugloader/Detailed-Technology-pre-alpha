@@ -1,12 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "WW",
-    "WW"
+    " W ",
+    "WAW",
+    " W "
   ],
   "key": {
     "W": {
       "item": "dt:firebrick"
+    },
+    "A": {
+      "item": "dt:bronze_rod_frame"
     }
   },
   "result": {

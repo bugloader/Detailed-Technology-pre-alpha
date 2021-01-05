@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WWW",
+    "WWW",
+    "WWW"
+  ],
+  "key": {
+    "W": {
+      "item": "dt:aluminium_ingot"
+    }
+  },
+  "result": {
+    "item": "dt:aluminium_block",
+    "count": 1
+  }
+}

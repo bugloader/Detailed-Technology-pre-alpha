@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "W W",
+    "WWW",
+    " W "
+  ],
+  "key": {
+    "W": {
+      "item": "dt:copper_ingot"
+    }
+  },
+  "result": {
+    "item": "dt:copper_wrench",
+    "count": 1
+  }
+}

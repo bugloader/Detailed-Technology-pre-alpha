@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " W ",
+    "WAW",
+    " W "
+  ],
+  "key": {
+    "W": {
+      "item": "dt:high_alumina_firebrick"
+    },
+    "A": {
+      "item": "dt:copper_rod_frame"
+    }
+  },
+  "result": {
+    "item": "dt:high_alumina_firebrick_block",
+    "count": 1
+  }
+}

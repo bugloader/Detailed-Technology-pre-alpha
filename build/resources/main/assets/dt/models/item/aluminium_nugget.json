@@ -1,0 +1,52 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"5": "dt:block/aluminium_block",
+		"particle": "dt:block/copper_block"
+	},
+	"elements": [
+		{
+			"from": [6, 0, 6],
+			"to": [10, 3, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [14, 8, 14]},
+			"faces": {
+				"north": {"uv": [0, 0, 4, 3], "texture": "#5"},
+				"east": {"uv": [0, 0, 4, 3], "texture": "#5"},
+				"south": {"uv": [0, 0, 4, 3], "texture": "#5"},
+				"west": {"uv": [0, 0, 4, 3], "texture": "#5"},
+				"up": {"uv": [0, 0, 4, 4], "texture": "#5"},
+				"down": {"uv": [0, 0, 4, 4], "texture": "#5"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [-1, 2.25, -0.75],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"translation": [-0.75, 2.25, -1],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_righthand": {
+			"translation": [0, 0, -9.75]
+		},
+		"firstperson_lefthand": {
+			"translation": [0, 0, -9.25]
+		},
+		"ground": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"gui": {
+			"rotation": [20, 20, 0],
+			"translation": [0, 5.5, 0]
+		}
+	},
+	"groups": [
+		{
+			"name": "nugget",
+			"origin": [8, 8, 8],
+			"children": [0]
+		}
+	]
+}

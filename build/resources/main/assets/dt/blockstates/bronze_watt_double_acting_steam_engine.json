@@ -1,0 +1,35 @@
+{
+  "variants": {
+    "work=0,facing=north": {
+      "model": "dt:block/bronze_watt_double_acting_steam_engine",
+      "y": 180
+    },
+    "work=0,facing=east": {
+      "model": "dt:block/bronze_watt_double_acting_steam_engine",
+      "y": 270
+    },
+    "work=0,facing=south": {
+      "model": "dt:block/bronze_watt_double_acting_steam_engine"
+    },
+    "work=0,facing=west": {
+      "model": "dt:block/bronze_watt_double_acting_steam_engine",
+      "y": 90
+    },
+    "work=1,facing=north": {
+      "model": "dt:block/bronze_watt_double_acting_steam_engine2",
+      "y": 180
+    },
+    "work=1,facing=east": {
+      "model": "dt:block/bronze_watt_double_acting_steam_engine2",
+      "y": 270
+    },
+    "work=1,facing=south": {
+      "model": "dt:block/bronze_watt_double_acting_steam_engine2"
+    },
+    "work=1,facing=west": {
+      "model": "dt:block/bronze_watt_double_acting_steam_engine2",
+      "y": 90
+    }
+  }
+}
+

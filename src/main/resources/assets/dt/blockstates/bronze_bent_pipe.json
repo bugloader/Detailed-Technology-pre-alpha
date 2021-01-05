@@ -1,0 +1,17 @@
+{
+  "variants": {
+    "pf=0": { "model": "dt:block/bronze_bent_pipe", "y": 180 },
+    "pf=1": { "model": "dt:block/bronze_bent_pipe" },
+    "pf=2":  { "model": "dt:block/bronze_bent_pipe", "y":  90},
+    "pf=3":  { "model": "dt:block/bronze_bent_pipe", "y": 270 },
+    "pf=4": { "model": "dt:block/bronze_bent_pipe2", "y": 180 },
+    "pf=5": { "model": "dt:block/bronze_bent_pipe2" },
+    "pf=6":  { "model": "dt:block/bronze_bent_pipe2", "y":  90},
+    "pf=7":  { "model": "dt:block/bronze_bent_pipe2", "y": 270 },
+    "pf=8": { "model": "dt:block/bronze_bent_pipe3", "y": 180 },
+    "pf=9": { "model": "dt:block/bronze_bent_pipe3" },
+    "pf=10":  { "model": "dt:block/bronze_bent_pipe3", "y":  90},
+    "pf=11":  { "model": "dt:block/bronze_bent_pipe3", "y": 270 }
+  }
+}
+

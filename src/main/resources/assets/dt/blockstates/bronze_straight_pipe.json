@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "pf=0": { "model": "dt:block/bronze_straight_pipe"},
+    "pf=1": { "model": "dt:block/bronze_straight_pipe","y":90},
+    "pf=2": { "model": "dt:block/bronze_straight_pipe2"}
+  }
+}
+
